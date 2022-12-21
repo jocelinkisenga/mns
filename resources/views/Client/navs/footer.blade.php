@@ -3,7 +3,7 @@
       <div class="appContainer text-gray-600">
         <div>
           <div class="mb-6 gap-6 items-center justify-between py-6 sm:flex md:mb-16 md:py-0 md:space-y-6">
-            <img src="./assets/images/MS Logo JPG.jpg" alt="logo M&S" class="w-32" width="100" height="42">
+            <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" alt="logo M&S" class="w-32" width="100" height="42">
             <div class="flex flex-wrap flex-col-reverse gap-6 mt-6 sm:flex-row sm:mt-0 sm:items-center">
               <div class="flex gap-6">
                 <a href="#" target="blank" aria-label="github" class="hover:text-pink-400">

@@ -20,7 +20,7 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Ajouter un produit</h4>
+                                                <h4 class="modal-title">Ajouter une catégorie</h4>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -35,41 +35,13 @@
                                                         <!-- form start -->
                                                       
                                                             <div class="card-body">
-                                                              <form action="" method="POST" enctype="multipart/form-data">
+                                                              <form action="{{route('admin-categories')}}" method="POST" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Nom du produit</label>
+                                                                    <label for="exampleInputEmail1">Nom de la catégorie</label>
                                                                     <input type="text" name="name" class="form-control"
                                                                         id="exampleInputEmail1" placeholder="">
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputPassword1">prix</label>
-                                                                    <input type="text" name="price" class="form-control"
-                                                                        id="exampleInputPassword1" placeholder="">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputFile">File input</label>
-                                                                    <div class="input-group">
-                                                                        <div class="custom-file">
-                                                                            <input type="file" name="image" class="custom-file-input"
-                                                                                id="exampleInputFile">
-                                                                            <label class="custom-file-label"
-                                                                                for="exampleInputFile">Choose file</label>
-                                                                        </div>
-                                                                        <div class="input-group-append">
-                                                                            <span class="input-group-text">Upload</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                  <label for="exampleInputFile">selectionner une catégorie</label>
-                                                               
-                                                                    <select class="custom-select" name="categorie_id" id="">
-                                                                      <option selected>Selectionner une cat...</option>
-                                                               
-                                                                    </select>
-                                                                  
-                                                              </div>
                                                             </div>
                                                             <!-- /.card-body -->
 
@@ -129,17 +101,18 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>nom</th>
-                                            <th>prix</th>
-                                            <th>categorie</th>
-                                            <th>Détail</th>
-                                        </tr>
+                                            <th>Action</th>
                                     </thead>
                                     <tbody>
-                                       
-                                        <tr>
+                                       @foreach($categories as $key => $item)
+                                       <tr>
+                                            <td>{{$key+1}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>voir plus</td>
+                                       </tr> 
+                                   
+                                       @endforeach
 
-                                        </tr> 
-                                    
 
                                     </tbody>
                                 </table>

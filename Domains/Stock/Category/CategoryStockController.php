@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Domains\Stock\Category;
 
+use App\Models\Category;
+
 class CategoryStockController {
     
     public function categories(){
@@ -14,11 +16,11 @@ class CategoryStockController {
 
     }
 
-    public function store($attributes){
-
+    public function store($data){
+            Category::create(['name'=>$data]);
     }
 
-    public function update(int $id, $attributes){
+    public function update(int $id, $data){
 
     }
 

@@ -10,7 +10,7 @@
               </svg>              
             </button>
           </div>
-          <a href="" class="flex">
+          <a href="/" class="flex">
             <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" alt="M&S" class="w-auto h-8 md:h-10">
           </a>
         </div>
@@ -34,7 +34,7 @@
 
         <div class="gap-4 flex items-center">
           <div class="flex md:hidden">
-            <a href="products.html" class="flex text-gray-600">
+            <a href="{{route('client-products')}}" class="flex text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
                   d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
@@ -88,22 +88,22 @@
         <ul
           class="flex flex-col md:flex-row md:items-center gap-3 py-2 min-w-max md:h-max h-full overflow-hidden overflow-y-auto md:overflow-y-hidden">
           <li class="w-full flex">
-            <a href=""
+            <a href="/"
               class="transition-all min-w-max duration-300 relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Accueil</a>
           </li>
           <li class="w-full flex">
-            <a href=""
+            <a href="{{route('about')}}"
               class="transition-all min-w-max duration-300 relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">A
               propos</a>
           </li>
           <li class="w-full flex">
-            <a href=""
+            <a href="{{route('client-products')}}"
               class="ttransition-all min-w-max duration-300 text-base font-medium relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Nos
               produits</a>
           </li>
         </ul>
         <div class="flex items-center py-2 min-h-max md:w-max w-full">
-          <a href=""
+          <a href="{{route('contact')}}"
             class="rounded min-w-max md:w-max w-full flex justify-center bg-pink-600 py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">Nous
             contacter</a>
         </div>

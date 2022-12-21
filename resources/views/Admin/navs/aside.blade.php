@@ -45,7 +45,7 @@
             <ul class="nav nav-treeview">
  
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link ">
+                <a href="{{route('admin.categories')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Catégories</p>
                 </a>
@@ -57,7 +57,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{route("admin-commandes")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>commandes</p>
                 </a>

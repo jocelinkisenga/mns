@@ -11,7 +11,7 @@
                             <div class="card-header">
 
                             </div>
-                            <div class="card-body">
+                            {{-- <div class="card-body">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">
                                     Ajouter un produit
                                 </button>
@@ -35,7 +35,7 @@
                                                         <!-- form start -->
                                                       
                                                             <div class="card-body">
-                                                              <form action="{{route('admin.products')}}" method="POST" enctype="multipart/form-data">
+                                                              <form action="" method="POST" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <div class="form-group">
                                                                     <label for="exampleInputEmail1">Nom du produit</label>
@@ -64,11 +64,8 @@
                                                                 <div class="form-group">
                                                                   <label for="exampleInputFile">selectionner une catégorie</label>
                                                                
-                                                                    <select class="custom-select" name="category_id" id="">
+                                                                    <select class="custom-select" name="categorie_id" id="">
                                                                       <option selected>Selectionner une cat...</option>
-                                                                      @foreach ($categories as  $item)
-                                                                          <option value="{{$item->id}}">{{$item->name}}</option>
-                                                                      @endforeach
                                                                
                                                                     </select>
                                                                   
@@ -96,7 +93,7 @@
                                 </div>
                                 <br />
                                 <br />
-                            </div>
+                            </div> --}}
                             <!-- /.card -->
                         </div>
                     </div>
@@ -110,7 +107,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Listes des categories</h3>
+                                <h3 class="card-title">Listes des commandes</h3>
 
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -132,24 +129,16 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>nom</th>
-                                            <th>quantité</th>
                                             <th>prix</th>
                                             <th>categorie</th>
                                             <th>Détail</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       @foreach ($products as $key => $item )
-                                       <tr>
-                                            <td>{{$key+1}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->old_quantity}}</td>
-                                            <td>{{$item->price}}</td>
-                                            <td>{{$item->categorie->name}}</td>
-                                            <td>voir plus</td>
-                                       </tr> 
-                                       @endforeach
+                                       
+                                        <tr>
 
+                                        </tr> 
                                     
 
                                     </tbody>

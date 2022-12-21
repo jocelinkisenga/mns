@@ -4,21 +4,27 @@ declare(strict_types=1);
 
 namespace Domains\Stock\Product;
 
+use App\Models\Product;
+
 class ProductStockController {
 
     public function products(){
-      return 2-1;
+      return Product::latest()->get();
     }
 
     public function product(int $id){
 
     }
 
-    public function store(){
-
+    public function store($data){
+       return  Product::create([
+          'category_id'=>$data->category_id,
+          'name'=>$data->name,
+          'price'=>$data->price
+        ]);
     }
 
-    public function update(int $id, $attributes){
+    public function update(int $id, $data){
 
     }
 

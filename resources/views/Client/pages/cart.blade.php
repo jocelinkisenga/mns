@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends("Client.layouts.app")
 @section('content')
     
   <section class="w-full overflow-hidden">
