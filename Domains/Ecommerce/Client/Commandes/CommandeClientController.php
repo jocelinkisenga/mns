@@ -4,21 +4,37 @@ declare(strict_types=1);
 
 namespace Domains\Ecommerce\Client\Commandes;
 
-class CommandeClientController {
+use App\Models\Product;
+use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 
-    public function my_commandes(){
+class CommandeClientController implements CommandeInterfaceRepository {
 
-    }
-
-    public function store_commande(){
-
-    }
-
-    public function update_commande(){
+    
+	public function show(){
 
     }
 
-    public function delete_commande(){
-        
+	// Ajouter un produit au panier
+	public function add(Product $product, $quantity){
+        $basket = session()->get('basket');
+        $detail_product = [
+            'name' => $product->name,
+            'price' => $product->price,
+            'quantity' => $quantity
+        ];
+        $basket[$product->id] = $detail_product;
+        session()->put("basket", $basket);
     }
+
+	// Retirer un produit du panier
+	public function remove (Product $product) {
+		$basket = session()->get("basket"); // On récupère le panier en session
+		unset($basket[$product->id]); // On supprime le produit du tableau $basket
+		session()->put("basket", $basket); // On enregistre le panier
+	}
+
+	# Vider le panier
+	public function empty () {
+		session()->forget("basket"); // On supprime le panier en session
+	}
 }
