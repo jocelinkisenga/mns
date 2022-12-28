@@ -9,12 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>M&S</title>
   <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
-  
+  @livewireStyles
 </head>
 <body class="w-full overflow-hidden overflow-y-auto">
 @include("client.navs.navbar")
 @yield("content")
 @include("client.navs.footer")
+
+@livewireScripts
 <script  src="{{asset('client/assets/js/app.js')}}"></script>
 
 </body>

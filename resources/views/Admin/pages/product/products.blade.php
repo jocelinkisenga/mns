@@ -110,7 +110,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Listes des categories</h3>
+                                <h3 class="card-title">Listes des produits</h3>
 
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -146,7 +146,7 @@
                                             <td>{{$item->old_quantity}}</td>
                                             <td>{{$item->price}}</td>
                                             <td>{{$item->categorie->name}}</td>
-                                            <td>voir plus</td>
+                                            <td><a href="{{route('admin.productDetail',['name'=>$item->name,'id'=>$item->id])}}">voir plus</a></td>
                                        </tr> 
                                        @endforeach
 

@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Domains\Stock\Repositories\Product;
 
+use App\Models\History;
 use App\Models\Product;
 
-class ProductRepositorie {
+class ProductRepository {
+    public int $id;
 
     public function get_all(){
         return Product::all();
@@ -21,11 +23,19 @@ class ProductRepositorie {
     }
 
     public function store_new_qty($data){
-        $this->update_old_qty($data->product_id,$data->quantity);
+        
+       $this->id = (int) $data->product_id;
+        $this->update_old_qty( $this->id,$data->quantity);
+        History::create([
+            'product_id'=>$data->product_id,
+            'quantity'=>$data->quantity
+        ]);
+     
     }
 
     private function update_old_qty(int $productid, $qty){
+        
             $product = Product::find($productid);
-            $product->update();
+            $product->update(['old_quantity'=>$qty]);
     }
 }

@@ -33,4 +33,21 @@ class ProductController extends Controller
         return redirect()->back();
 
     }
+
+    public function show(string $name, int $id){
+        $product = $this->domainController->product($id);
+         $categories = Category::all();
+
+        return view('Admin.pages.product.productDetail',compact("product","categories"));
+    }
+
+    public function update(Request $request){
+        $this->domainController->update($request);
+        return redirect()->back();
+    }
+
+    public function update_quantity(Request $request){
+        $this->domainController->quantity($request);
+        return redirect()->back();
+    }
 }
