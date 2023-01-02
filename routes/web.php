@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-
+ 
 require __DIR__."/Client.php";
 require __DIR__."/Admin.php";
+require __DIR__."/auth.php";
