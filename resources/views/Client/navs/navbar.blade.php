@@ -42,10 +42,11 @@
               </svg>
             </a>
           </div>
-          <a href="" title="Panier"
+          @if (session()->has("basket"))
+          <a href="{{route('client-cart')}}" title="Panier"
             class="flex flex-col items-center  text-gray-700 hover:text-primary transition relative">
             <span
-              class="absolute -right-0 -top-0 w-2 h-2 rounded-full flex items-center justify-center bg-pink-600"></span>
+              class="absolute -right-0 -top-0 w-3 h-3 rounded-full flex items-center text-white justify-center bg-pink-600">{{sizeof(session('basket'))}}</span>
             <div class="text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path
@@ -54,6 +55,7 @@
             </div>
             <div class="text-xs leading-3 md:flex hidden">Panier</div>
           </a>
+          @endif
           <a href="#" class="flex flex-col items-center text-gray-700 hover:text-primary transition">
             <div class="text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

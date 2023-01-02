@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Client\CategorieController;
 use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\CardController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\ProductController;
@@ -12,3 +13,4 @@ Route::get('/products',[ProductController::class,'index'])->name("client-product
 Route::get('/contact',[ContactController::class,'index'])->name('contact');
 Route::get('/about',[AboutController::class,'index'])->name('about');
 Route::get('{name}/{id}',[CategorieController::class,'show'])->name('client.categorie');
+Route::get('/cart', [CardController::class, 'index'])->name('client-cart');

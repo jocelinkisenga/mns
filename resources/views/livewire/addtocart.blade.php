@@ -1,7 +1,7 @@
 <div>
     {{-- <form class="flex w-full"> --}}
       
-        <button
+        <button wire:click.prevent="add({{$product}})"
             class="border-pink-600 py-2.5 border
 bg-pink-600
 hover:border-pink-600 text-white
@@ -17,7 +17,7 @@ flex items-center justify-center gap-3">
                 </svg>
             </span>
             <span>
-                Ajouter {{$product}}
+                Ajouter
             </span>
         </button>
     {{-- </form> --}}
