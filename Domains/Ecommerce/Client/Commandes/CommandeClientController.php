@@ -5,12 +5,22 @@ declare(strict_types=1);
 namespace Domains\Ecommerce\Client\Commandes;
 
 use App\Models\Product;
+use Auth;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
+use Domains\Stock\Repositories\Product\ProductRepository;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CommandeClientController implements CommandeInterfaceRepository
 {
 
 	protected $quantity = 1;
+	private $product_repo;
+
+	public function __construct()
+	{
+		$this->product_repo = new ProductRepository;
+	}
+
 	public function show()
 	{
 
@@ -34,48 +44,19 @@ class CommandeClientController implements CommandeInterfaceRepository
 			abort(404);
 
 		}
+		$item = \Gloudemans\Shoppingcart\Facades\Cart::get($product->id);
+		if ($item) {
 
-		$basket = session()->get('basket');
-
-		// if basket is empty then this the first product
-		if (!$basket) {
-
-			$basket = [
-				$id => [
-					'id' => $product->id,
-					"name" => $product->name,
-					"quantity" => 1,
-					"price" => $product->price,
-					"photo" => $product->image->path
-				]
-			];
-
-			session()->put('basket', $basket);
-
-
+			\Gloudemans\Shoppingcart\Facades\Cart::update($product->id, [
+				'quantity' => 1,
+			]);
+			$this->product_repo->substract_quantity($id);
+		} else {
+			\Gloudemans\Shoppingcart\Facades\Cart::add($product->id, $product->name, $product->price, 1)->associate("App\Models\Product");
+			$this->product_repo->substract_quantity($id);
 		}
 
-		// if basket not empty then check if this product exist then increment quantity
-		if (isset($basket[$id])) {
 
-			$basket[$id]['quantity'] = $basket[$id]['quantity'] + $this->quantity;
-
-			session()->put('basket', $basket);
-
-
-
-		}
-
-		// if item not exist in basket then add to basket with quantity = 1
-		$basket[$id] = [
-			'id' => $product->id,
-			"name" => $product->name,
-			"quantity" => 1,
-			"price" => $product->price,
-			"photo" => $product->image->path
-		];
-
-		session()->put('basket', $basket);
 
 	}
 
@@ -87,11 +68,11 @@ class CommandeClientController implements CommandeInterfaceRepository
 	 * from
 	 * the basket
 	 */
-	public function remove(Product $product)
+	public function remove( $productid)
 	{
-		$basket = session()->get("basket"); // On récupère le panier en session
-		unset($basket[$product->id]); // On supprime le produit du tableau $basket
-		session()->put("basket", $basket); // On enregistre le panier
+		$cart_item = \Gloudemans\Shoppingcart\Facades\Cart::get($productid);
+		$this->product_repo->restore_quantity($productid, $cart_item['quantity']);
+		\Gloudemans\Shoppingcart\Facades\Cart::remove($productid);
 	}
 
 	/**

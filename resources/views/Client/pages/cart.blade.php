@@ -1,6 +1,8 @@
 @extends("Client.layouts.app")
 @section('content')
-    
+    @php
+      use Darryldecode\Cart\Facades\CartFacade;
+    @endphp
   <section class="w-full overflow-hidden">
     <div class="appContainer pt-10">
 
@@ -28,7 +30,7 @@
           </div>
           <div class="flex justify-between my-3 text-gray-800 font-semibold uppercase">
             <h4>Total</h4>
-            <h4>$320</h4>
+            <h4>$ {{Cart::getTotal()}}</h4>
           </div>
           <div class="pt-6">
             <a href="" class="bg-pink-600 border border-pink-600

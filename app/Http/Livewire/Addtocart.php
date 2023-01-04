@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Addtocart extends Component
@@ -24,8 +25,12 @@ class Addtocart extends Component
     }
 
     public function add($id){
-       
+       if(Auth::check()){
         $this->cardRepo->add($id);
+       }else{
+        return redirect()->to('/login');
+       }
+       
     }
     
 }

@@ -36,6 +36,10 @@
           <div>
             <div class="pb-16 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
               <div>
+              <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <input type="submit" value="se deconnecter">
+              </form>
                 <h6 class="text-lg font-medium text-gray-700">Categories</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>

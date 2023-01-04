@@ -1,3 +1,6 @@
+@php
+  use Darryldecode\Cart\Facades\CartFacade;
+@endphp
 <header class="relative z-[1000] w-full bg-white shadow-gray-200 shadow-md">
     <div class="appContainer flex items-center justify-between">
       <!-- logo -->
@@ -42,11 +45,13 @@
               </svg>
             </a>
           </div>
-          @if (session()->has("basket"))
+          @auth
           <a href="{{route('client-cart')}}" title="Panier"
             class="flex flex-col items-center  text-gray-700 hover:text-primary transition relative">
             <span
-              class="absolute -right-0 -top-0 w-3 h-3 rounded-full flex items-center text-white justify-center bg-pink-600">{{sizeof(session('basket'))}}</span>
+              class="absolute -right-0 -top-0 w-3 h-3 rounded-full flex items-center text-white justify-center bg-pink-600">@if(CartFacade::getContent() !== null)
+              {{sizeof(CartFacade::getContent())}}
+              @endif</span>
             <div class="text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path
@@ -55,7 +60,7 @@
             </div>
             <div class="text-xs leading-3 md:flex hidden">Panier</div>
           </a>
-          @endif
+          @endauth
           <a href="#" class="flex flex-col items-center text-gray-700 hover:text-primary transition">
             <div class="text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
