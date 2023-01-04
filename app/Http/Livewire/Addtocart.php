@@ -2,16 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 class Addtocart extends Component
 {
     protected $cardRepo;
-    public $product;   
-     public  $quantity = 1;
+    public $product;
+    public $quantity = 1;
 
     public function __construct()
     {
@@ -24,15 +27,29 @@ class Addtocart extends Component
         return view('livewire.addtocart');
     }
 
-    public function add($id){
-       if(Auth::check()){
-        $this->cardRepo->add($id);
-       }else{
-        return redirect()->to('/login');
-       }
-       
+    /**
+     * Summary of add 
+     * this function adds a product to a card
+     * @param mixed $id
+     * @return mixed
+     */
+    public function add($id)
+    {
+        if (Auth::check()) {
+            $item = CartFacade::get($id);
+            if ($item) {
+                Alert::alert('Title', 'Message');
+                // return redirect()->to("/");
+               
+            } else {
+                $this->cardRepo->add_to_cart($id);
+                $this->emit("cardcounter");
+            }
+
+        } else {
+            return redirect()->to('/login');
+        }
+
     }
-    
+
 }
-
-

@@ -1,5 +1,16 @@
 @extends('client.layouts.app')
 @section('content')
+@if (session('message'))
+<script>
+Swal.fire({
+    title: 'Error!',
+    text: 'Do you want to continue',
+    icon: 'error',
+    confirmButtonText: 'Cool'
+  })
+</script>
+
+@endif
     <section class="w-full relative overflow-hidden">
         <div class="bg-cover bg-no-repeat bg-center py-28 relative">
             <div class="absolute z-0 inset-0">

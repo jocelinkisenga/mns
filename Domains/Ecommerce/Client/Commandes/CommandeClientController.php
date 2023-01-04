@@ -6,6 +6,7 @@ namespace Domains\Ecommerce\Client\Commandes;
 
 use App\Models\Product;
 use Auth;
+use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Domains\Stock\Repositories\Product\ProductRepository;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -44,21 +45,46 @@ class CommandeClientController implements CommandeInterfaceRepository
 			abort(404);
 
 		}
-		$item = \Gloudemans\Shoppingcart\Facades\Cart::get($product->id);
+		$item = CartFacade::get($product->id);
 		if ($item) {
 
-			\Gloudemans\Shoppingcart\Facades\Cart::update($product->id, [
+			CartFacade::update($product->id, [
 				'quantity' => 1,
 			]);
 			$this->product_repo->substract_quantity($id);
 		} else {
-			\Gloudemans\Shoppingcart\Facades\Cart::add($product->id, $product->name, $product->price, 1)->associate("App\Models\Product");
+			CartFacade::add($product->id, $product->name, $product->price, 1)->associate("App\Models\Product");
 			$this->product_repo->substract_quantity($id);
 		}
 
 
 
 	}
+
+
+
+	public function add_to_cart($id)
+	{
+
+
+		$product = Product::find($id);
+
+		if (!$product) {
+
+			abort(404);
+
+		}
+
+			CartFacade::add($product->id, $product->name, $product->price, 1)->associate("App\Models\Product");
+			$this->product_repo->substract_quantity($id);
+		
+
+
+
+	}
+
+
+
 
 	/**
 	 * Summary of remove
@@ -70,9 +96,24 @@ class CommandeClientController implements CommandeInterfaceRepository
 	 */
 	public function remove( $productid)
 	{
-		$cart_item = \Gloudemans\Shoppingcart\Facades\Cart::get($productid);
+		
+		$cart_item = CartFacade::get($productid);
 		$this->product_repo->restore_quantity($productid, $cart_item['quantity']);
-		\Gloudemans\Shoppingcart\Facades\Cart::remove($productid);
+		CartFacade::remove($productid);
+	}
+
+
+
+	public function reduce_quantity(int $productId){
+		$item = CartFacade::get($productId);
+		if($item){
+			$this->product_repo->restore_quantity($productId, 1);
+			
+			CartFacade::update($productId, [
+				'quantity' => -1,
+			]);
+			
+		}
 	}
 
 	/**
@@ -84,4 +125,7 @@ class CommandeClientController implements CommandeInterfaceRepository
 	{
 		session()->forget("basket"); // On supprime le panier en session
 	}
+
+
+
 }

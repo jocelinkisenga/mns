@@ -10,26 +10,55 @@ class Card extends Component
 {
     protected $repository;
     public $items;
+    protected $listeners = ["addtocart" => "render"];
 
     public function __construct()
     {
         $this->repository = new CommandeClientController();
     }
 
-    public function mount(){
-    $this->items = CartFacade::getContent();
-    }
     public function render()
     {
+        $this->items = CartFacade::getContent();
         return view('livewire.card');
     }
 
-    public function add($id){
-        
+    /**
+     * Summary of add : this function adds the product to the basket
+     * this function refers the the basket's blade component
+     * @param mixed $id
+     * @return void
+     */
+    public function add($id)
+    {
+
         $this->repository->add($id);
+        $this->emit('addtocart');
     }
 
-    public function empty($id){
-        $this->repository->remove($id);
+
+    /**
+     * Summary of reduce  : this function reduce the quantity of the product from the baslket
+     * @param int $productId
+     * @return void
+     */
+    public function reduce(int $productId)
+    {
+        $this->repository->reduce_quantity($productId);
+        $this->emit('addtocart');
     }
+
+
+    /**
+     * Summary of empty this function deletes a product from the basket
+     * @param int $productId
+     * @return void
+     */
+    public function empty(int $productId)
+    {
+        $this->repository->remove($productId);
+    }
+
+
+
 }

@@ -9,6 +9,7 @@ use Domains\Ecommerce\Client\Categories\CategorieClientController;
 use Domains\Ecommerce\Client\Products\ProductClientController;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,7 @@ class HomeController extends Controller
 
     public function index(){
 
-  
-      
+     
         $categories = $this->domainCategorie->get_all();
         $products = $this->domainProduct->get_all();
 

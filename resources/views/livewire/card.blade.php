@@ -19,7 +19,7 @@
                 <p class="text-pink-600 text-lg font-semibold">{{$item['price']}} Fc</p>
               </div>
               <div class="flex border border-gray-300 text-gray-600 divide-x divide-gray-300">
-                <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">-</div>
+                <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none"><button type="button" wire:click.prevent="reduce({{$item['id']}})">-</button></div>
                 <input name="" id="" class="h-8 w-10 flex items-center justify-center px-2 text-center" value="{{$item['quantity']}}">
                 <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none"><button type="button" wire:click.prevent="add({{$item['id']}})">+</button></div>
               </div>
