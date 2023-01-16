@@ -13,7 +13,9 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
-        "realrashid/sweet-alert": "^5.1"
+        "mckenziearts/laravel-notify": "^2.3",
+        "realrashid/sweet-alert": "^5.1",
+        "stripe/stripe-php": "^10.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

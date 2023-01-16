@@ -106,12 +106,15 @@ class CommandeClientController implements CommandeInterfaceRepository
 
 	public function reduce_quantity(int $productId){
 		$item = CartFacade::get($productId);
-		if($item){
+	
+		if($item !== null){
+		
 			$this->product_repo->restore_quantity($productId, 1);
 			
-			CartFacade::update($productId, [
+		$cart = CartFacade::update($productId, [
 				'quantity' => -1,
 			]);
+
 			
 		}
 	}

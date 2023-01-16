@@ -33,11 +33,13 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(Auth::check() and Auth::user()->role_id == RoleEnum::GERANT){
-            return redirect(route('commandes'));
-        } else {
-            return redirect()->intended(RouteServiceProvider::HOME);
-        }
+        return redirect('/');
+
+        // if(Auth::check() and Auth::user()->role_id == RoleEnum::GERANT){
+        //     return redirect(route('commandes'));
+        // } else {
+        //     return redirect()->intended(RouteServiceProvider::HOME);
+        // }
 
         
     }

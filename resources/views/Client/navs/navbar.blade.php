@@ -95,12 +95,24 @@
               class="ttransition-all min-w-max duration-300 text-base font-medium relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Nos
               produits</a>
           </li>
+          <li class="w-full flex">
+          @auth
+          @if (Auth::user()->role == 1)
+          <div class="flex items-center py-2 min-h-max md:w-max w-full">
+            <a href="{{route('admin.dashboard')}}" style="background-color: black"
+              class="rounded min-w-max md:w-max w-full flex justify-center   py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">
+              dashboard</a>
+          </div>
+          @endif
+          @endauth
+          </li>
         </ul>
         <div class="flex items-center py-2 min-h-max md:w-max w-full">
           <a href="{{route('contact')}}"
             class="rounded min-w-max md:w-max w-full flex justify-center bg-pink-600 py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">Nous
             contacter</a>
         </div>
+
       </nav>
     </div>
   </header>

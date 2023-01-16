@@ -16,7 +16,7 @@
                 <h2 class="text-gray-600 mb-2 text-xl ">
                   {{$item['name']}}
                 </h2>
-                <p class="text-pink-600 text-lg font-semibold">{{$item['price']}} Fc</p>
+                <p class="text-pink-600 text-lg font-semibold">{{$item['price']}} $</p>
               </div>
               <div class="flex border border-gray-300 text-gray-600 divide-x divide-gray-300">
                 <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none"><button type="button" wire:click.prevent="reduce({{$item['id']}})">-</button></div>
@@ -24,7 +24,7 @@
                 <div class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none"><button type="button" wire:click.prevent="add({{$item['id']}})">+</button></div>
               </div>
               <div class="ml-auto md:ml-0">
-                <p class="text-primary text-lg font-semibold">{{$item['price'] * $item['quantity']}} Fc</p>
+                <p class="text-primary text-lg font-semibold">{{$item['price'] * $item['quantity']}} $</p>
               </div>
               <div class="text-gray-600 hover:text-primary cursor-pointer">
                 <a wire:click.prevent="empty({{$item['id']}})">

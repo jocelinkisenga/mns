@@ -103,7 +103,7 @@ Swal.fire({
                       <div
                           class="flex w-full items-center flex-wrap gap-1 small:gap-0 small:flex-nowrap justify-between">
                           <h2 class="font-bold text-lg flex text-gray-600">{{$item->price}} <span
-                                  class="pl-1 text-pink-500">CDF</span>
+                                  class="pl-1 text-pink-500">$</span>
                           </h2>
                       </div>
                         {{-- start livewire add cart --}}

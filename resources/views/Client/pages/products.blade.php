@@ -93,10 +93,11 @@
                 </a>
               </div>
               <div class="flex w-full items-center flex-wrap gap-1 small:gap-0 small:flex-nowrap justify-between">
-                <h2 class="font-bold text-lg flex text-gray-600">{{$item->price}} <span class="pl-1 text-pink-500">CDF</span>
+                <h2 class="font-bold text-lg flex text-gray-600">{{$item->price}} <span class="pl-1 text-pink-500">$</span>
                 </h2>
               </div>
-              <form class="flex w-full">
+              <livewire:addtocart :product="$item->id">
+              {{-- <form class="flex w-full">
                 <input type="hidden" name="producId" value="id">
                 <button class="border-pink-600 py-2.5 border
                 bg-pink-600
@@ -115,7 +116,7 @@
                     Ajouter
                   </span>
                 </button>
-              </form>
+              </form> --}}
             </div>
           </div>
 
