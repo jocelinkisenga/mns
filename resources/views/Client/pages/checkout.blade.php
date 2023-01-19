@@ -5,7 +5,8 @@
       <div class="w-full grid md:grid-cols-3 lg:grid-cols-5 items-start gap-6 pb-16 pt-4">
         <!-- checkout form -->
         <div class="md:col-span-2 lg:col-span-3 border bg-white shadow-sm border-gray-200 px-4 py-4 rounded">
-          <form action="">
+          <form action="{{route('store-order')}}" method="POST">
+            @csrf
             <h3 class="text-lg font-medium capitalize mb-4">
               Paiement
             </h3>
@@ -16,41 +17,41 @@
                   <label class="text-gray-600 mb-2 block">
                     Nom <span class="text-red-600">*</span>
                   </label>
-                  <input type="text" class="input-box">
+                  <input type="text" name="nickname" class="input-box">
                 </div>
                 <div>
                   <label class="text-gray-600 mb-2 block">
                     Prenom <span class="text-red-600">*</span>
                   </label>
-                  <input type="text" class="input-box">
+                  <input type="text" name="suname" class="input-box">
                 </div>
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
                   Pays/Region <span class="text-red-600">*</span>
                 </label>
-                <input type="text" class="input-box" placeholder="RDC- Lubumbashi">
+                <input type="text" name="country" class="input-box" placeholder="RDC- Lubumbashi">
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
                   Adresse physique <span class="text-red-600">*</span>
                 </label>
-                <input type="text" class="input-box" placeholder="Kasapa, Avenue Colonel Mulamba, Ref bus rouge" />
+                <input type="text" name="address" class="input-box" placeholder="Kasapa, Avenue Colonel Mulamba, Ref bus rouge" />
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
                   Numero Telephone <span class="text-red-600">*</span>
                 </label>
-                <input type="text" class="input-box" placeholder="+243 97 24 44 966">
+                <input type="text" name="phone" class="input-box" placeholder="+243 97 24 44 966">
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
                   Adresse email <span class="text-red-600">*</span>
                 </label>
-                <input type="text" class="input-box" placeholder="johndoe@gmail.com">
+                <input type="text" name="email" class="input-box" placeholder="johndoe@gmail.com">
               </div>
             </div>
-          </form>
+    
         </div>
         <!-- checkout form end -->
 
@@ -61,16 +62,16 @@
           <div class="space-y-2">
             <div class="flex justify-between" v-for="n in 3" :key="n">
               <div>
-                <h5 class="text-gray-800 font-medium">Gadget mjs</h5>
-                <p class="text-sm text-gray-600">Nice Wia</p>
+                <h5 class="text-gray-800 font-medium">Produits</h5>
+                <p class="text-sm text-gray-600"></p>
               </div>
-              <p class="text-gray-600">x3</p>
-              <p class="text-gray-800 font-medium">$320</p>
+              <p class="text-gray-600">x  {{sizeof(Cart::getContent())}}</p>
+              <p class="text-gray-800 font-medium">$ {{Cart::getTotal()}}</p>
             </div>
           </div>
           <div class="flex justify-between border-b border-gray-200 mt-1">
             <h4 class="text-gray-800 font-medium my-3 uppercase">Sous total</h4>
-            <h4 class="text-gray-800 font-medium my-3 uppercase">$320</h4>
+            <h4 class="text-gray-800 font-medium my-3 uppercase">$ {{Cart::getTotal()}}</h4>
           </div>
           <div class="flex justify-between border-b border-gray-200">
             <h4 class="text-gray-800 font-medium my-3 uppercase">Livraison</h4>
@@ -78,7 +79,7 @@
           </div>
           <div class="flex justify-between">
             <h4 class="text-gray-800 font-semibold my-3 uppercase">Total</h4>
-            <h4 class="text-gray-800 font-semibold my-3 uppercase">$320</h4>
+            <h4 class="text-gray-800 font-semibold my-3 uppercase">$ {{Cart::getTotal()}}</h4>
           </div>
 
 
@@ -90,7 +91,7 @@
             </label>
           </div>
 
-          <button class="border-pink-600 py-2.5 border
+          <button type="submit" class="border-pink-600 py-2.5 border
                   bg-pink-600
                     hover:border-pink-600 text-white
                    hover:text-pink-600 transition
@@ -108,6 +109,7 @@
               Valider le paiement
             </span>
           </button>
+        </form>
         </div>
       </div>
     </div>

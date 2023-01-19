@@ -22,9 +22,8 @@ class CommandeClientController implements CommandeInterfaceRepository
 		$this->product_repo = new ProductRepository;
 	}
 
-	public function show()
-	{
-
+	public function show(){
+		
 	}
 
 	/**
@@ -38,8 +37,8 @@ class CommandeClientController implements CommandeInterfaceRepository
 	{
 
 
-		$product = Product::find($id);
-
+		$product = Product::whereId($id)->with('image')->first();
+		
 		if (!$product) {
 
 			abort(404);
@@ -53,7 +52,13 @@ class CommandeClientController implements CommandeInterfaceRepository
 			]);
 			$this->product_repo->substract_quantity($id);
 		} else {
-			CartFacade::add($product->id, $product->name, $product->price, 1)->associate("App\Models\Product");
+			CartFacade::add([
+					'id'=>$product->id, 
+					'name'=>$product->name,
+					'price'=> $product->price,
+				 	'quantity' => 1,
+					'image' => $product ->image->path,
+			])->associate("App\Models\Product");
 			$this->product_repo->substract_quantity($id);
 		}
 
@@ -66,8 +71,7 @@ class CommandeClientController implements CommandeInterfaceRepository
 	public function add_to_cart($id)
 	{
 
-
-		$product = Product::find($id);
+		$product = Product::whereId($id)->with('image')->first();
 
 		if (!$product) {
 
@@ -75,7 +79,13 @@ class CommandeClientController implements CommandeInterfaceRepository
 
 		}
 
-			CartFacade::add($product->id, $product->name, $product->price, 1)->associate("App\Models\Product");
+			CartFacade::add([
+				'id'=>$product->id, 
+				'name'=>$product->name,
+				'price'=> $product->price,
+			 	'quantity' => 1,
+				'attributes' => array('image' => $product ->image->path),
+			])->associate("App\Models\Product");
 			$this->product_repo->substract_quantity($id);
 		
 

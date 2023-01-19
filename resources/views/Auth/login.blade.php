@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
 </head>
 <body>
-    <div class="row justify-center" style="justify-content: center; margin-top:10%">
+  <div class="row justify-center" style="justify-content: center; margin-top:10%">
+    <h2>se connecter</h2>
+  </div>
+    <div class="row justify-center" style="justify-content: center; margin-top:4%">
+
         <form action="{{route('login')}}" method="POST">
             @csrf
-
+        @error('email')
+          {{$message}}
+        @enderror
           <div class="col-md-6 col-lg-12">
             <label for="validationCustomUsername" class="form-label">email</label>
             <div class="input-group">
@@ -22,7 +28,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-12">
+          <div class="col-md-6 col-lg-12 mt-3">
             <label for="validationCustom02" class="form-label">mot de passe</label>
             <input type="text" name="password" class="form-control" id="validationCustom02"  required>
             <div class="valid-feedback">
@@ -30,7 +36,7 @@
             </div>
           </div>
 
-          <div class="col-12">
+          <div class="col-12 mt-4">
             <button class="btn btn-primary" type="submit">Submit </button>
           </div>
         </form>

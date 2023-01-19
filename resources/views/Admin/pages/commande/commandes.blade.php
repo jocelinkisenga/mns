@@ -128,18 +128,21 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>nom</th>
-                                            <th>prix</th>
-                                            <th>categorie</th>
+                                            <th>utilisateur</th>
+                                            <th>montant</th>
                                             <th>Détail</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
-                                        <tr>
-
-                                        </tr> 
-                                    
+                                       @foreach ($commandes as $key => $commande )
+                                                <tr>
+                                                    <td>{{$key+1}}</td>
+                                                    <td>{{$commande->nickname}} {{$commande->suname}}</td>
+                                                    <td>{{$commande->amount}} $</td>
+                                                    <td>voir plus</td>
+                                                </tr>
+                                           
+                                       @endforeach
 
                                     </tbody>
                                 </table>

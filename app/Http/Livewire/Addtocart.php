@@ -39,11 +39,14 @@ class Addtocart extends Component
             $item = CartFacade::get($id);
             if ($item) {
                 Alert::alert('Title', 'Message');
+                session()->flash('message', "ce produit existe déjà");
                 // return redirect()->to("/");
                
             } else {
                 $this->cardRepo->add_to_cart($id);
+                session()->flash('message', "produit ajouté avec succès");
                 $this->emit("cardcounter");
+
             }
 
         } else {

@@ -74,7 +74,9 @@ Swal.fire({
         </div>
     </section>
 
-
+    @if (session("message"))
+        <livewire:component.sesion-component>
+    @endif
     <section class="pt-14 w-full overflow-hidden">
         <div class="appContainer py-1">
             <div class="flex flex-col gap-6">
