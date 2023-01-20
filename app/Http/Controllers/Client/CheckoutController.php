@@ -34,7 +34,7 @@ class CheckoutController extends Controller
        
     }
 
-    public function store(Request $request){
+    public function store(CheckoutRequest $request){
 
         $order = new Order();
 
