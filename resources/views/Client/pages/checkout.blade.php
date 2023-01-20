@@ -15,42 +15,73 @@
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label class="text-gray-600 mb-2 block">
-                    Nom <span class="text-red-600">*</span>
+                    Nom <span class="text-red-600">*   @error("nickname") {{$message}}  @enderror </span>
                   </label>
                   <input type="text" name="nickname" class="input-box">
                 </div>
                 <div>
                   <label class="text-gray-600 mb-2 block">
-                    Prenom <span class="text-red-600">*</span>
+                    Prenom <span class="text-red-600">*   @error("suname") {{$message}}  @enderror </span>
                   </label>
                   <input type="text" name="suname" class="input-box">
                 </div>
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
-                  Pays/Region <span class="text-red-600">*</span>
+                  Pays/Region <span class="text-red-600">*   @error("country") {{$message}}  @enderror </span>
                 </label>
                 <input type="text" name="country" class="input-box" placeholder="RDC- Lubumbashi">
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
-                  Adresse physique <span class="text-red-600">*</span>
+                  Adresse physique <span class="text-red-600">*   @error("address") {{$message}}  @enderror </span>
                 </label>
                 <input type="text" name="address" class="input-box" placeholder="Kasapa, Avenue Colonel Mulamba, Ref bus rouge" />
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
-                  Numero Telephone <span class="text-red-600">*</span>
+                  Numero Telephone <span class="text-red-600">*   @error("phone") {{$message}}  @enderror </span>
                 </label>
                 <input type="text" name="phone" class="input-box" placeholder="+243 97 24 44 966">
               </div>
               <div>
                 <label class="text-gray-600 mb-2 block">
-                  Adresse email <span class="text-red-600">*</span>
+                  Adresse email <span class="text-red-600">*   @error("email") {{$message}}  @enderror </span>
                 </label>
                 <input type="text" name="email" class="input-box" placeholder="johndoe@gmail.com">
               </div>
             </div>
+
+             <div class="space-y-4 mt-4 bg-gray-600" style="margin-top: 10%; ">
+              <div class="ml-2">
+                <label class="text-gray-600 ml-2 mb-2 block" >
+                  Card Number <span class="text-red-600">*  @error("card_no") {{$message}}  @enderror </span>
+                </label>
+                <input type="text" name="card_no" class="input-box" placeholder="">
+              </div>
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div>
+                  <label class="text-gray-600 mb-2 block" style="color: gray-600">
+                    MM <span class="text-red">*   @error("mm") {{$message}}  @enderror </span>
+                  </label>
+                  <input type="text" name="mm" class="input-box" placeholder="03">
+                </div>
+                <div>
+                  <label class="text-gray-600 mb-2 block">
+                    YY <span class="text-red">*   @error("yy") {{$message}}  @enderror </span>
+                  </label>
+                  <input type="text" name="yy" class="input-box" placeholder="23">
+                </div>
+                
+                <div class="mb-2 mr-2">
+                  <label class="text-gray-600 mb-2 block">
+                    CVC <span class="text-red">*   @error("cvc") {{$message}}  @enderror </span>
+                  </label>
+                  <input type="text" name="cvc" class="input-box">
+                </div>
+              </div>
+
+            </div> 
     
         </div>
         <!-- checkout form end -->

@@ -20,5 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart', [CardController::class, 'index'])->name('client-cart');
     Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-checkout');
     Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
-    Route::get('/invoce/{id}', [InvoceController::class, 'show'])->name('invoce');
+    Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
+    Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 });
