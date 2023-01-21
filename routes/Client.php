@@ -8,6 +8,7 @@ use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\InvoceController;
 use App\Http\Controllers\Client\ProductController;
+use App\Http\Controllers\Client\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index'])->name('home');
@@ -22,4 +23,5 @@ Route::middleware('auth')->group(function () {
     Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
     Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
     Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
+    Route::get("/profile", [ProfileController::class, "me"])->name("profile");
 });

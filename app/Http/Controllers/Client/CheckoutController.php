@@ -34,7 +34,7 @@ class CheckoutController extends Controller
        
     }
 
-    public function store(CheckoutRequest $request){
+    public function store(Request $request){
 
         $order = new Order();
 
@@ -66,53 +66,52 @@ class CheckoutController extends Controller
 
 
        
-            $stripe = Stripe::make(env('STRIPE_KEY'));
-            try {
-                $token = $stripe->tokens()->create([
-                    'card' => [
-                        'number' => $request->card_no,
-                        'exp_month' => $request->mm,
-                        'exp_year' => $request->yy,
-                        'cvc' => $request->cvc,
-                    ]
-                ]);
-                if (!isset($token)) {
-                    session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
+            // $stripe = Stripe::make(env('STRIPE_KEY'));
+            // try {
+            //     $token = $stripe->tokens()->create([
+            //         'card' => [
+            //             'number' => $request->card_no,
+            //             'exp_month' => $request->mm,
+            //             'exp_year' => $request->yy,
+            //             'cvc' => $request->cvc,
+            //         ]
+            //     ]);
+            //     if (!isset($token)) {
+            //         session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
               
-                }
-                $customer = $stripe->customers()->create([
-                    'name' => $request->nickname . ' ' . $request->suname,
-                    'email' => $request->email,
-                    'phone' => $request->phone,
-                    'address' => [
-                        'line1' => $request->address,
-                        'country' => $request->country,
-                    ],
-                    'source' => $token['id']
-                ]);
-                $charge = $stripe->charges()->create([
-                    'customer' => $customer['id'],
-                    'currency' => 'USD',
-                    'amount' => CartFacade::getTotal(),
-                    'description' => 'Payment for order no' . $order->id
-                ]);
-                if ($charge['status'] == 'succeeded') {
-                    $this->makeTransaction($order->id, 'approved');
-                    $this->resetCard();
-                } else {
-                    session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
+            //     }
+            //     $customer = $stripe->customers()->create([
+            //         'name' => $request->nickname . ' ' . $request->suname,
+            //         'email' => $request->email,
+            //         'phone' => $request->phone,
+            //         'address' => [
+            //             'line1' => $request->address,
+            //             'country' => $request->country,
+            //         ],
+            //         'source' => $token['id']
+            //     ]);
+            //     $charge = $stripe->charges()->create([
+            //         'customer' => $customer['id'],
+            //         'currency' => 'USD',
+            //         'amount' => CartFacade::getTotal(),
+            //         'description' => 'Payment for order no' . $order->id
+            //     ]);
+            //     if ($charge['status'] == 'succeeded') {
+            //         $this->makeTransaction($order->id, 'approved');
+            //         $this->resetCard();
+            //     } else {
+            //         session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
                 
-                }
-            } catch (\Throwable $e) {
-                session()->flash('stripe_err', $e->getMessage());
+            //     }
+            // } catch (\Throwable $e) {
+            //     session()->flash('stripe_err', $e->getMessage());
                
-            }
-        
+            // }
 
 
 
-        // CartFacade::clear();
-        return view('Client.pages.invoce');
+        $commandes = CartFacade::getContent();
+        return view('Client.pages.invoce',compact('order','commandes'));
     }
 
     public function checkout_back(){

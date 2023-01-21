@@ -1,3 +1,7 @@
+@php
+  use Darryldecode\Cart\Facades\CartFacade;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,18 +49,18 @@
                 <address>
                   <strong>MDS, Inc.</strong><br>
                   Lubumbashi, kasavubu Ave, Suite 600<br>
-                  Phone: (804) 123-5432<br>
-                  Email: info@almasaeedstudio.com
+                <b>  Phone:</b>  (804) 123-5432<br>
+                <b>Email:</b>  info@almasaeedstudio.com
                 </address>
               </div>
               <!-- /.col -->
               <div class="col-sm-4 invoice-col">
                 A
                 <address>
-                  <strong>John Doe</strong><br>
-                  795 Folsom Ave, Suite 600<br>
-                  Phone: (555) 539-1037<br>
-                  Email: john.doe@example.com
+                  <strong>{{$order->suname}} {{$order->nickname}}</strong><br>
+                  {{$order->address}}<br>
+                  <b>Phone:</b>  {{$order->phone}}<br>
+                  <b>email:</b>  {{$order->email}}
                 </address>
               </div>
               <!-- /.col -->
@@ -64,7 +68,7 @@
                 <b>facture #007612</b><br>
                 <br>
                 <b>commande ID:</b> 4F3S8J<br>
-                <b>Payé le :</b> 2/22/2014<br>
+                <b>Payé le :</b>{{$order->created_at}}<br>
               </div>
               <!-- /.col -->
             </div>
@@ -82,11 +86,13 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>soulier</td>
-                    <td>$64.50</td>
-                  </tr>
+                    @foreach ($commandes as $item)
+                    <tr>
+                      <td>{{$item['quantity']}}</td>
+                      <td>{{$item['name']}}</td>
+                      <td>{{$item["quantity"] * $item['price']}}$</td>
+                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -113,19 +119,15 @@
                   <table class="table">
                     <tr>
                       <th style="width:50%">Subtotal:</th>
-                      <td>$250.30</td>
+                      <td>{{CartFacade::getTotal()}} $</td>
                     </tr>
                     <tr>
-                      <th>Tax (9.3%)</th>
-                      <td>$10.34</td>
-                    </tr>
-                    <tr>
-                      <th>Shipping:</th>
-                      <td>$5.80</td>
+                      <th>Tax (16 %%)</th>
+                      <td>{{(CartFacade::getTotal() / 100) * 16}} $</td>
                     </tr>
                     <tr>
                       <th>Total:</th>
-                      <td>$265.24</td>
+                      <td>{{ CartFacade::getTotal()  +  ((CartFacade::getTotal() / 100) * 16)}} $</td>
                     </tr>
                   </table>
                 </div>

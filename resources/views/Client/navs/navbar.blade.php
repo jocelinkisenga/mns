@@ -48,7 +48,7 @@
           @auth
             <livewire:card-counter>
           @endauth
-          <a href="#" class="flex flex-col items-center text-gray-700 hover:text-primary transition">
+          <a href="{{route('profile')}}" class="flex flex-col items-center text-gray-700 hover:text-primary transition">
             <div class="text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
