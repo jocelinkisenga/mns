@@ -8,6 +8,7 @@ use App\Models\Order;
 use Cartalyst\Stripe\Stripe;
 use Darryldecode\Cart\Facades\CartFacade;
 use DateTime;
+use Domains\Ecommerce\Client\Commandes\Checkout;
 use Hamcrest\Core\IsTypeOf;
 use Hamcrest\Type\IsInteger;
 use Illuminate\Http\Request;
@@ -17,6 +18,15 @@ use Ramsey\Uuid\Type\Integer;
 class CheckoutController extends Controller
 {
     public int $taille;
+    public $checkout_repo;
+
+
+    public function __construct()
+    {
+        $this->checkout_repo = new Checkout();
+    }
+
+
     public function create(){
 
         $this->taille = (int) (sizeof(CartFacade::getContent()));
@@ -36,12 +46,7 @@ class CheckoutController extends Controller
 
     public function store(CheckoutRequest $request){
 
-
-
-       
-
-
-
+        $this->checkout_repo->order($request);
         $commandes = CartFacade::getContent();
         return view('Client.pages.invoce',compact('order','commandes'));
     }
