@@ -15,6 +15,9 @@ class Order extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
+    public function order_items(){
+        return $this->hasMany(OrderItem::class);
+    }
 
     /*
      $stripe = new \Stripe\StripeClient("sk_test_4eC39HqLyjWDarjtT1zdp7dc");

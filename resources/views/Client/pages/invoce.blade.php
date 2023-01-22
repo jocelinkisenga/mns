@@ -86,11 +86,12 @@
                   </tr>
                   </thead>
                   <tbody>
+                   
                     @foreach ($commandes as $item)
                     <tr>
-                      <td>{{$item['quantity']}}</td>
-                      <td>{{$item['name']}}</td>
-                      <td>{{$item["quantity"] * $item['price']}}$</td>
+                      <td>{{$item->quantity}}</td>
+                      <td>{{$item->product->name}}</td>
+                      <td>{{$item->quantity * $item->price}}$</td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -119,15 +120,15 @@
                   <table class="table">
                     <tr>
                       <th style="width:50%">Subtotal:</th>
-                      <td>{{CartFacade::getTotal()}} $</td>
+                      <td>{{$order->amount}} $</td>
                     </tr>
                     <tr>
                       <th>Tax (16 %%)</th>
-                      <td>{{(CartFacade::getTotal() / 100) * 16}} $</td>
+                      <td>{{($order->amount / 100) * 16}} $</td>
                     </tr>
                     <tr>
                       <th>Total:</th>
-                      <td>{{ CartFacade::getTotal()  +  ((CartFacade::getTotal() / 100) * 16)}} $</td>
+                      <td>{{ $order->amount  +  (($order->amount / 100) * 16)}} $</td>
                     </tr>
                   </table>
                 </div>

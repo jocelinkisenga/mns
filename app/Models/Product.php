@@ -18,4 +18,8 @@ class Product extends Model
     public function image (){
         return $this->hasOne(ProductImage::class);
     }
+
+    public function order_items(){
+        return $this->hasMany(OrderItem::class);
+    }
 }

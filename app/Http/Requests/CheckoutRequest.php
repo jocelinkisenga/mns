@@ -30,9 +30,9 @@ class CheckoutRequest extends FormRequest
             'address' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'card_no' => 'required|integer',
-            'yy' => 'required|integer|min:2|max:2',
-            'mm' => 'required|integer|min:2|max:2'
+            'card_no' => 'required|numeric',
+            'yy' => 'required|numeric',
+            'mm' => 'required|numeric'
         ];
     }
 }

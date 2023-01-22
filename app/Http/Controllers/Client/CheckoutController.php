@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CheckoutRequest;
 use App\Models\Order;
+use App\Models\OrderItem;
 use Cartalyst\Stripe\Stripe;
 use Darryldecode\Cart\Facades\CartFacade;
 use DateTime;
@@ -45,14 +46,21 @@ class CheckoutController extends Controller
     }
 
     public function store(CheckoutRequest $request){
+        
+        if(sizeof(CartFacade::getContent()) == 0){
+            return redirect()->route("home");
+        } else {
 
-        $this->checkout_repo->order($request);
-        $commandes = CartFacade::getContent();
+            $order = $this->checkout_repo->order($request);
+            $commandes = OrderItem::whereOrder_id($order->id)->get();
+           
+        }
+         CartFacade::clear();
         return view('Client.pages.invoce',compact('order','commandes'));
     }
 
     public function checkout_back(){
-        CartFacade::clear();
+     
         return redirect()->route('home');
     }
 }
