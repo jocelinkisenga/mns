@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Domains\Ecommerce\Client\Products;
+namespace Domains\Ecommerce\Client\Repositories;
 
 use App\Models\Product;
+use Domains\Ecommerce\Interfaces\Client\ClientProductInterface;
 
-class ProductClientController {
+class ClientProductRepositorie implements ClientProductInterface {
 
       /**
        * Summary of get_all
@@ -18,7 +19,7 @@ class ProductClientController {
         return Product::latest()->get();
     }
 
-    public function get_one(){
+    public function get_one(int $id){
         
     }
 }

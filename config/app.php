@@ -198,6 +198,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\BasketProvider::class,
+        App\Providers\RepositorieServiceProvider::class,
 
     ],
 

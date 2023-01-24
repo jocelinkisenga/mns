@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Domains\Ecommerce\Admin\Commandes;
+namespace Domains\Ecommerce\Admin\Repositories;
 
 use App\Models\Order;
+use Domains\Ecommerce\Interfaces\AdminCommandeInterface;
 
-class CommandeAdminController {
+class AdminCommandeRepository implements AdminCommandeInterface {
 
     public function get_all(){
         return Order::latest()->get();

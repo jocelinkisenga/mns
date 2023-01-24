@@ -11,7 +11,7 @@ use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Domains\Stock\Repositories\Product\ProductRepository;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class CommandeClientController implements CommandeInterfaceRepository
+class ClientOrderRepositorie implements CommandeInterfaceRepository
 {
 
 	protected $quantity = 1;

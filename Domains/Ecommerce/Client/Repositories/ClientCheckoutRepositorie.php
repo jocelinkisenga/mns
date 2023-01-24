@@ -12,7 +12,7 @@ use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class Checkout {
+class ClientCheckoutRepositorie {
 
     public $latest;
     public $data;

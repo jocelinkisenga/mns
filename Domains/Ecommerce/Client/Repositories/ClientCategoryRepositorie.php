@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Domains\Ecommerce\Client\Categories;
+namespace Domains\Ecommerce\Client\Repositories;
 
 use App\Models\Category;
+use Domains\Ecommerce\Interfaces\Client\ClientCategorieInterface;
 
-class CategorieClientController {
+class ClientCategoryRepositorie implements ClientCategorieInterface {
 
 
       /**
