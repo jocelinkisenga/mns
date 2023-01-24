@@ -14,9 +14,9 @@ class Card extends Component
     protected $listeners = ["addtocart" => "render"];
     protected $interface;
 
-    public function mount(ClientCommandeInterface $clientCommandeInterface){
-        $this->interface = $clientCommandeInterface;
-    }
+    // public function mount(ClientCommandeInterface $clientCommandeInterface){
+    //     $this->interface = $clientCommandeInterface;
+    // }
 
     // public function __construct()
     // {
@@ -35,8 +35,9 @@ class Card extends Component
      * @param mixed $id
      * @return void
      */
-    public function add($id)
+    public function add(ClientCommandeInterface $clientCommandeInterface, $id)
     {
+        $this->interface = $clientCommandeInterface;
 
         $this->interface->add($id);
         $this->emit('addtocart');
@@ -48,8 +49,9 @@ class Card extends Component
      * @param int $productId
      * @return void
      */
-    public function reduce(int $productId)
+    public function reduce(ClientCommandeInterface $clientCommandeInterface, int $productId)
     {
+        $this->interface = $clientCommandeInterface;
         $this->interface->reduce_quantity($productId);
         $this->emit('addtocart');
     }
@@ -60,8 +62,9 @@ class Card extends Component
      * @param int $productId
      * @return void
      */
-    public function empty(int $productId)
+    public function empty(ClientCommandeInterface $clientCommandeInterface, int $productId)
     {
+        $this->interface = $clientCommandeInterface;
         $this->interface->remove($productId);
     }
 

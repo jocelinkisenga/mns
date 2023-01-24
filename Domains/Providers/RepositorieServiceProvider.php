@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Providers;
+namespace Domains\Providers;
 
+use Domains\Ecommerce\Admin\Repositories\AdminCommandeRepository;
 use Domains\Ecommerce\Client\Repositories\ClientCategoryRepositorie;
 use Domains\Ecommerce\Client\Repositories\ClientOrderRepositorie;
 use Domains\Ecommerce\Client\Repositories\ClientProductRepositorie;
+use Domains\Ecommerce\Interfaces\Admin\AdminCommandeInterface;
 use Domains\Ecommerce\Interfaces\Client\ClientCategorieInterface;
 use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
 use Domains\Ecommerce\Interfaces\Client\ClientProductInterface;
@@ -17,6 +19,7 @@ class RepositorieServiceProvider extends ServiceProvider
         ClientCategorieInterface::class => ClientCategoryRepositorie::class,
         ClientProductInterface::class => ClientProductRepositorie::class,
         ClientCommandeInterface::class => ClientOrderRepositorie::class,
+        AdminCommandeInterface::class => AdminCommandeRepository::class,
     ];
 
     /**

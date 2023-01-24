@@ -35,7 +35,7 @@
                                                         <!-- form start -->
                                                       
                                                             <div class="card-body">
-                                                              <form action="{{route('admin.products')}}" method="POST" enctype="multipart/form-data">
+                                                              <form action="{{route('admin.products.store')}}" method="POST" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <div class="form-group">
                                                                     <label for="exampleInputEmail1">Nom du produit</label>

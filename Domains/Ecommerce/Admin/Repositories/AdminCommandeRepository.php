@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Domains\Ecommerce\Admin\Repositories;
 
 use App\Models\Order;
-use Domains\Ecommerce\Interfaces\AdminCommandeInterface;
+use Domains\Ecommerce\Interfaces\Admin\AdminCommandeInterface;
 
 class AdminCommandeRepository implements AdminCommandeInterface {
 

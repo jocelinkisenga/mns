@@ -37,12 +37,11 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 // Route::get('{name}/{id}',[CategorieController::class,'show'])->name('client.categorie');
 
-
+require __DIR__ . "/Admin.php";
 
 // Route::middleware('auth')->group(function () {
 
 Route::get("/profile", [ProfileController::class, "me"])->name("profile");
-//     Route::get('{id}',[OrderController::class,'index'])->name('myOrders');
 Route::get('/cart', [CardController::class, 'index'])->name('client-cart');
 Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-checkout');
 //     Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
@@ -52,5 +51,6 @@ Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-che
 // });
 
 
-require __DIR__ . "/Admin.php";
+Route::get('/{id}',[OrderController::class,'index'])->name('myOrders');
+
 require __DIR__ . "/auth.php";
