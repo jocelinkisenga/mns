@@ -20,7 +20,7 @@ Connection par défaut de l'administrateur
 
 - commande des produits par les utilisateurs
 - Mise à jours des produits du panier
-- confirmer le paiement en fournissant les déttails de paiement
+- confirmer le paiement en fournissant les détails de paiement
 - génération de la facture 
 - envoi de la facture à l'email fournit
 
