@@ -1,7 +1,10 @@
 @extends('Admin.layouts.app')
 
 @section("content")
-
+@php
+  use App\Models\User;
+  use App\Models\Order;
+@endphp
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -28,13 +31,13 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Managers</span>
+                <span class="info-box-text">clients</span>
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                  {{User::count()}}
+                  <small></small>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -47,8 +50,8 @@
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Societés</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">commandes</span>
+                <span class="info-box-number">{{Order::count()}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -76,7 +79,7 @@
             <!-- MAP & BOX PANE -->
 
             <!-- /.card -->
-            <div class="row">
+            <div class="row mt-4">
          
                 <!-- DIRECT CHAT -->
       
@@ -90,7 +93,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Nouveaux managers</h3>
+                <h3 class="card-title text-uppercase">Nouvelles commandes</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -129,8 +132,6 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -142,7 +143,7 @@
             <!-- MAP & BOX PANE -->
 
             <!-- /.card -->
-            <div class="row">
+            <div class="row mt-4">
          
                 <!-- DIRECT CHAT -->
       
@@ -156,7 +157,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Nouveaux Sociétés</h3>
+                <h3 class="card-title text-uppercase ">Nouveaux clients</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -195,8 +196,6 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
               </div>
               <!-- /.card-footer -->
             </div>

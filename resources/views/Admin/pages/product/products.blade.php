@@ -12,7 +12,7 @@
 
                             </div>
                             <div class="card-body">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">
+                                <button type="button" class="btn" style="background-color: #f248a0; color:white" data-toggle="modal" data-target="#modal-lg">
                                     Ajouter un produit
                                 </button>
 
@@ -146,7 +146,7 @@
                                             <td>{{$item->old_quantity}}</td>
                                             <td>{{$item->price}}</td>
                                             <td>{{$item->categorie->name}}</td>
-                                            <td><a href="{{route('admin.productDetail',['name'=>$item->name,'id'=>$item->id])}}">voir plus</a></td>
+                                            <td><a href="{{route('admin.productDetail',['id'=>$item->id])}}">voir plus</a></td>
                                        </tr> 
                                        @endforeach
 

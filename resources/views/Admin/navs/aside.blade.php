@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar  elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
       <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -13,7 +13,7 @@
           <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">M adn S</a>
+          <a href="#" class="d-block text-bold" style="color: #f248a0; font-size:30px">M adn S</a>
         </div>
       </div>
 
@@ -35,7 +35,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link " style="background-color: #f248a0; color:white">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard

@@ -12,7 +12,7 @@
 
                             </div>
                             <div class="card-body">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">
+                                <button type="button" class="btn " style="background-color: #f248a0; color:white" data-toggle="modal" data-target="#modal-lg">
                                     Ajouter une catégorie
                                 </button>
 

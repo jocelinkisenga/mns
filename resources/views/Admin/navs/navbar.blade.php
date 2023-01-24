@@ -1,11 +1,11 @@
-<nav class="main-header navbar navbar-expand navbar-dark">
+<nav class="main-header navbar navbar-expand ">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars" style="color: #f248a0"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Accueil</a>
+        <a href="{{route('home')}}" class="nav-link text-bold" style="color: #f248a0">Accueil</a>
       </li>
     </ul>
 
@@ -14,7 +14,7 @@
       <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
+          <i class="fas fa-search" style="color: #f248a0"></i>
         </a>
         <div class="navbar-search-block">
           <form class="form-inline">
@@ -22,13 +22,13 @@
               <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
+                  <i class="fas fa-search" style="color: #f248a0"></i>
                 </button>
                 <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
+                  <i class="fas fa-times" style="color: #f248a0"></i>
                 </button>
               </div>
-            </div>
+            </div> 
           </form>
         </div>
       </li>
@@ -37,8 +37,8 @@
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <i class="far fa-bell" style="color: #f248a0"></i>
+          <span class="badge  navbar-badge" style="color: #f248a0">15</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">15 Notifications</span>
@@ -50,7 +50,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
+          <i class="fas fa-expand-arrows-alt" style="color: #f248a0"></i>
         </a>
       </li>
     </ul>

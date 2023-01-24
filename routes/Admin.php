@@ -14,7 +14,7 @@ Route::middleware(['auth','admin'])->group(function () {
     
     Route::get('/admin-products',[ProductController::class,'index'])->name('admin.products');
     Route::post('/admin-products',[ProductController::class,'store'])->name('admin.products');
-    Route::get('/{name}/{id}',[ProductController::class,'show'])->name('admin.productDetail');
+    Route::get('/adminProduct/{id}',[ProductController::class,'show'])->name('admin.productDetail');
     Route::put('updateProduct',[ProductController::class,'update'])->name('admin.updateProduct');
     Route::post('/updateQuantity',[ProductController::class,'update_quantity'])->name('admin.updateQuantity');
     

@@ -12,7 +12,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <div class="mt-4">
-                            <button class="btn btn-success btn-lg btn-flat" type="button" data-toggle="modal"
+                            <button class="btn   btn-flat" style="background-color: #f248a0; color:white" type="button" data-toggle="modal"
                                 data-target="#edit">
                                 <i class="fas fa-edit fa-lg mr-2"></i>
                                 Modifier
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="mt-4">
-                            <button class="btn btn-success btn-lg btn-flat" type="button" data-toggle="modal"
+                            <button class="btn  btn-flat" style="background-color: #f248a0; color:white" type="button" data-toggle="modal"
                                 data-target="#quantity">
                                 <i class="fas fa-edit fa-lg mr-2"></i>
                                 Ajouter la quantité

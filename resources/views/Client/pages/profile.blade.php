@@ -53,10 +53,8 @@
                 <td>jocelin kisenga</td>
                 <td><span class="badge badge-success">{{$item->amount}} $</span></td>
                 <td>{{$item->created_at}}</td>
-                <td>
-                  <div class="sparkbar" data-color="#00a65a" data-height="20">voir plus</div>
-                </td>
-              </tr>
+                <td> <a href="{{route('myOrders',['id'=>$item->id])}}">voir plus</a></td>
+ </tr>
               @endforeach
             </tbody>
           </table>

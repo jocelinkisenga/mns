@@ -139,7 +139,7 @@
                                                     <td>{{$key+1}}</td>
                                                     <td>{{$commande->nickname}} {{$commande->suname}}</td>
                                                     <td>{{$commande->amount}} $</td>
-                                                    <td>voir plus</td>
+                                                    <td><a href="{{route('myOrders',['id'=>$commande->id])}}">voir plus</a> </td>
                                                 </tr>
                                            
                                        @endforeach

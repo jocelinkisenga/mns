@@ -34,7 +34,7 @@ class ProductController extends Controller
 
     }
 
-    public function show(string $name, int $id){
+    public function show( int $id){
         $product = $this->domainController->product($id);
          $categories = Category::all();
 
