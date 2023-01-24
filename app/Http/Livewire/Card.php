@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
+use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
 use Livewire\Component;
 
 class Card extends Component
@@ -11,11 +12,16 @@ class Card extends Component
     protected $repository;
     public $items;
     protected $listeners = ["addtocart" => "render"];
+    protected $interface;
 
-    public function __construct()
-    {
-        $this->repository = new CommandeClientController();
+    public function mount(ClientCommandeInterface $clientCommandeInterface){
+        $this->interface = $clientCommandeInterface;
     }
+
+    // public function __construct()
+    // {
+    //     $this->repository = new CommandeClientController();
+    // }
 
     public function render()
     {
@@ -32,7 +38,7 @@ class Card extends Component
     public function add($id)
     {
 
-        $this->repository->add($id);
+        $this->interface->add($id);
         $this->emit('addtocart');
     }
 
@@ -44,7 +50,7 @@ class Card extends Component
      */
     public function reduce(int $productId)
     {
-        $this->repository->reduce_quantity($productId);
+        $this->interface->reduce_quantity($productId);
         $this->emit('addtocart');
     }
 
@@ -56,7 +62,7 @@ class Card extends Component
      */
     public function empty(int $productId)
     {
-        $this->repository->remove($productId);
+        $this->interface->remove($productId);
     }
 
 

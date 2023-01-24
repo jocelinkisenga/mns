@@ -5,7 +5,6 @@
 
         <div class="space-y-2 mb-10">
           @isset ($items)
-    
               @foreach ($items as $item )
               <div
               class="flex items-center md:justify-between gap-4 md:gap-6 p-4 border border-gray-200 rounded flex-wrap md:flex-nowrap">

@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use Domains\Ecommerce\Client\Repositories\ClientCategoryRepositorie;
+use Domains\Ecommerce\Client\Repositories\ClientOrderRepositorie;
+use Domains\Ecommerce\Client\Repositories\ClientProductRepositorie;
 use Domains\Ecommerce\Interfaces\Client\ClientCategorieInterface;
+use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
 use Domains\Ecommerce\Interfaces\Client\ClientProductInterface;
-use Domains\Stock\Repositories\Category\CategoryRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositorieServiceProvider extends ServiceProvider
@@ -13,7 +15,8 @@ class RepositorieServiceProvider extends ServiceProvider
 
     private $repositories = [
         ClientCategorieInterface::class => ClientCategoryRepositorie::class,
-        ClientProductInterface::class => ClientProductRepositorie::class
+        ClientProductInterface::class => ClientProductRepositorie::class,
+        ClientCommandeInterface::class => ClientOrderRepositorie::class,
     ];
 
     /**

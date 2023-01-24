@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
+use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
+use Domains\Ecommerce\Interfaces\Client\ClientProductInterface;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -15,12 +17,9 @@ class Addtocart extends Component
     protected $cardRepo;
     public $product;
     public $quantity = 1;
+    
 
-    public function __construct()
-    {
-        $repository = new CommandeClientController;
-        $this->cardRepo = $repository;
-    }
+
 
     public function render()
     {
@@ -33,19 +32,33 @@ class Addtocart extends Component
      * @param mixed $id
      * @return mixed
      */
-    public function add($id)
+    public function add($id, ClientCommandeInterface $clientCommandeInterface)
     {
+        $this->cardRepo = $clientCommandeInterface;
         if (Auth::check()) {
             $item = CartFacade::get($id);
             if ($item) {
              
               
-                session()->flash('message', "ce produit existe déjà");
+                $this->dispatchBrowserEvent('swal', [ 
+                "position"=> 'top-end',
+                "icon" => 'warning',
+                "title" =>'ce produit existe dans le panier',
+                "showConfirmButton" => false,
+                "timer" => 1500
+            ]);
+
                             
                             
             } else {
                 $this->cardRepo->add_to_cart($id);
-                session()->flash('message', "produit ajouté avec succès");
+                $this->dispatchBrowserEvent('swal', [ 
+                    "position"=> 'top-end',
+                    "icon" => 'success',
+                    "title" =>'ce produit ajouté avec succés',
+                    "showConfirmButton" => false,
+                    "timer" => 1500
+                ]);
                 $this->emit("cardcounter");
 
             }

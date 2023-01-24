@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>M&S</title>
   <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet"></link> 
 
   @livewireStyles
   
@@ -23,7 +24,16 @@
 @livewireScripts
 @notifyJs
 <script  src="{{asset('client/assets/js/app.js')}}"></script>
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script> 
 @include('sweetalert::alert')
+
+    
+<script>
+          window.addEventListener('swal',function(e){
+            Swal.fire(e.detail);
+        });
+
+</script>
 </body>
 
 </html>

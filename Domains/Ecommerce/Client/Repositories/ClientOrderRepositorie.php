@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Domains\Ecommerce\Client\Commandes;
+namespace Domains\Ecommerce\Client\Repositories;
 
 use App\Models\Product;
 use Auth;
 use Darryldecode\Cart\Facades\CartFacade;
+use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Domains\Stock\Repositories\Product\ProductRepository;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class ClientOrderRepositorie implements CommandeInterfaceRepository
+class ClientOrderRepositorie implements ClientCommandeInterface
 {
 
 	protected $quantity = 1;

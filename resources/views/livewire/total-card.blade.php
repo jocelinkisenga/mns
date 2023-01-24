@@ -6,6 +6,7 @@
             <div class="flex justify-between font-medium">
               <p>Sous total</p>
               <p>$ {{Cart::getTotal()}}</p>
+             
             </div>
             <div class="flex justify-between">
               <p>Livraison</p>
