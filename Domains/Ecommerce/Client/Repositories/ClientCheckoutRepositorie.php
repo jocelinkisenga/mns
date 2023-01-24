@@ -2,17 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Domains\Ecommerce\Client\Commandes;
+namespace Domains\Ecommerce\Client\Repositories;
 
 use App\Models\Order;
 use App\Models\OrderItem;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Darryldecode\Cart\Facades\CartFacade;
 use DateTime;
+use Domains\Ecommerce\Interfaces\Client\ClientCheckoutInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class ClientCheckoutRepositorie {
+class ClientCheckoutRepositorie implements ClientCheckoutInterface {
 
     public $latest;
     public $data;

@@ -6,15 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CategorieRequest;
 use App\Models\Category;
 use Domains\Stock\Category\CategoryStockController;
+use Domains\Stock\Interfaces\StockCategorieInterface;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public $DomainController;
 
-    public function __construct()
+    public function __construct(StockCategorieInterface $stockCategorieInterface)
     {
-        $this->DomainController = new CategoryStockController();
+        $this->DomainController = $stockCategorieInterface;
     }
     public function index(){
         $categories = Category::latest()->get();

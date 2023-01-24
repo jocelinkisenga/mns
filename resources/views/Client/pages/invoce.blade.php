@@ -26,7 +26,7 @@
         <div class="col-8 ">
           <div class="callout callout-info">
             <h5 class="text-success"><i class="fas fa-info"></i> Commande confirmée avec succès !!</h5>
-             Nous avons envoyé la copie de facture à votre email <span><a href="{{route('checkout-back')}}" class="btn btn-primary text-white">rentrer à l'acceuil</a></span>
+             Nous avons envoyé la copie de facture à votre email <span><a href="{{route('home')}}" class="btn btn-primary text-white">rentrer à l'acceuil</a></span>
           </div>
 
 

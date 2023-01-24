@@ -10,6 +10,7 @@ use Cartalyst\Stripe\Stripe;
 use Darryldecode\Cart\Facades\CartFacade;
 use DateTime;
 use Domains\Ecommerce\Client\Commandes\Checkout;
+use Domains\Ecommerce\Interfaces\Client\ClientCheckoutInterface;
 use Hamcrest\Core\IsTypeOf;
 use Hamcrest\Type\IsInteger;
 use Illuminate\Http\Request;
@@ -22,9 +23,9 @@ class CheckoutController extends Controller
     public $checkout_repo;
 
 
-    public function __construct()
+    public function __construct(ClientCheckoutInterface $clientCheckoutInterface)
     {
-        $this->checkout_repo = new Checkout();
+        $this->checkout_repo = $clientCheckoutInterface;
     }
 
 

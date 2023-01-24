@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Domains\Stock\Product;
+namespace Domains\Stock\Repositories;
 
 use App\Models\Product;
-use Domains\Stock\Repositories\Product\ProductRepository;
+use Domains\Stock\Interfaces\StockProductInterface;
+use Domains\Stock\Utilities\Product\ProductUtility;
 
-class ProductStockController {
+class StockProductRepositorie implements StockProductInterface {
 
   public $repo;
 
   public function __construct()
   {
-    $this->repo = new ProductRepository();
+    $this->repo = new ProductUtility();
   }
 
     public function products(){

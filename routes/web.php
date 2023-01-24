@@ -44,8 +44,8 @@ require __DIR__ . "/Admin.php";
 Route::get("/profile", [ProfileController::class, "me"])->name("profile");
 Route::get('/cart', [CardController::class, 'index'])->name('client-cart');
 Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-checkout');
-//     Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
-//     Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
+ Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
+    Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
 //     Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 
 // });

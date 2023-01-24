@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Domains\Stock\Category;
+namespace Domains\Stock\Repositories;
 
 use App\Models\Category;
+use Domains\Stock\Interfaces\StockCategorieInterface;
 
-class CategoryStockController {
+class StockCategorieRepositorie implements StockCategorieInterface {
     
     public function categories(){
-
+        return Category::all();
     }
 
     public function category(int $id){
-
+        return Category::find($id);
     }
 
     public function store($data){

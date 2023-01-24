@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\ProductImage;
+use Domains\Stock\Interfaces\StockProductInterface;
 use Domains\Stock\Product\ProductStockController;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,9 @@ class ProductController extends Controller
 {
     public $domainController;
 
-    public function __construct()
+    public function __construct(StockProductInterface $stockProductInterface)
     {
-        $this->domainController = new ProductStockController();
+        $this->domainController = $stockProductInterface;
     }
     public function index(){
         $categories = Category::all();
