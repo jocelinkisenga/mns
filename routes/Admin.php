@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommandeController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RapportController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,7 +18,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/adminProduct/{id}',[ProductController::class,'show'])->name('admin.productDetail');
     Route::put('updateProduct',[ProductController::class,'update'])->name('admin.updateProduct');
     Route::post('/updateQuantity',[ProductController::class,'update_quantity'])->name('admin.updateQuantity');
-    
+    Route::get('rapport', [RapportController::class, 'index'])->name('rapport');
     
     Route::get('/admincategories',[CategoryController::class,'index'])->name('admin.categories');
     Route::post('/categories',[CategoryController::class,'store'])->name('admin-categories');

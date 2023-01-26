@@ -41,7 +41,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/test', [StripeTestController::class, 'index']);
 require __DIR__ . "/Admin.php";
 
-// Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
 
 Route::get("/profile", [ProfileController::class, "me"])->name("profile");
 Route::get('/cart', [CardController::class, 'index'])->name('client-cart');
@@ -50,7 +50,7 @@ Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-che
     Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
 //     Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 
-// });
+});
 
 require __DIR__ . "/auth.php";
 Route::get('/{id}',[OrderController::class,'index'])->name('myOrders');

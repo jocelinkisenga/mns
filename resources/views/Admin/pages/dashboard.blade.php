@@ -111,20 +111,23 @@
                     <thead>
                     <tr>
                       <th>Order ID</th>
-                      <th>Nom</th>
-                      <th>Email</th>
-                      <th>Action</th>
+                      <th>code</th>
+                      <th>montant</th>
+                      <th>action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html"></a></td>
-                      <td>jocelin kisenga</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20"></div>
-                      </td>
-                    </tr>
+                     
+                      @foreach ($orders as $key => $item )
+                      <tr>
+                        <td>{{$key+1}}</td>
+                        <td>{{$item->payment_id}}</td>
+                        <td><span class="badge badge-success">{{$item->amount}} $</span></td>
+                        <td>
+                          <a href="{{route('myOrders',['id'=>$item->id])}}">voir plus</a>
+                        </td>
+                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -174,21 +177,22 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
-                      <th>Status</th>
-                      <th>Popularity</th>
+                      <th> ID</th>
+                      <th>nom</th>
+                      <th>email</th>
+                      <th>action</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach ($users as $key => $user )
                     <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20"></div>
-                      </td>
+                      <td>{{$key+1}}</td>
+                      <td>{{$user->name}}</td>
+                      <td>{{$user->email}}</td>
+                      <td>voir plus</td>
+                      
                     </tr>
+                    @endforeach
                     </tbody>
                   </table>
                 </div>
