@@ -14,6 +14,7 @@ use App\Http\Controllers\Client\InvoceController;
 use App\Http\Controllers\Client\OrderController;
 use App\Http\Controllers\Client\ProductController;
 use App\Http\Controllers\Client\ProfileController;
+use App\Http\Controllers\StripeTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +33,12 @@ use App\Http\Controllers\Client\ProfileController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/products', [ProductController::class, 'index'])->name("client-products");
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 // Route::get('{name}/{id}',[CategorieController::class,'show'])->name('client.categorie');
-
+Route::get('/test', [StripeTestController::class, 'index']);
 require __DIR__ . "/Admin.php";
 
 // Route::middleware('auth')->group(function () {
@@ -50,7 +52,5 @@ Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-che
 
 // });
 
-
-Route::get('/{id}',[OrderController::class,'index'])->name('myOrders');
-
 require __DIR__ . "/auth.php";
+Route::get('/{id}',[OrderController::class,'index'])->name('myOrders');

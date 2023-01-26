@@ -10,6 +10,7 @@ use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
 use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Domains\Stock\Repositories\Product\ProductRepository;
+use Domains\Stock\Utilities\Product\ProductUtility;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ClientOrderRepositorie implements ClientCommandeInterface
@@ -20,7 +21,7 @@ class ClientOrderRepositorie implements ClientCommandeInterface
 
 	public function __construct()
 	{
-		$this->product_repo = new ProductRepository;
+		$this->product_repo = new ProductUtility;
 	}
 
 	public function show(){
