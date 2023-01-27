@@ -85,7 +85,7 @@
                   <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">
                       <div class="w-full">
 
-                          <a href="detailproduit.html">
+                          <a href="{{route('client.productDetails',['id'=>$item->id])}}">
                               <h4
                                   class="uppercase font-medium text-xl text-gray-700 group-hover:color-orange transition">
                                   {{$item->name}}...

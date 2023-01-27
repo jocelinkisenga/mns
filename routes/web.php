@@ -37,6 +37,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index'])->name("client-products");
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/productDetails/{id}', [ProductController::class, 'show'])->name('client.productDetails');
 // Route::get('{name}/{id}',[CategorieController::class,'show'])->name('client.categorie');
 Route::get('/test', [StripeTestController::class, 'index']);
 require __DIR__ . "/Admin.php";
@@ -46,7 +47,7 @@ Route::middleware('auth')->group(function () {
 Route::get("/profile", [ProfileController::class, "me"])->name("profile");
 Route::get('/cart', [CardController::class, 'index'])->name('client-cart');
 Route::get('/checkout', [CheckoutController::class, 'create'])->name('client-checkout');
- Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
+Route::post('checkout', [CheckoutController::class, 'store'])->name('store-order');
     Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
 //     Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 
