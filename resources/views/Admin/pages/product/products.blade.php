@@ -12,7 +12,7 @@
 
                             </div>
                             <div class="card-body">
-                                <button type="button" class="btn" style="background-color: #f248a0; color:white" data-toggle="modal" data-target="#modal-lg">
+                                <button type="button" class="btn btn-background font-bold" style=" color:white" data-toggle="modal" data-target="#modal-lg">
                                     Ajouter un produit
                                 </button>
 
@@ -51,7 +51,7 @@
                                                                     <label for="exampleInputFile">File input</label>
                                                                     <div class="input-group">
                                                                         <div class="custom-file">
-                                                                            <input type="file" name="image" class="custom-file-input"
+                                                                            <input type="file" name="image[]" class="custom-file-input" multiple
                                                                                 id="exampleInputFile">
                                                                             <label class="custom-file-label"
                                                                                 for="exampleInputFile">Choose file</label>

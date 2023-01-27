@@ -44,7 +44,7 @@
             </div>
 
             <div class="flex pt-4">
-              <button class="bg-pink-600 border border-pink-600
+              <button class="btn-background border btn-border
               text-white px-6 py-2 rounded-md z-50
             hover:bg-opacity-80 transition w-full flex justify-center text-center">Filtrer</button>
             </div>
@@ -80,7 +80,7 @@
             <div
             class="col-span-1 flex flex-col  w-full border border-dashed shadow group-first: shadow-gray-100 rounded-md overflow-hidden">
             <div class="flex w-full bg-gray-100">
-              <img src="{{ asset('storage/uploads/' . $item->image->path) }}" width="40" height="auto" alt="image produits"
+              <img src="{{ asset('storage/uploads/' . $item->image->first()["path"]) }}" width="40" height="auto" alt="image produits"
                 class="w-full h-28 sm:h-36 md:h-40 lg:h-44 rounded">
             </div>
             <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">
@@ -93,7 +93,7 @@
                 </a>
               </div>
               <div class="flex w-full items-center flex-wrap gap-1 small:gap-0 small:flex-nowrap justify-between">
-                <h2 class="font-bold text-lg flex text-gray-600">{{$item->price}} <span class="pl-1 text-pink-500">$</span>
+                <h2 class="font-bold text-lg flex text-gray-600">{{$item->price}} <span class="pl-1 color-orange">$</span>
                 </h2>
               </div>
               <livewire:addtocart :product="$item->id">

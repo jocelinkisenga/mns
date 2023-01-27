@@ -10,7 +10,7 @@
   <title>M&S</title>
   <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
   <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet"></link> 
-
+  <link rel="stylesheet" href="{{asset('client/assets/css/style.css')}}">
   @livewireStyles
   
 </head>

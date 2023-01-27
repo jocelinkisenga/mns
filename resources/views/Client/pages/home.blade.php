@@ -13,7 +13,7 @@
                     <div class="flex flex-col gap-6 md:col-span-2 lg:col-span-1 z-30">
                         <div class="flex flex-col gap-4">
                             <h1 class="xl:text-6xl md:text-5xl text-4xl text-gray-700 font-semibold z-50">
-                                Trouvez les instruments pour vos <span class="text-pink-600">menages
+                                Trouvez les instruments pour vos <span class="color-orange">menages
                                     rapidement</span>
                             </h1>
                             <p class="text-base text-gray-600 leading-6 z-50">
@@ -22,8 +22,8 @@
                             </p>
                         </div>
                         <div class="flex pt-8 z-30">
-                            <a href="shop.html"
-                                class="bg-pink-600 border border-pink-600
+                            <a href="{{route('client-products')}}"
+                                class="btn-background btn-border border  font-bold
                    text-white px-8 py-3 rounded-md z-50
                  hover:bg-opacity-80 transition">
                                 Acheter maintenant
@@ -79,7 +79,7 @@
                   <div
                   class="col-span-1 flex flex-col  w-full border border-dashed shadow group-first: shadow-gray-100 rounded-md overflow-hidden">
                   <div class="flex w-full bg-gray-100">
-                      <img src="{{ asset('storage/uploads/' . $item->image->path) }}" width="40"
+                      <img src="{{ asset('storage/uploads/' . $item->image->first()["path"]) }}" width="40"
                           height="auto" alt="image produits" class="w-full h-28 sm:h-36 md:h-40 lg:h-44 rounded">
                   </div>
                   <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">
@@ -87,7 +87,7 @@
 
                           <a href="detailproduit.html">
                               <h4
-                                  class="uppercase font-medium text-xl text-gray-700 group-hover:text-pink-600 transition">
+                                  class="uppercase font-medium text-xl text-gray-700 group-hover:color-orange transition">
                                   {{$item->name}}...
                               </h4>
                           </a>
@@ -95,7 +95,7 @@
                       <div
                           class="flex w-full items-center flex-wrap gap-1 small:gap-0 small:flex-nowrap justify-between">
                           <h2 class="font-bold text-lg flex text-gray-600">{{$item->price}} <span
-                                  class="pl-1 text-pink-500">$</span>
+                                  class="pl-1 color-orange">$</span>
                           </h2>
                       </div>
                         {{-- start livewire add cart --}}
@@ -113,106 +113,12 @@
     </section>
 
 
-    <section class="w-full overflow-hidden pt-14 pb-6">
-        <div class="appContainer flex flex-col">
-            <div>
-                <div class="flex flex-col gap-y-5">
-                    <div class="flex">
-                        <h1 class="text-2xl  md:text-3xl font-semibold text-gray-700">Pourquoi nous choisir</h1>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div
-                            class="col-span-1 flex flex-col md:flex-row border-pink-600 border rounded-md px-5 lg:px-2 lg:py-4 py-3 justify-center gap-2">
-                            <div class=" min-w-[3.5rem] text-pink-600 flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-10 h-10 md:h-14 md:w-14">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
-                                </svg>
-
-                            </div>
-                            <div class="flex flex-col gap-y-2">
-                                <h1 class="text-pink-600 text-lg md:text-xl">Nous vous facilitons la tache</h1>
-                                <p class="text-sm text-gray-600">Les produits M&S sont dirigés par l’idée de rendre la vie
-                                    plus facile à la maison, que ce soit pour le rangement et nettoyage</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="col-span-1 flex flex-col md:flex-row border-pink-600 border rounded-md px-5 lg:px-2 lg:py-4 py-3 justify-center gap-2">
-                            <div class=" min-w-[3.5rem] text-pink-600 flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-10 h-10 md:h-14 md:w-14">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                </svg>
-
-                            </div>
-                            <div class="flex flex-col gap-y-2">
-                                <h1 class="text-pink-600 text-lg md:text-xl">Nous repondons à vos besoins.</h1>
-                                <p class="text-sm text-gray-600">Nous apportons nos produits en fonction des besoins de la
-                                    maison et les difficultés actuelles dans notre ville.</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="col-span-1 flex flex-col md:flex-row border-pink-600 border rounded-md px-5 lg:px-2 lg:py-4 py-3 justify-center gap-2">
-                            <div class=" min-w-[3.5rem] text-pink-600 flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-10 h-10 md:h-14 md:w-14">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-                                </svg>
-
-                            </div>
-                            <div class="flex flex-col gap-y-2">
-                                <h1 class="text-pink-600 text-lg md:text-xl">Meilleur prix du marché</h1>
-                                <p class="text-sm text-gray-600">Vous trouvez le meilleur des home gadgets à prix abordable
-                                    (tout ou presque à 5$ chez nous)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{-- about us  --}}
+@include("Client.components.about")
+{{-- end about us --}}
 
 
-    <section class="w-full overflow-hidden pt-8">
-        <div class="appContainer">
-            <div
-                class="grid bg-gradient-to-tl from-gray-50 to-gray-300 md:grid-cols-3 gap-6 items-center relative rounded-xl overflow-hidden">
-                <div
-                    class="absolute rounded-3xl -skew-y-12 top-0 right-0 md:right-[calc(50%-200px)] w-20 h-20 bg-gradient-to-br from-pink-400 to-gray-400 opacity-25">
-                </div>
-                <div
-                    class="absolute rounded-3xl -skew-y-12 bottom-0 w-20 h-20 bg-gradient-to-br from-pink-400 to-gray-400 opacity-25">
-                </div>
-                <div class="relative flex md:col-span-2 flex-col gap-5 p-6 sm:p-10 z-10">
-                    <h1 class="text-gray-700 font-semibold text-3xl sm:text-4xl lg:text-5xl tracking-tight ">
-                        Les meilleurs produits pour vos menages
-                    </h1>
-                    <p class="text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, est libero! Ratione accusamus
-                        repellendus placeat tempora blanditiis tenetur dignissimos nostrum, assumenda expedita obcaecati,
-                        dicta sint accusantium aspernatur reprehenderit laboriosam. Dolore?
-                    </p>
-                    <div class="flex">
-                        <a href="shop.html"
-                            class="bg-pink-600 border border-pink-600
-                 text-white px-8 py-3 rounded-md z-50
-               hover:bg-opacity-80 transition">
-                            Acheter maintenant
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:flex col-span-1 h-full relative overflow-hidden">
-                    <div class="w-full">
-                        <img src="{{ asset('client/assets/images/disinfecting-in-home.jpg') }}" alt="image product"
-                            width="300" height="auto" class="w-full h-full object-cover absolute rounded-l-[10rem]">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{-- best choice --}}
+@include("Client.components.choice")
+{{-- end best choice --}}
 @endsection

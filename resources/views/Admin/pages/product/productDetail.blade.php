@@ -12,7 +12,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <div class="mt-4">
-                            <button class="btn   btn-flat" style="background-color: #f248a0; color:white" type="button" data-toggle="modal"
+                            <button class="btn btn-background font-bold   btn-flat" style=" color:white" type="button" data-toggle="modal"
                                 data-target="#edit">
                                 <i class="fas fa-edit fa-lg mr-2"></i>
                                 Modifier
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="mt-4">
-                            <button class="btn  btn-flat" style="background-color: #f248a0; color:white" type="button" data-toggle="modal"
+                            <button class="btn btn-background font-bold  btn-flat" style=" color:white" type="button" data-toggle="modal"
                                 data-target="#quantity">
                                 <i class="fas fa-edit fa-lg mr-2"></i>
                                 Ajouter la quantité
@@ -49,19 +49,18 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+                            <h3 class="d-inline-block d-sm-none">{{$product->name}}</h3>
                             <div class="col-12">
-                                <img src="{{ asset('storage/uploads/' . $product->image->path) }}" class="product-image"
+                                <img src="{{ asset('storage/uploads/' . $product->image->first()["path"]) }}" class="product-image"
                                     alt="Product Image">
                             </div>
                             <div class="col-12 product-image-thumbs">
-                                <div class="product-image-thumb active"><img
-                                        src="{{ asset('storage/uploads/' . $product->image->path) }}" alt="Product Image">
-                                </div>
-                                <div class="product-image-thumb"></div>
-                                <div class="product-image-thumb"></div>
-                                <div class="product-image-thumb"></div>
-                                <div class="product-image-thumb"></div>
+
+
+                                @foreach ($product->image  as $key => $image)
+                                <div class="product-image-thumb active {{$key+1}}"><img
+                                    src="{{ asset('storage/uploads/' . $image->path) }}" alt="Product Image"></div>
+                                @endforeach
                             </div>
                         </div>
 

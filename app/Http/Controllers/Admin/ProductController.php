@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\ProductImage;
+use Carbon\Carbon;
 use Domains\Stock\Interfaces\StockProductInterface;
 use Domains\Stock\Product\ProductStockController;
 use Illuminate\Http\Request;
@@ -25,13 +26,30 @@ class ProductController extends Controller
     }
 
     public function store(ProductRequest $request){
-        $newFile = time().'_'.$request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->storeAs('uploads',$newFile,'public');   
+        
+       
+//  foreach($request->image as $key => $image){
+//          echo ("image n°".$key+1..$image->getClientOriginalName())."<br>";
+//  }     
+        
+        // $path = $request->file('image')->storeAs('uploads',$newFile,'public');  
+            $product = $this->domainController->store($request);
+        
+        if ($request->image) {
+            
+            foreach ($request->image as $key => $image) {
+                $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
+                $path = $image->storeAs('uploads',$imgName,'public');
+                ProductImage::create(['product_id'=>$product['id'],'path'=>$imgName]);
+           
+            }
+          
+    }
+        // $product = $this->domainController->store($request);
+        
 
-        $product = $this->domainController->store($request);
-
-        ProductImage::create(['product_id'=>$product['id'],'path'=>$newFile]);
-        return redirect()->back();
+        // ProductImage::create(['product_id'=>$product['id'],'path'=>$newFile]);
+         return redirect()->back();
 
     }
 

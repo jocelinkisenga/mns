@@ -16,7 +16,7 @@ class Product extends Model
     }
 
     public function image (){
-        return $this->hasOne(ProductImage::class);
+        return $this->hasMany(ProductImage::class);
     }
 
     public function order_items(){

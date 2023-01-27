@@ -109,7 +109,7 @@
         </ul>
         <div class="flex items-center py-2 min-h-max md:w-max w-full">
           <a href="{{route('contact')}}"
-            class="rounded min-w-max md:w-max w-full flex justify-center bg-pink-600 py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">Nous
+            class="rounded min-w-max md:w-max w-full font-bold flex justify-center btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-4 md:px-6 md:py-3 text-white">Nous
             contacter</a>
         </div>
 

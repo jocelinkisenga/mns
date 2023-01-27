@@ -22,7 +22,7 @@
   <div class="class col-6 p-6 ">
     <div class="card">
       <div class="card-header border-transparent">
-        <h3 class="card-title">Mes commandes</h3>
+        <h3 class="card-title color-orange">Mes commandes</h3>
     
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse">

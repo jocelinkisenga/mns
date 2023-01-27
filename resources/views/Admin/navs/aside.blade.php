@@ -13,7 +13,7 @@
           <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{route('admin.dashboard')}}" class="d-block text-bold" style="color: #f248a0; font-size:30px"> Dashboard</a>
+          <a href="{{route('admin.dashboard')}}" class="d-block text-bold color-orange" style=" font-size:30px"> Dashboard</a>
         </div>
       </div>
 
@@ -35,7 +35,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="{{route("admin.dashboard")}}" class="nav-link " style="background-color: #f248a0; color:white">
+            <a href="{{route("admin.dashboard")}}" class="nav-link btn-background " style=" color:white">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -46,31 +46,31 @@
  
               <li class="nav-item">
                 <a href="{{route('admin.categories')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle nav-icon color-orange"></i>
                   <p>Catégories</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('admin.products')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle color-orange nav-icon"></i>
                   <p>Produits</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route("admin-commandes")}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-circle nav-icon color-orange"></i>
                   <p>commandes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="" class="nav-link">
-                  <i class="far fa-user nav-icon"></i>
+                  <i class="far fa-circle nav-icon color-orange"></i>
                   <p>Clients</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('rapport')}}" class="nav-link">
-                  <i class="fa fa-circle "></i>
+                  <i class="far fa-circle nav-icon color-orange"></i>
                   <p>Rapports</p>
                 </a>
               </li>

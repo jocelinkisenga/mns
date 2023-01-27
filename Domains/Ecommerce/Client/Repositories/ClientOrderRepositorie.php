@@ -59,7 +59,7 @@ class ClientOrderRepositorie implements ClientCommandeInterface
 					'name'=>$product->name,
 					'price'=> $product->price,
 				 	'quantity' => 1,
-					'image' => $product ->image->path,
+					'image' => $product ->image->first()["path"],
 			])->associate("App\Models\Product");
 			$this->product_repo->substract_quantity($id);
 		}
@@ -86,7 +86,7 @@ class ClientOrderRepositorie implements ClientCommandeInterface
 				'name'=>$product->name,
 				'price'=> $product->price,
 			 	'quantity' => 1,
-				'attributes' => array('image' => $product ->image->path),
+				'attributes' => array('image' => $product ->image->first()["path"]),
 			])->associate("App\Models\Product");
 			$this->product_repo->substract_quantity($id);
 		
