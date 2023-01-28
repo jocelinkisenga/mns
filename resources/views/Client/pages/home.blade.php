@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 @extends("Client.layouts.app")
-=======
 @extends('Client.layouts.app')
->>>>>>> 519f8785e689bb3d2a9042526a0197e8dfaa7696
+
 @section('content')
  
     <section class="w-full relative overflow-hidden">
