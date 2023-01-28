@@ -22,7 +22,7 @@
             <h4>$ {{ (Cart::getTotal() + ((Cart::getTotal()/100)*16))}}</h4>
           </div>
           <div class="pt-6">
-            <a href="{{route('client-checkout')}}" class="bg-pink-600 border border-pink-600
+            <a href="{{route('client-checkout')}}" class="btn-background border btn-border font-bold
           text-white px-8 py-3 rounded-md z-50
         hover:bg-opacity-80 transition">
             Proceder au paiement

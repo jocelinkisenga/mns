@@ -29,7 +29,8 @@ class StockProductRepositorie implements StockProductInterface {
        return  Product::create([
           'category_id'=>$data->category_id,
           'name'=>$data->name,
-          'price'=>$data->price
+          'price'=>$data->price,
+          'description'=>$data->description
         ]);
     }
 

@@ -39,10 +39,16 @@
           <h2 class="md:text-3xl text-2xl font-medium uppercase mb-2">{{$product->name}}</h2>
 
           <div class="space-y-2">
-            {{-- <p class="text-gray-800 font-semibold space-x-2">
+            @if ($product->old_quantity > 0)
+            <p class="text-gray-800 font-semibold space-x-2">
               <span>Disponibilite: </span>
-              <span class="bg-pink-100 text-pink-600 p-1 px-2 rounded-full text-sm font-light">Bientot disponible</span>
-            </p> --}}
+              <span class=" color-orange  p-1 px-2 rounded-full text-sm font-bold">disponible</span>
+            @else
+             <p class="text-gray-800 font-semibold space-x-2">
+              <span>Disponibilite: </span>
+              <span class=" color-orange p-1 px-2 rounded-full text-sm font-bold">Bientot disponible</span>
+            </p> 
+            @endif
             <p class="space-x-2">
               <span class="text-gray-800 font-semibold">Categorie: </span>
               <span class="text-gray-600">{{$product->categorie->name}}</span>
@@ -107,17 +113,10 @@
         <!-- details table -->
         <table class="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6">
           <tr>
-            <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Info</th>
+            <th class="py-2 px-4 border border-gray-300 w-40 font-medium">couleurs</th>
             <td class="py-2 px-4 border border-gray-300">Black, Brown, Red</td>
           </tr>
-          <tr>
-            <th class="py-2 px-4 border border-gray-300 w-40 font-medium"></th>
-            <td class="py-2 px-4 border border-gray-300">Artificial Leather</td>
-          </tr>
-          <tr>
-            <th class="py-2 px-4 border border-gray-300 w-40 font-medium">Weight</th>
-            <td class="py-2 px-4 border border-gray-300">55kg</td>
-          </tr>
+
         </table>
       </div>
     </div>

@@ -73,6 +73,11 @@
                                                                     </select>
                                                                   
                                                               </div>
+                                                              <div class="form-group">
+                                                                <label for="exampleInputPassword1">description</label>
+                                                                <textarea type="text" name="description" class="form-control"
+                                                                    id=""></textarea>
+                                                            </div>
                                                             </div>
                                                             <!-- /.card-body -->
 

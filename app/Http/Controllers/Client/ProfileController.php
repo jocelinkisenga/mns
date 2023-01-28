@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
     public function me(){
+       
         $mesCommandes = Order::latest()->whereUser_id(Auth::user()->id)->get();
         return view("Client.pages.profile",compact('mesCommandes'));
     }

@@ -18,8 +18,8 @@
           </a>
         </div>
 
-        <form class="w-full md:max-w-md xl:max-w-xl lg:max-w-lg md:flex relative hidden">
-          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+        {{-- <form class="w-full md:max-w-md xl:max-w-xl lg:max-w-lg md:flex relative hidden">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 color-orange">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
               <path fill-rule="evenodd"
                 d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
@@ -30,10 +30,10 @@
             class="pl-12 w-full border border-r-0 border-gray-200 py-2.5 px-4 rounded-l-md focus:border-pink-600 outline-none"
             placeholder="Recyclette...">
           <button type="submit"
-            class="bg-pink-600 border border-pink-600 text-white px-6 font-medium rounded-r-md hover:bg-transparent hover:text-pink-600 transition">
+            class="color-orange border btn-border text-white px-6 font-medium rounded-r-md hover:bg-transparent hover:text-pink-600 transition">
             Recherche
           </button>
-        </form>
+        </form> --}}
 
         <div class="gap-4 flex items-center">
           <div class="flex md:hidden">
@@ -49,7 +49,7 @@
             <livewire:card-counter>
           @endauth
           <a href="{{route('profile')}}" class="flex flex-col items-center text-gray-700 hover:text-primary transition">
-            <div class="text-gray-600">
+            <div class="color-orange">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
                   d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
@@ -99,17 +99,21 @@
           @auth
           @if (Auth::user()->role == 1)
           <div class="flex items-center py-2 min-h-max md:w-max w-full">
-            <a href="{{route('admin.dashboard')}}" style="background-color: black"
-              class="rounded min-w-max md:w-max w-full flex justify-center   py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">
+            <a href="{{route('admin.dashboard')}}" 
+              class="rounded min-w-max md:w-max w-full flex justify-center  color-orange  py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">
               dashboard</a>
           </div>
           @endif
           @endauth
           </li>
         </ul>
+      
+
+ 
         <div class="flex items-center py-2 min-h-max md:w-max w-full">
+
           <a href="{{route('contact')}}"
-            class="rounded min-w-max md:w-max w-full font-bold flex justify-center btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-4 md:px-6 md:py-3 text-white">Nous
+            class="rounded min-w-max md:w-max w-full font-bold flex justify-center btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-4 md:px-6 md:py-3 text-white ml-2">Nous
             contacter</a>
         </div>
 

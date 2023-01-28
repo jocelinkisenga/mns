@@ -4,42 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>s'inscrire</title>
-    <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+    <title>se connecter</title>
+    <link rel="stylesheet" href="{{asset('Client/assets/css/login.css')}}">
 </head>
 <body>
-  <div class="row justify-center" style="justify-content: center; margin-top:10%">
-    <h2>se connecter</h2>
-  </div>
-    <div class="row justify-center" style="justify-content: center; margin-top:4%">
 
-        <form action="{{route('login')}}" method="POST">
-            @csrf
-        @error('email')
-          {{$message}}
+  <div class="container">
+    <div class="screen">
+      <div class="screen__content">
+        <form class="login" action="{{route('login')}}" method="POST">
+          @csrf
+          <div class="login__field">
+            <i class="login__icon fas fa-user"></i>
+            <input type="text" name="email" class="login__input" placeholder=" Email" autocomplete="off">
+          </div>
+          @error('email')
+            <span style="color: red">{{$message}}</span>
+          @enderror
+          <div class="login__field">
+            <i class="login__icon fas fa-lock"></i>
+            <input type="password" name="password" class="login__input" placeholder="Password" autocomplete="off">
+          </div>
+          @error('password')
+          <span style="color: red">{{$message}}</span>
         @enderror
-          <div class="col-md-6 col-lg-12">
-            <label for="validationCustomUsername" class="form-label">email</label>
-            <div class="input-group">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input type="email" name="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Please choose a username.
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-12 mt-3">
-            <label for="validationCustom02" class="form-label">mot de passe</label>
-            <input type="text" name="password" class="form-control" id="validationCustom02"  required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-
-          <div class="col-12 mt-4">
-            <button class="btn btn-primary" type="submit">Submit </button>
-          </div>
+          <button type="submit" class="button login__submit">
+            <span class="button__text">se connecter</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>				
         </form>
+
+        <div class="social-login">
+          <h4>vous n'avez pas de compte?</h4> <br>
+          <a href="{{route('register')}}">créer un compte</a>
+        </div>
+
+      </div>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>		
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>		
     </div>
+  </div>
 </body>
 </html>

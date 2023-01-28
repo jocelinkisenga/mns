@@ -1,4 +1,4 @@
-@extends('client.layouts.app')
+@extends("Client.layouts.app")
 @section('content')
  
     <section class="w-full relative overflow-hidden">
@@ -88,8 +88,8 @@
                           <a href="{{route('client.productDetails',['id'=>$item->id])}}">
                               <h4
                                   class="uppercase font-medium text-xl text-gray-700 group-hover:color-orange transition">
-                                  {{$item->name}}...
-                              </h4>
+                                  {{$item->name}}... 
+                              </h4> <span class=" color-orange font-bold">voir plus </span>
                           </a>
                       </div>
                       <div
