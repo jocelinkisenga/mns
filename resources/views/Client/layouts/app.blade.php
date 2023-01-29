@@ -18,7 +18,6 @@
 <body class="w-full overflow-hidden overflow-y-auto">
 
 @include("Client.navs.navbar")
-
 @yield("content")
 @include("Client.navs.footer")
 
