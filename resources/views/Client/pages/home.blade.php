@@ -1,6 +1,6 @@
 
-@extends("Client.layouts.app")
-@extends('Client.layouts.app')
+@extends("client.layouts.app")
+@extends('client.layouts.app')
 
 @section('content')
  
