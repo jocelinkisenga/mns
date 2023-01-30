@@ -9,28 +9,29 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
+ 
 </head>
 <body>
 @include("Client.navs.navbar")
 
 
 <div class="wrapper">
-    <section class="content" style="justify-content: center; margin-left:20%; margin-top:5%">
+    <section class="content" style="justify-content: center;  margin-top:5%">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-8 ">
+            <div class="col-md-12 ">
 
     
     @if ($order != null)
     <div class="invoice p-3 mb-3">
       <!-- title row -->
       <div class="row">
-        <div class="col-8">
+        <div class="col-md-12">
           <h4>
             <i class="fas fa-globe"></i> MNS, Inc.
             <small class="float-right">Date: {{$order->paid_at}}</small>
@@ -42,7 +43,7 @@
       <div class="row invoice-info">
 
         <!-- /.col -->
-        <div class="col-sm-4 mt-2 invoice-col">
+        <div class="col-sm-4 col-md-4 mt-2 invoice-col">
           A
           <address>
             <strong>{{$order->suname}} {{$order->nickname}}</strong><br>
@@ -52,7 +53,7 @@
           </address>
         </div>
         <!-- /.col -->
-        <div class="col-sm-4 mt-2  invoice-col" style="margin-left: 20%">
+        <div class="col-sm-4 col-md-4  mt-12  invoice-col" >
           <b>facture #007612</b><br>
           <br>
           <b>commande ID:</b> {{$order->payment_id}}<br>
@@ -64,7 +65,7 @@
 
       <!-- Table row -->
       <div class="row">
-        <div class="col-12 table-responsive">
+        <div class="col-12 table-responsive mt-4">
           <table class="table table-striped">
             <thead>
             <tr>

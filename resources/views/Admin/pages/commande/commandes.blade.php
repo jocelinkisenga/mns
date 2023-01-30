@@ -130,7 +130,9 @@
                                             <th>ID</th>
                                             <th>utilisateur</th>
                                             <th>montant</th>
+                                            <th>status</th>
                                             <th>Détail</th>
+                                            <th>action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -139,7 +141,15 @@
                                                     <td>{{$key+1}}</td>
                                                     <td>{{$commande->nickname}} {{$commande->suname}}</td>
                                                     <td>{{$commande->amount}} $</td>
-                                                    <td><a href="{{route('myOrders',['id'=>$commande->id])}}">voir plus</a> </td>
+                                                    <td>
+                                                        @if($commande->status === 0)
+                                                        <span style=" background-color:rgb(229, 199, 2); color:white; padding: 3px 4px 3px 4px;">non livré</span>
+                                                       @else
+                                                       <span style=" background-color:rgb(6, 150, 61); color:white; padding: 3px 4px 3px 4px;">non livré</span>
+                                                       @endif
+                                                </td>
+                                                    <td><a href="{{route('myOrders',['id'=>$commande->id])}}"><i class="fa fa-eye"></i></a> </td>
+                                                    <td> <a href="{{route("admin-commandes-update",['id'=>$commande->id])}}"> <i class=" fa fa-save"></i></a></td>
                                                 </tr>
                                            
                                        @endforeach

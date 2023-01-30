@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\CommandeController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
@@ -22,5 +23,8 @@ Route::middleware(['auth','admin'])->group(function () {
     
     Route::get('/admincategories',[CategoryController::class,'index'])->name('admin.categories');
     Route::post('/categories',[CategoryController::class,'store'])->name('admin-categories');
+    Route::get('/clients', [ClientController::class, 'index'])->name('admin.clients');
+    Route::get('/client/{id}', [ClientController::class, 'show'])->name('admin.client.details');
+    Route::get('/commandesDetails/{id}',[CommandeController::class,'update'])->name('admin-commandes-update');
     
 });

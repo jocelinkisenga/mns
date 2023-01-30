@@ -17,7 +17,7 @@ interface AdminCommandeInterface
 
     public function get_unprouved();
 
-    public function confirm();
+    public function confirm(int $commandeId);
 
     public function invoice();
         

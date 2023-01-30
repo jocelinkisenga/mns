@@ -25,8 +25,14 @@ class AdminCommandeRepository implements AdminCommandeInterface {
 
     }
 
-    public function confirm(){
+    public function confirm(int $commandeId){
 
+        $commande = Order::find($commandeId);
+        $commande->update([
+            'status' => 1
+        ]);
+      
+     
     }
 
     public function invoice(){

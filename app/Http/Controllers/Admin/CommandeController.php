@@ -24,4 +24,10 @@ class CommandeController extends Controller
     public function show(int $commandeId){
         $this->commande_repo->get_one($commandeId);
     }
+
+    public function update(int $id){
+    
+        $this->commande_repo->confirm($id);
+         return redirect()->back();
+    }
 }

@@ -50,14 +50,21 @@ class CheckoutController extends Controller
         
         if(sizeof(CartFacade::getContent()) == 0){
             return redirect()->route("home");
-        } else {
+        } 
 
             $order = $this->checkout_repo->order($request);
-            $commandes = OrderItem::whereOrder_id($order->id)->get();
+
+            if(!$order){
+            return redirect()->back();
+            }
+            else {
+                $commandes = OrderItem::whereOrder_id($order->id)->get();
            
-        }
-         CartFacade::clear();
-        return view('Client.pages.invoce',compact('order','commandes'));
+        
+        
+                CartFacade::clear();
+               return view('Client.pages.invoce',compact('order','commandes'));
+            }
     }
 
     public function checkout_back(){

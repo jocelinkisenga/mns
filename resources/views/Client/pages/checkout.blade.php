@@ -1,5 +1,8 @@
 @extends("Client.layouts.app")
 @section("content")
+@php
+  use GuzzleHttp\Exception\ConnectException;
+@endphp
 <section class="w-full overflow-hidden">
     <div class="appContainer">
       <div class="w-full grid md:grid-cols-3 lg:grid-cols-5 items-start gap-6 pb-16 pt-4">
@@ -51,7 +54,10 @@
                 <input type="text" name="email" class="input-box" placeholder="johndoe@gmail.com">
               </div>
             </div>
-
+            
+            @if (session('stripe_err') and ConnectException::class)
+              <span class="text-red-600">veuillez vous assurer que vous avez une connexion</span>
+            @endif
              <div class="space-y-4 mt-4 bg-gray-600" style="margin-top: 10%; ">
               <div class="ml-2">
                 <label class="text-gray-600 ml-2 mb-2 block" >
@@ -62,20 +68,20 @@
               <div class="grid sm:grid-cols-3 gap-4">
                 <div>
                   <label class="text-gray-600 mb-2 block" style="color: gray-600">
-                    MM <span class="text-red">*   @error("mm") {{$message}}  @enderror </span>
+                    MM <span  class="text-red-600">*   @error("mm") {{$message}}  @enderror </span>
                   </label>
                   <input type="text" name="mm" class="input-box" placeholder="03">
                 </div>
                 <div>
                   <label class="text-gray-600 mb-2 block">
-                    YY <span class="text-red">*   @error("yy") {{$message}}  @enderror </span>
+                    YY <span  class="text-red-600">*   @error("yy") {{$message}}  @enderror </span>
                   </label>
                   <input type="text" name="yy" class="input-box" placeholder="23">
                 </div>
                 
                 <div class="mb-2 mr-2">
                   <label class="text-gray-600 mb-2 block">
-                    CVC <span class="text-red">*   @error("cvc") {{$message}}  @enderror </span>
+                    CVC <span  class="text-red-600">*   @error("cvc") {{$message}}  @enderror </span>
                   </label>
                   <input type="text" name="cvc" class="input-box">
                 </div>
@@ -123,7 +129,7 @@
           </div>
 
           <button type="submit" class="border-pink-600 py-2.5 border
-                  bg-pink-600
+                    btn-background btn-border
                     hover:border-pink-600 text-white
                    hover:text-pink-600 transition
                    hover:bg-white

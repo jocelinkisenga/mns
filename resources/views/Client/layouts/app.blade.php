@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>M&S</title>
   <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('client/assets/css/lightbox.min.css')}}">
-  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet"></link> 
+  
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet">
+
   <link rel="stylesheet" href="{{asset('client/assets/css/style.css')}}">
+ 
   @livewireStyles
   
 </head>
@@ -20,11 +22,13 @@
 @include("client.navs.navbar")
 
 @yield("content")
+
 @include("client.navs.footer")
 
 @livewireScripts
 @notifyJs
 <script  src="{{asset('client/assets/js/app.js')}}"></script>
+<script  src="{{asset('client/assets/js/bootstrap.min.js')}}"></script>
 <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script> 
 <script  src="{{asset('client/assets/js/lightbox-plus-jquery.min.js')}}"></script>
 @include('sweetalert::alert')

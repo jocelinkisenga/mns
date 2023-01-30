@@ -8,7 +8,8 @@
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <link rel="stylesheet" href="{{ asset('client/assets/css/app.css') }}">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- overlayScrollbars -->
@@ -16,13 +17,14 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('client/assets/css/app.css') }}">
+   
 </head>
 
 <body>
     @include('Client.navs.navbar')
 
-    <div class="row justify-center">
-        <div class="class col-6 p-6 ">
+    <div class="row r">
+        <div class="class  col-md-12 col-sm-12 p-6 ">
             <div class="card">
                 <div class="card-header border-transparent">
                     <h3 class="card-title color-orange">Mes commandes</h3>
@@ -37,15 +39,15 @@
                     </div>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body p-0">
+                <div class="card-body p-0 ">
 
 
                   @if ($mesCommandes != null)
-                  <div class="table-responsive">
+                  <div class="table-responsive ">
                     <table class="table m-0">
                         <thead>
                             <tr>
-                                <th>N°</th>
+                           
                                 <th>code</th>
                                 <th>montant</th>
                                 <th>date</th>
@@ -55,7 +57,7 @@
                         <tbody>
                             @foreach ($mesCommandes as $key => $item)
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
+                                  
                                     <td>jocelin kisenga</td>
                                     <td><span class="badge badge-success">{{ $item->amount }} $</span></td>
                                     <td>{{ $item->created_at }}</td>

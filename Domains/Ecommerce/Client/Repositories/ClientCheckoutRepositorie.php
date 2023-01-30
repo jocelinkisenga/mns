@@ -13,11 +13,15 @@ use Domains\Ecommerce\Interfaces\Client\ClientCheckoutInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Http\RedirectResponse;
+ use   Illuminate\Routing\Redirector;
+
 class ClientCheckoutRepositorie implements ClientCheckoutInterface {
 
     public $latest;
     public $data;
     public $latestOrder;
+    public $saved;
 
     public function order($donnes){
 
@@ -39,21 +43,7 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                 $order->phone = $this->data->phone;
                 $order->email = $this->data->email;
 
-                $order->save();
 
-
-
-
-                foreach (CartFacade::getContent() as $product) {
-                    $order_item = new OrderItem();
-
-                    $order_item->product_id = $product->id;
-                    $order_item->order_id = $order->id;
-                    $order_item->price = $product->price;
-                    $order_item->quantity = $product->quantity;
-
-                    $order_item->save();
-                }
 
 
 
@@ -105,9 +95,29 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     // $this->latest_order($order);
                // }
 
-                 $this->stripe_paiement($order, $this->data);
+             $this->saved =  $this->stripe_paiement($order->payment_id, $this->data);
 
-                $this->latestOrder = $order;
+             if($this->saved){
+                $order->save();
+
+
+
+
+                foreach (CartFacade::getContent() as $product) {
+                    $order_item = new OrderItem();
+
+                    $order_item->product_id = $product->id;
+                    $order_item->order_id = $order->id;
+                    $order_item->price = $product->price;
+                    $order_item->quantity = $product->quantity;
+
+                    $order_item->save();
+                }
+
+               $this->latestOrder = $order;
+             }
+
+
             
 
         });
@@ -129,7 +139,8 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     ]
                 ]);
                 if (!isset($token)) {
-                    session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
+                    session()->flash('stripe_err', 'Veuillez vous vous assurer que vous disposez d\une bonne carte!');
+            
               
                 }
             
@@ -150,7 +161,7 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     'customer' => $customer['id'],
                     'currency' => 'USD',
                     'amount' => CartFacade::getTotal(),
-                    'description' => 'Payment for order no ' . $order->payment_id
+                    'description' => 'Payment for order no ' . $order
                 ]);
                 if ($charge['status'] == 'succeeded') {
                 session()->flash("message","paiment fait avec succès");
@@ -161,7 +172,8 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                 
                 }
             } catch (\Throwable $e) {
-                session()->flash('stripe_err', $e->getMessage());
+             session()->flash('stripe_err', $e->getMessage());
+         
                
             }
 

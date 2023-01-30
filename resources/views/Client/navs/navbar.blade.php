@@ -18,7 +18,7 @@
           </a>
         </div>
 
-        {{-- <form class="w-full md:max-w-md xl:max-w-xl lg:max-w-lg md:flex relative hidden">
+        <form class="w-full md:max-w-md xl:max-w-xl lg:max-w-lg md:flex relative hidden">
           <span class="absolute left-4 top-1/2 -translate-y-1/2 color-orange">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
               <path fill-rule="evenodd"
@@ -27,17 +27,17 @@
             </svg>
           </span>
           <input type="text"
-            class="pl-12 w-full border border-r-0 border-gray-200 py-2.5 px-4 rounded-l-md focus:border-pink-600 outline-none"
+            class="pl-12 w-full border border-r-0 btn-border py-2.5 px-4 rounded-l-md focus:border-yellow-600 outline-none"
             placeholder="Recyclette...">
           <button type="submit"
             class="color-orange border btn-border text-white px-6 font-medium rounded-r-md hover:bg-transparent hover:text-pink-600 transition">
             Recherche
           </button>
-        </form> --}}
+        </form>
 
         <div class="gap-4 flex items-center">
           <div class="flex md:hidden">
-            <a href="{{route('client-products')}}" class="flex text-gray-600">
+            <a href="" class="flex text-gray-600">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
                   d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
@@ -48,7 +48,7 @@
           @auth
             <livewire:card-counter>
           @endauth
-          <a href="{{route('profile')}}" class="flex flex-col items-center text-gray-700 hover:text-primary transition">
+          <a href="#" class="flex flex-col items-center text-gray-700 hover:text-primary transition dropdown-toggle"  data-bs-toggle="dropdown" id="profileDropdown" aria-expanded="false">
             <div class="color-orange">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
@@ -58,6 +58,11 @@
             </div>
             <div class="text-xs leading-3 md:flex hidden">Compte</div>
           </a>
+            <ul class="dropdown-menu hidden" aria-labelledby="profileDropdown">
+              <li class="dropdown-item">
+                hello
+              </li>
+            </ul>
         </div>
       </div>
 
@@ -92,8 +97,7 @@
           </li>
           <li class="w-full flex">
             <a href="{{route('client-products')}}"
-              class="ttransition-all min-w-max duration-300 text-base font-medium relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Nos
-              produits</a>
+              class="ttransition-all min-w-max duration-300 text-base font-medium relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Notre Magasin</a>
           </li>
           <li class="w-full flex">
           @auth
