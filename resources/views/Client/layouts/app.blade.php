@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{asset('client/assets/css/app.css')}}">
   
   <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}"> 
 
   <link rel="stylesheet" href="{{asset('client/assets/css/style.css')}}">
  
@@ -21,18 +22,18 @@
 
 @include("Client.navs.navbar")
 @yield("content")
-<<<<<<< HEAD
 
-@include("client.navs.footer")
-=======
+
+
+
 @include("Client.navs.footer")
->>>>>>> c4d00a672fbe5e8298a3d431dc19e9e8849b9533
 
 @livewireScripts
 @notifyJs
 <script  src="{{asset('client/assets/js/app.js')}}"></script>
 <script  src="{{asset('client/assets/js/bootstrap.min.js')}}"></script>
 <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script> 
+
 <script  src="{{asset('client/assets/js/lightbox-plus-jquery.min.js')}}"></script>
 @include('sweetalert::alert')
 
@@ -43,6 +44,26 @@
         });
 
 </script>
+
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 </body>
 
 </html>
