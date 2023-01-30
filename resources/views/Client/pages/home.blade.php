@@ -1,5 +1,10 @@
 
+<<<<<<< HEAD
 @extends("Client.layouts.app")
+=======
+@extends("client.layouts.app")
+@extends('client.layouts.app')
+>>>>>>> c4d00a672fbe5e8298a3d431dc19e9e8849b9533
 
 @section('content')
  
