@@ -48,7 +48,8 @@
           @auth
             <livewire:card-counter>
           @endauth
-          <a href="#" class="flex flex-col items-center text-gray-700 hover:text-primary transition dropdown-toggle"  data-bs-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+          {{-- <div class="dropdown">
+          <button type="button" onclick="myFunction()" class="flex flex-col items-center text-gray-700 hover:text-primary transition dropbtn" >
             <div class="color-orange">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
@@ -57,12 +58,33 @@
               </svg>
             </div>
             <div class="text-xs leading-3 md:flex hidden">Compte</div>
-          </a>
-            <ul class="dropdown-menu hidden" aria-labelledby="profileDropdown">
-              <li class="dropdown-item">
-                hello
-              </li>
-            </ul>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div> --}}
+        <div class="dropdown">
+          <button ><i onclick="myFunction()" class="fa fa-user dropbtn flex flex-col items-center text-gray-700 hover:text-primary transition"></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            @auth
+            <a href="{{route('profile')}}">Profil</a>
+            <a href="{{route('edit-profile')}}">Editer le profile</a>
+            <form action="{{route('logout')}}" method="POST">
+              @csrf
+              <input type="submit" value="se deconnecter" class="rounded min-w-max md:w-max w-full font-bold flex justify-center  btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-8 md:px-6 md:py-6 text-white">
+            </form>
+            @endauth
+            @guest
+            <a href="{{route('login')}}">se connecter</a>
+            <a href="{{route('register')}}">créer un compte</a>
+            @endguest
+
+          </div>
+        </div>
+        
+
         </div>
       </div>
 
@@ -114,7 +136,7 @@
       
 
  
-        <div class="flex items-center py-2 min-h-max md:w-max w-full">
+        <div class="flex items-center py-2  min-h-max md:w-max w-full">
 
           <a href="{{route('contact')}}"
             class="rounded min-w-max md:w-max w-full font-bold flex justify-center btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-4 md:px-6 md:py-3 text-white ml-2">Nous

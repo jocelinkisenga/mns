@@ -43,16 +43,16 @@
                 <h6 class="text-lg font-medium text-gray-700">Categories</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Appareil</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Appareil</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Telephone</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Telephone</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Chaussure</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Chaussure</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Telephone</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Telephone</a>
                   </li>
                 </ul>
               </div>
@@ -60,16 +60,16 @@
                 <h6 class="text-lg font-medium text-gray-700">Produits</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Top produits</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Top produits</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Mieux notes</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Mieux notes</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Plus vendus</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Plus vendus</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Tous les produits</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Tous les produits</a>
                   </li>
                 </ul>
               </div>
@@ -77,16 +77,16 @@
                 <h6 class="text-lg font-medium text-gray-700">Ressources</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">A propos</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">A propos</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Clients</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Clients</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Entreprise</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Entreprise</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">Partenaires</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Partenaires</a>
                   </li>
                 </ul>
               </div>
@@ -94,10 +94,10 @@
                 <h6 class="text-lg font-medium text-gray-700">Contact</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="tel:+243996660436" class="hover:text-pink-400 transition">+243 972 44 49 66</a>
+                    <a href="tel:+243996660436" class="hover:text-pink-400 transition" style="color: gray">+243 972 44 49 66</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition">johnkatembue4@gmail.com</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">johnkatembue4@gmail.com</a>
                   </li>
 
                 </ul>

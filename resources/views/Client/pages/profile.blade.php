@@ -17,7 +17,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('client/assets/css/app.css') }}">
-   
+    <link rel="stylesheet" href="{{asset('client/assets/css/style.css')}}">
 </head>
 
 <body>
@@ -61,7 +61,7 @@
                                     <td>jocelin kisenga</td>
                                     <td><span class="badge badge-success">{{ $item->amount }} $</span></td>
                                     <td>{{ $item->created_at }}</td>
-                                    <td> <a href="{{ route('myOrders', ['id' => $item->id]) }}">voir plus</a></td>
+                                    <td> <a href="{{ route('myOrders', ['id' => $item->id]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -103,6 +103,24 @@
 
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('admin/dist/js/pages/dashboard2.js') }}"></script>
+    <script>
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
 </body>
 
 </html>

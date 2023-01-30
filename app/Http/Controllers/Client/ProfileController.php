@@ -14,4 +14,8 @@ class ProfileController extends Controller
         $mesCommandes = Order::latest()->whereUser_id(Auth::user()->id)->get();
         return view("Client.pages.profile",compact('mesCommandes'));
     }
+
+    public function create(){
+        return view('Client.pages.editProfile');
+    }
 }
