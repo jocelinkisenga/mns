@@ -105,9 +105,7 @@
       <div class="lg:w-4/5 xl:w-3/5 pt-6">
         <div class="space-y-3 text-gray-600">
           <p>
-            Apps on MacBook Air can use machine learning (ML) to automatically retouch photos like a pro,
-            make smart tools such as magic wands and audio filters more accurate at auto‑detection, and so
-            much more. That’s not just brain power — that’s the power of a full stack of ML technologies.
+       {{$product->description}}.
           </p>
         </div>
         <!-- details table -->

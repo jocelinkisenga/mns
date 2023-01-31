@@ -29,7 +29,9 @@
 
     
     @if ($order != null)
-    <div class="invoice p-3 mb-3">
+    <div class="invoice p-3 mb-3 ">
+
+      <div class="html-content" id="myPrintable">
       <!-- title row -->
       <div class="row">
         <div class="col-md-12">
@@ -126,14 +128,14 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-
+    </div>
       <!-- this row will not appear when printing -->
       <div class="row no-print">
         <div class="col-12">
-          <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+          <button id="basic" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
           <button type="button" class=" float-right">
           </button>
-          <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;" >
+          <button  onclick="CreatePDFfromHTML()" class="btn btn-primary float-right" style="margin-right: 5px;" >
             <i class="fas fa-download"></i> Generate PDF
           </button>
         </div>
@@ -164,14 +166,19 @@
 <script src="{{asset('admin/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <!-- ChartJS -->
 <script src="{{asset('admin/plugins/chart.js/Chart.min.js')}}"></script>
-
+<script src="{{asset("Client/assets/js/printThis.js")}}"></script>
 <!-- AdminLTE for demo purposes -->
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('admin/dist/js/pages/dashboard2.js')}}"></script>
 <script>
+
+  //nav bar function
+
   function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -188,6 +195,62 @@
       }
     }
   }
+
+
+
+  //Create PDf from HTML...
+function CreatePDFfromHTML() {
+    var HTML_Width = $(".html-content").width();
+    var HTML_Height = $(".html-content").height();
+    var top_left_margin = 15;
+    var PDF_Width = HTML_Width + (top_left_margin * 2);
+    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+
+    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+    html2canvas($(".html-content")[0]).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/jpeg", 1.0);
+        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+        for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+        }
+        pdf.save("mafacture.pdf");
+        $(".html-content").hide();
+    });
+}
+
+// print facture 
+
+$('#basic').on("click", function () {
+$("#myPrintable").printThis({
+    debug: false,               // show the iframe for debugging
+    importCSS: false,            // import parent page css
+    importStyle: true,         // import style tags
+    printContainer: true,       // print outer container/$.selector
+    loadCSS: "admin/dist/css/adminlte.min.css",                // path to additional css file - use an array [] for multiple
+    pageTitle: "ma facture",              // add title to print page
+    removeInline: false,        // remove inline styles from print elements
+    removeInlineSelector: "*",  // custom selectors to filter inline styles. removeInline must be true
+    printDelay: 333,            // variable print delay
+    header: null,               // prefix to html
+    footer: null,               // postfix to html
+    base: false,                // preserve the BASE tag or accept a string for the URL
+    formValues: true,           // preserve input/form values
+    canvas: false,              // copy canvas content
+    doctypeString: '...',       // enter a different doctype for older markup
+    removeScripts: false,       // remove script tags from print content
+    copyTagClasses: false,      // copy classes from the html & body tag
+    beforePrintEvent: null,     // function for printEvent in iframe
+    beforePrint: null,          // function called before iframe is filled
+    afterPrint: null            // function called before iframe is removed
+});
+});
+
   </script>
+  
 </body>
 </html>
