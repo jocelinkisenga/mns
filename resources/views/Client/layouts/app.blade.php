@@ -20,13 +20,13 @@
 </head>
 <body class="w-full overflow-hidden overflow-y-auto">
 
-@include("Client.navs.navbar")
+@include("client.navs.navbar")
 @yield("content")
 
 
 
 
-@include("Client.navs.footer")
+@include("client.navs.footer")
 
 @livewireScripts
 @notifyJs
