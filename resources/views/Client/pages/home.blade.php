@@ -46,7 +46,7 @@
                 </div>
                 <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
                   @foreach ($categories as $item )
-                  <a href=""
+                  <a href="{{route('client.categorie',['id'=>$item->id])}}"
                   class="col-span-1 bg-white shadow-gray-100 border border-dashed rounded-md shadow transition-all hover:shadow-lg p-4">
                   <div class="w-full flex flex-col gap-2">
                       <div class="flex justify-center">

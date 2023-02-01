@@ -8,14 +8,15 @@
       <div class="w-full grid md:grid-cols-3 lg:grid-cols-5 items-start gap-6 pb-16 pt-4">
         <!-- checkout form -->
         <div class="md:col-span-2 lg:col-span-3 border bg-white shadow-sm border-gray-200 px-4 py-4 rounded">
-          <form action="{{route('store-order')}}" method="POST">
+          <form action="{{route('update.profile')}}" method="POST">
+            @method('put')
             @csrf
+      
             <h3 class="text-lg font-medium capitalize mb-4">
               modifier votre profile
             </h3>
-
+              <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
             <div class="space-y-4">
-
               <div>
                 <label class="text-gray-600 mb-2 block">
                   noms <span class="text-red-600">*   @error("country") {{$message}}  @enderror </span>
@@ -32,7 +33,7 @@
                 <label class="text-gray-600 mb-2 block">
                   mot de passe <span class="text-red-600">*   @error("phone") {{$message}}  @enderror </span>
                 </label>
-                <input type="text" name="password" class="input-box">
+                <input type="password" name="password" class="input-box">
               </div>
 
             </div>

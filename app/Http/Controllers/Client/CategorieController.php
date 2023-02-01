@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
-    public function show(string $name, int $id){
+    public function show(int $id){
         $categories = Category::all();
         $products = Product::whereCategory_id($id)->get();
 
