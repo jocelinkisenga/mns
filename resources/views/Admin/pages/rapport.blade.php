@@ -1,7 +1,7 @@
 @extends('Admin.layouts.app')
 
 @section('content')
-    {{-- <div class="content-wrapper">
+    <div class="content-wrapper">
         <section class="content">
             <div class="container-fluid">
 
@@ -11,12 +11,12 @@
                        
 
                         </div>
-                        {{-- <div class="card card-primary card-outline">
+                         <div class="card card-primary card-outline">
                             <div class="card-header">
 
                             </div>
                             <div class="card-body">
-                                <button type="button" class="btn " style="background-color: #f248a0; color:white" data-toggle="modal" data-target="#modal-lg">
+                                <button type="button" class="btn btn-warning text-white"  data-toggle="modal" data-target="#modal-lg">
                                     generer un rapport
                                 </button>
 
@@ -24,42 +24,65 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Ajouter une catégorie</h4>
+                                                <h4 class="modal-title">filtrer par date</h4>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="col-md-12">
-                                                    <!-- general form elements -->
-                                                    <div class="card card-primary">
+                                                <div class="card">
+                                                    <div class="card-body">
 
-                                                        <!-- /.card-header -->
-                                                        <!-- form start -->
-                                                      
-                                                            <div class="card-body">
-                                                              <form action="" method="POST" enctype="multipart/form-data">
-                                                                @csrf
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Nom de la catégorie</label>
-                                                                    <input type="text" name="name" class="form-control"
-                                                                        id="exampleInputEmail1" placeholder="">
-                                                                </div>
+                                                        <!-- /Filter -->
+                                                        <div class="card" id="">
+                                                            <div class="pb-0 card-body">
+                                                                <form action="{{ route('search') }}" method="POST">
+                                                                    @csrf
+                                                                    <div class="row">
+                                    
+                                                                        <div class="mr-3 col-lg-4 col-sm-6 col-12">
+                                    
+                                                                            <div class="form-group">
+                                                                                <div class="input-groupicon">
+                                                                                 <span class=" color-orange font-bold mr-2">Du </span>  <input type="date" name="date_from" >
+                                                                                    {{-- <div class="addonset">
+                                                                                    <img src="assets/img/icons/calendars.svg" alt="img">
+                                                                                </div> --}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div> 
+                                                                        <div class="mr-3 col-lg-4 col-sm-6 col-12">
+                                                                            <div class="form-group">
+                                                                                <div class="input-groupicon">
+                                                                               <span   class=" color-orange font-bold mr-2">Au</span>   <input type="date" name="date_to">
+                                                                                    {{-- <div class="addonset">
+                                                                                    <img src="assets/img/icons/calendars.svg" alt="img">
+                                                                                </div> --}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                                                                            <div class="form-group">
+                                                                                <button class="btn btn-filters ms-auto" type="submit"
+                                                                                   ><i class="fa fa-search color-orange" aria-hidden="true"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                    
+                                                                    </div>
+                                                                </form>
                                                             </div>
-                                                            <!-- /.card-body -->
-
-
-                                                      
+                                                        </div>
                                                     </div>
-                                                    <!-- /.card -->
-
+                                                    <!-- /Filter -->
+                                    
+                                                    <!-- /Filter -->
+                                    
+                                    
                                                 </div>
                                             </div>
                                             <div class="modal-footer justify-content-between">
-                                                <button type="button" class="btn btn-danger"
-                                                    data-dismiss="modal">fermer</button>
-                                                <button type="submit" class="btn btn-primary">enregistrer</button>
+                                               
                                             </div>
                                           </form>
                                         </div>
@@ -105,17 +128,25 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>nom</th>
-                                            <th>Action</th>
+                                            <th>Entrée</th>
+                                            <th>Sorties</th>
+                                            <th>Solde</th>
+                                            <th>Total</th>
                                     </thead>
                                     <tbody>
                                       
-                                       <tr>
-                                            <td>ggg</td>
-                                            <td>ffff</td>
-                                            <td>voir plus</td>
+                                        @foreach ($rapport['results'] as $key => $item)
+                                        <tr>
+                                            <td>{{$key+1}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->entries}}</td>
+                                            <td>{{$item->outputs}}</td>
+                                            <td>{{$item->old_quantity}}</td>
+                                            <td>{{$item->outputs * $item->vente}}</td>
                                        </tr> 
                                    
                                        
+                                        @endforeach
 
 
                                     </tbody>
@@ -129,5 +160,5 @@
                 </div>
 
             </div>
-    </div> --}}
+    </div>
 @endsection
