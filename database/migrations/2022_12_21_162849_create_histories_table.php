@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id');
             $table->bigInteger('quantity');
+            $table->bigInteger("old_quantity");
             $table->timestamps();
         });
     }

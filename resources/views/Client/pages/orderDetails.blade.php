@@ -160,6 +160,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('admin/dist/js/adminlte.js')}}"></script>
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+<script  src="{{asset('client/assets/js/app.js')}}"></script>
 <!-- PAGE admin/plugins -->
 <!-- jQuery Mapael -->
 <script src="{{asset('admin/plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
