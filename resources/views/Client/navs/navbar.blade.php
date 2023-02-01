@@ -14,7 +14,7 @@
             </button>
           </div>
           <a href="/" class="flex">
-            <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" alt="M&S" class="w-auto h-8 md:h-10">
+            <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="M&S" class="w-auto h-8 md:h-10">
           </a>
         </div>
 

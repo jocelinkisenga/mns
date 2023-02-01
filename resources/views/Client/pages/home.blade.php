@@ -7,7 +7,7 @@
         <div class="bg-cover bg-no-repeat bg-center py-28 relative">
             <div class="absolute z-0 inset-0">
                 <div class="absolute inset-0 z-0 bg-gradient-to-br to-gray-300"></div>
-                <img src="{{ asset('client/assets/images/young-wife.jpg') }}" alt="Jeune femme au foyer porte des gants"
+                <img src="{{ asset('Client/assets/images/young-wife.jpg') }}" alt="Jeune femme au foyer porte des gants"
                     class="w-full h-full object-cover">
             </div>
             <div class="appContainer">
@@ -51,7 +51,7 @@
                   <div class="w-full flex flex-col gap-2">
                       <div class="flex justify-center">
                           <div class="flex bg-white shadow-lg p-3 rounded-full">
-                              <img src="{{ asset('client/assets/images/bar_icon_127276.png') }}" alt="{{$item->name}}"
+                              <img src="{{ asset('Client/assets/images/bar_icon_127276.png') }}" alt="{{$item->name}}"
                                   width="30" class="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12">
                           </div>
                       </div>
