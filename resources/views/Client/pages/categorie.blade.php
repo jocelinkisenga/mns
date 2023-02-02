@@ -11,7 +11,7 @@
                 </div>
                 <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
                   @foreach ($categories as $item )
-                  <a href="{{route('Client.categorie',['id'=>$item->id])}}"
+                  <a href="{{route('client.categorie',['id'=>$item->id])}}"
                   class="col-span-1 bg-white shadow-gray-100 border border-dashed rounded-md shadow transition-all hover:shadow-lg p-4">
                   <div class="w-full flex flex-col gap-2">
                       <div class="flex justify-center">
@@ -50,7 +50,7 @@
                   <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">
                       <div class="w-full">
 
-                          <a href="{{route('Client.productDetails',['id'=>$item->id])}}">
+                          <a href="{{route('client.productDetails',['id'=>$item->id])}}">
                               <h4
                                   class="uppercase font-medium text-xl text-gray-700 group-hover:text-pink-600 transition">
                                   {{$item->name}}...

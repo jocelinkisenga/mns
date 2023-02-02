@@ -13,7 +13,7 @@
           <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{route('Admin.dashboard')}}" class="d-block text-bold color-orange" style=" font-size:30px"> Dashboard</a>
+          <a href="{{route('admin.dashboard')}}" class="d-block text-bold color-orange" style=" font-size:30px"> Dashboard</a>
         </div>
       </div>
 

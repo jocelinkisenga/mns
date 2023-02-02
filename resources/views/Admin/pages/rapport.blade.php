@@ -4,12 +4,9 @@
     <div class="content-wrapper">
         <section class="content">
             <div class="container-fluid">
-
                 <div class="row" style="margin-top: 7%;">
                     <div class="col-md-12">
                         <div class="row">
-                       
-
                         </div>
                          <div class="card card-primary card-outline">
                             <div class="card-header">
@@ -17,14 +14,14 @@
                             </div>
                             <div class="card-body">
                                 <button type="button" class="btn btn-warning text-white"  data-toggle="modal" data-target="#modal-lg">
-                                    generer un rapport
+                                    Generer un rapport
                                 </button>
 
                                 <div class="modal fade" id="modal-lg">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">filtrer par date</h4>
+                                                <h4 class="modal-title">Filtrer par date</h4>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>

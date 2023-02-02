@@ -23,7 +23,7 @@
               </p>
             </div>
             <div class="flex">
-              <a href="{{route('Client-products')}}" class="btn-background btn-border border  font-bold
+              <a href="{{route('client-products')}}" class="btn-background btn-border border  font-bold
                  text-white px-8 py-3 rounded-md z-50
                hover:bg-opacity-80 transition">
                 Acheter maintenant
