@@ -6,7 +6,7 @@
       <div
         class="w-full rounded-md py-4 md:py-8 p-4 md:p-6 lg:p-8 md:pt-0 pt-20 flex items-end md:items-center h-full relative">
         <div class="absolute inset-0 z-0">
-          <img src="{{asset('client/assets/images/disinfecting-in-home.jpg')}}" alt="banner product" width="500" height="auto"
+          <img src="{{asset('Client/assets/images/disinfecting-in-home.jpg')}}" alt="banner product" width="500" height="auto"
             class="w-full h-full z-0 rounded-3xl object-cover">
         </div>
 
@@ -23,7 +23,7 @@
               </p>
             </div>
             <div class="flex">
-              <a href="{{route('client-products')}}" class="btn-background btn-border border  font-bold
+              <a href="{{route('Client-products')}}" class="btn-background btn-border border  font-bold
                  text-white px-8 py-3 rounded-md z-50
                hover:bg-opacity-80 transition">
                 Acheter maintenant
@@ -42,7 +42,7 @@
     <div class="appContainer flex flex-col">
       <div class="grid items-center md:grid-cols-2 gap-6 lg:gap-10">
         <div class="col-span-1 flex h-full">
-          <img src="{{asset('client/assets/images/young-wife.jpg')}}" width="300" alt="image Serpi"
+          <img src="{{asset('Client/assets/images/young-wife.jpg')}}" width="300" alt="image Serpi"
             class="w-full h-80 object-cover rounded-md md:h-full">
         </div>
         <div class="flex flex-col gap-6 md:gap-8 md:py-12">

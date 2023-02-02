@@ -1,7 +1,7 @@
 <aside class="main-sidebar  elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light"></span>
     </a>
 
@@ -10,10 +10,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{route('admin.dashboard')}}" class="d-block text-bold color-orange" style=" font-size:30px"> Dashboard</a>
+          <a href="{{route('Admin.dashboard')}}" class="d-block text-bold color-orange" style=" font-size:30px"> Dashboard</a>
         </div>
       </div>
 
