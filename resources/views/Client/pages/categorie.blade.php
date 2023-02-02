@@ -16,7 +16,7 @@
                   <div class="w-full flex flex-col gap-2">
                       <div class="flex justify-center">
                           <div class="flex bg-white shadow-lg p-3 rounded-full">
-                              <img src="{{ asset('client/assets/images/bar_icon_127276.png') }}" alt="{{$item->name}}"
+                              <img src="{{ asset('Client/assets/images/bar_icon_127276.png') }}" alt="{{$item->name}}"
                                   width="30" class="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12">
                           </div>
                       </div>
