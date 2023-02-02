@@ -13,9 +13,21 @@
                     Les meilleurs produits pour vos menages
                 </h1>
                 <p class="text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, est libero! Ratione accusamus
-                    repellendus placeat tempora blanditiis tenetur dignissimos nostrum, assumenda expedita obcaecati,
-                    dicta sint accusantium aspernatur reprehenderit laboriosam. Dolore?
+                rouvez le meilleur des home gadgets à petits !
+
+Nous allions qualité, efficacité et accessibilité.
+Pour nos mamans, nos boss ladies et tous les membres de la famille, les tâches domestiques ne sont plus une corvée.
+
+Find the best home gadgets at a low price. 
+
+We combine quality, efficiency and accessibility.
+For our moms, boss ladies and all family members, household chores are no longer a chore.
+
+ 
+
+
+
+
                 </p>
                 <div class="flex">
                     <a href="shop.html"
