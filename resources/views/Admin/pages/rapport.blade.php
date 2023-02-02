@@ -131,20 +131,22 @@
                                             <th>Total</th>
                                     </thead>
                                     <tbody>
-                                      
-                                        @foreach ($rapport['results'] as $key => $item)
-                                        <tr>
-                                            <td>{{$key+1}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->entries}}</td>
-                                            <td>{{$item->outputs}}</td>
-                                            <td>{{$item->old_quantity}}</td>
-                                            <td>{{$item->outputs * $item->vente}}</td>
-                                       </tr> 
-                                   
-                                       
-                                        @endforeach
+                                      @isset($rapport)
+                                      @foreach ($rapport['results'] as $key => $item)
+                                      <tr>
+                                          <td>{{$key+1}}</td>
+                                          <td>{{$item->name}}</td>
+                                          <td>{{$item->entries}}</td>
+                                          <td>{{$item->outputs}}</td>
+                                          <td>{{$item->old_quantity}}</td>
+                                          <td>{{$item->outputs * $item->vente}}</td>
+                                     </tr> 
+                                 
+                                     
+                                      @endforeach
 
+                                      @endisset
+                                  
 
                                     </tbody>
                                 </table>
