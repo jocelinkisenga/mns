@@ -27,5 +27,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/client/{id}', [ClientController::class, 'show'])->name('admin.client.details');
     Route::get('/commandesDetails/{id}',[CommandeController::class,'update'])->name('admin-commandes-update');
     Route::post('rapportSearch', [RapportController::class, 'search'])->name('search');
+    route::get('/deleteProduct/{id}', [ProductController::class, 'delete'])->name('admin.delete.product');
     
 });

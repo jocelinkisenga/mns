@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Domains\Stock\Interfaces\StockProductInterface;
 use Domains\Stock\Product\ProductStockController;
 use Illuminate\Http\Request;
+use Stripe\Product;
 
 class ProductController extends Controller
 {
@@ -67,6 +68,11 @@ class ProductController extends Controller
 
     public function update_quantity(Request $request){
         $this->domainController->quantity($request);
+        return redirect()->back();
+    }
+
+    public function delete(int $id){
+        \App\Models\Product::destroy($id);
         return redirect()->back();
     }
 }
