@@ -25,3 +25,10 @@ Connection par défaut de l'administrateur
 - envoi de la facture à l'email fournit
 
 Nb: A chaque commande la quantité du stock est synchronisé.
+
+## Simulation stripe
+
+code 4242424242424242
+YY : 23
+MM : 04
+CVC : 453
