@@ -168,7 +168,7 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     // $this->makeTransaction($order->id, 'approved');
                     // $this->resetCard();
                 } else {
-                    session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
+                    session()->flash('stripe_err', 'le paiement ne s\'est pas effectué!');
                 
                 }
             } catch (\Throwable $e) {

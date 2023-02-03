@@ -27,4 +27,10 @@ class CategoryController extends Controller
 
             return redirect()->back();
     }
+
+    public function delete(int $id){
+        $categorie = Category::find($id);
+        $categorie->update(['visible' => false]);
+        return redirect()->back();
+    }
 }

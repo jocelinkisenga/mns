@@ -21,7 +21,7 @@ class ProductController extends Controller
         $this->domainController = $stockProductInterface;
     }
     public function index(){
-        $categories = Category::all();
+        $categories = Category::whereVisible(true);
         $products = $this->domainController->products();
         return view('Admin.pages.product.products', compact('categories','products'));
     }
@@ -72,7 +72,8 @@ class ProductController extends Controller
     }
 
     public function delete(int $id){
-        \App\Models\Product::destroy($id);
+        $product = \App\Models\Product::find($id);
+        $product->update(['visible' => false]);
         return redirect()->back();
     }
 }

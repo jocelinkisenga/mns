@@ -54,7 +54,7 @@ class CheckoutController extends Controller
 
             $order = $this->checkout_repo->order($request);
 
-            if(!$order){
+            if(empty($order)){
             return redirect()->back();
             }
             else {

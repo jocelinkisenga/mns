@@ -55,8 +55,8 @@
               </div>
             </div>
             
-            @if (session('stripe_err') and ConnectException::class)
-              <span class="text-red-600">veuillez vous assurer que vous avez une connexion</span>
+            @if (session('stripe_err'))
+              <span class="text-red-600">{{session('stripe_err')}}</span>
             @endif
              <div class="space-y-4 mt-4 bg-gray-600" style="margin-top: 10%; ">
               <div class="ml-2">

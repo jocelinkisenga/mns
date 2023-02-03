@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('amount');
             $table->text('products');
             $table->dateTime('paid_at')->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->cascadeOnDelete();
             $table->string('nickname')->nullable();
             $table->string('suname')->nullable();
             $table->string('country')->nullable();
@@ -27,7 +27,9 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->boolean('status')->default(false);
+            $table->boolean('visible')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

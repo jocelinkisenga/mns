@@ -101,14 +101,16 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>nom</th>
-                                            <th>Action</th>
+                                            <th>éditer</th>
+                                            <th>supprimer</th>
                                     </thead>
                                     <tbody>
                                        @foreach($categories as $key => $item)
                                        <tr>
                                             <td>{{$key+1}}</td>
                                             <td>{{$item->name}}</td>
-                                            <td>voir plus</td>
+                                            <td><a href=""><i class="fa fa-edit text-success" aria-hidden="true"></i></a></td>
+                                            <td><a href="{{route('admin.delete.categorie',['id'=>$item->id])}}"><i class="fa fa-window-close text-danger" aria-hidden="true"></i></a></td>
                                        </tr> 
                                    
                                        @endforeach

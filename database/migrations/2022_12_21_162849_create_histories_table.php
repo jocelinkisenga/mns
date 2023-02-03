@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id');
+            $table->foreignId('product_id')->cascadeOnDelete();
             $table->bigInteger('quantity');
             $table->bigInteger("old_quantity")->nullable();
             $table->timestamps();

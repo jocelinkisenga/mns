@@ -30,4 +30,9 @@ class CommandeController extends Controller
         $this->commande_repo->confirm($id);
          return redirect()->back();
     }
+
+    public function delete($id){
+        $order = Order::find($id);
+        $order->update(['visible' => false]);
+    }
 }
