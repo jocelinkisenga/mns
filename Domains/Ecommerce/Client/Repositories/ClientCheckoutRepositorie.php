@@ -95,30 +95,33 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     // $this->latest_order($order);
                // }
 
-            $this->stripe_paiement($order->payment_id, $this->data);
+         $stripe =   $this->stripe_paiement($order->payment_id, $this->data);
+
+        if($stripe == true){
+
+            $order->save();
+
+
+
+
+            foreach (CartFacade::getContent() as $product) {
+                $order_item = new OrderItem();
+
+                $order_item->product_id = $product->id;
+                $order_item->order_id = $order->id;
+                $order_item->price = $product->price;
+                $order_item->quantity = $product->quantity;
+
+                $order_item->save();
+            }
+
+           $this->latestOrder = $order;
+         
+
 
         
-                $order->save();
+        }
 
-
-
-
-                foreach (CartFacade::getContent() as $product) {
-                    $order_item = new OrderItem();
-
-                    $order_item->product_id = $product->id;
-                    $order_item->order_id = $order->id;
-                    $order_item->price = $product->price;
-                    $order_item->quantity = $product->quantity;
-
-                    $order_item->save();
-                }
-
-               $this->latestOrder = $order;
-             
-
-
-            
 
          });
          return $this->latestOrder;
@@ -166,6 +169,8 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                 ]);
                 if ($charge['status'] == 'succeeded') {
                 session()->flash("message","paiment fait avec succès");
+
+                return true;
                     // $this->makeTransaction($order->id, 'approved');
                     // $this->resetCard();
                 } else {
