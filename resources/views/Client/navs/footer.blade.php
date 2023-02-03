@@ -86,7 +86,7 @@
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Entreprise</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Partenaires</a>
+                    <a href="http://ms-homegadget.com:2096/" class="hover:text-pink-400 transition" style="color: gray">Web Mail</a>
                   </li>
                 </ul>
               </div>
