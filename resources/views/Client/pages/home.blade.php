@@ -19,8 +19,7 @@
                                     rapidement</span>
                             </h1>
                             <p class="text-base text-gray-600 leading-6 z-50">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
-                                assumenda aliquid inventore nihil laboriosam odio
+                                
                             </p>
                         </div>
                         <div class="flex pt-8 z-30">

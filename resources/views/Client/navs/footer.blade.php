@@ -3,7 +3,7 @@
       <div class="appContainer text-gray-600">
         <div>
           <div class="mb-6 gap-6 items-center justify-between py-6 sm:flex md:mb-16 md:py-0 md:space-y-6">
-            <img src="{{asset('client/assets/images/MS Logo JPG.jpg')}}" alt="logo M&S" class="w-32" width="100" height="42">
+            <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="logo M&S" class="w-32" width="100" height="42">
             <div class="flex flex-wrap flex-col-reverse gap-6 mt-6 sm:flex-row sm:mt-0 sm:items-center">
               <div class="flex gap-6">
                 <a href="#" target="blank" aria-label="github" class="hover:text-pink-400">
@@ -86,7 +86,7 @@
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Entreprise</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Partenaires</a>
+                    <a href="http://ms-homegadget.com:2096/" class="hover:text-pink-400 transition" style="color: gray">Web Mail</a>
                   </li>
                 </ul>
               </div>
@@ -94,10 +94,10 @@
                 <h6 class="text-lg font-medium text-gray-700">Contact</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="tel:+243996660436" class="hover:text-pink-400 transition" style="color: gray">+243 972 44 49 66</a>
+                    <a href="tel:+243996660436" class="hover:text-pink-400 transition" style="color: gray">+243  0993066556</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">johnkatembue4@gmail.com</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">info@ms-homegadget.com</a>
                   </li>
 
                 </ul>

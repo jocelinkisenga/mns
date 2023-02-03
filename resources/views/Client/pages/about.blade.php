@@ -17,9 +17,15 @@
               <h1 class="text-2xl sm:text-3xl md:text-4xl z-20 lg:text-5xl font-semibold text-gray-700">Trouvez les
                 instruments pour vos menages rapidement</h1>
               <p class="flex text-sm md:text-base z-10 text-gray-600 line-clamp-3">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla accusantium dolor ratione hic cum ipsam
-                ullam at! Praesentium excepturi repellat quam non animi sunt magni, consequuntur dolorem quos illum
-                modi?
+              Trouvez le meilleur des home gadgets à petits !
+
+          Nous allions qualité, efficacité et accessibilité.
+          Pour nos mamans, nos boss ladies et tous les membres de la famille, les tâches domestiques ne sont plus une corvée.
+
+          Find the best home gadgets at a low price. 
+
+          We combine quality, efficiency and accessibility.
+          For our moms, boss ladies and all family members, household chores are no longer a chore.
               </p>
             </div>
             <div class="flex">
@@ -50,9 +56,15 @@
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700">A propos de
               nous</h2>
             <p class="text-sm md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur in nesciunt quis sunt
-              fuga dolorum? Maiores non animi impedit dignissimos ullam? Reprehenderit sint vel modi.
-              Alias sapiente veritatis cum at?
+            "Bienvenue chez M AND S  Gadjet! Nous sommes le leader sur le marché de l'équipement de maintenance pour la maison. Nous offrons une large gamme de produits de haute qualité pour vous aider à entretenir et à améliorer votre maison.
+
+          Que vous soyez un bricoleur amateur ou un professionnel expérimenté, nous avons ce qu'il vous faut. Nos produits incluent des outils électriques, des équipements de plomberie, des équipements de jardinage et bien plus encore. Tous nos produits sont conçus pour durer et sont fabriqués par les marques les plus fiables sur le marché
+
+          <p>Chez Home Maintenance Equipment, nous savons que l'achat d'équipements de maintenance peut parfois être déroutant. C'est pourquoi nos experts en service à la clientèle sont là pour vous aider à trouver les produits qui répondent à vos besoins spécifiques. Nous nous engageons à vous fournir un service à la clientèle exceptionnel et à vous assister à tout moment.
+
+           sommes fiers de proposer des prix compétitifs sur tous nos produits, et nous offrons également des offres spéciales régulières pour que vous puissiez économiser encore plus. Nous offrons également une garantie de satisfaction à 100% pour vous donner la tranquillité d'esprit que vous méritez.</p>
+
+         
             </p>
             <div class="flex flex-col gap-6">
               <div class="flex max-w-sm w-full gap-6">
@@ -87,7 +99,9 @@
                   <h4 class="font-bold text-gray-500 text-xl mb-1">
                     Adresse mail
                   </h4>
-                  <p class="text-base text-gray-500">-</p>
+                  <p class="text-base text-gray-500">
+                    info@ms-homegadget.com
+                  </p>
                 </div>
               </div>
             </div>
