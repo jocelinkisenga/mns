@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->double('price');
             $table->text('description')->nullable();
+            $table->boolean('visible')->default(true);
             $table->bigInteger('old_quantity')->nullable();
             $table->boolean('visible')->default(true);
             $table->timestamps();
