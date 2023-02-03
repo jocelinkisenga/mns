@@ -34,7 +34,7 @@
                         @if ($order != null)
                             <div class="invoice p-3 mb-3 ">
 
-                                <div class="html-content" id="myPrintable">
+                                <div class="html-content">
                                     <!-- title row -->
                                     <div class="row">
                                         <div class="col-md-12">
@@ -137,7 +137,7 @@
                                 <!-- this row will not appear when printing -->
                                 <div class="row no-print">
                                     <div class="col-12">
-                                        <button id="basic" class="btn btn-default"><i class="fas fa-print"></i>
+                                        <button  onclick="myPrintFunction()" class="btn btn-default"><i class="fas fa-print"></i>
                                             Print</button>
                                         <button type="button" class=" float-right">
                                         </button>
@@ -161,30 +161,27 @@
 
     @include('Client.navs.footer')
     <!-- jQuery -->
-    <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
+ <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js"></script> --}}
     <!-- Bootstrap -->
-    <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+ 
     <!-- overlayScrollbars -->
-    <script src="{{ asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{ asset('admin/dist/js/adminlte.js') }}"></script>
-    <script src="{{ asset('admin/dist/js/demo.js') }}"></script>
-    <script src="{{ asset('client/assets/js/app.js') }}"></script>
+   
     <!-- PAGE admin/plugins -->
     <!-- jQuery Mapael -->
-    <script src="{{ asset('admin/plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>
-    <script src="{{ asset('admin/plugins/raphael/raphael.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
-    <script src="{{ asset('admin/plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
+    <script src="{{ asset('Client/assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('Client/assets/js/printThis.js') }}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <!-- ChartJS -->
-    <script src="{{ asset('admin/plugins/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('Client/assets/js/printThis.js') }}"></script>
+   
+  
+  
     <!-- AdminLTE for demo purposes -->
 
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('admin/dist/js/pages/dashboard2.js') }}"></script>
+    
     <script>
         //nav bar function
 
@@ -235,33 +232,64 @@
         }
 
         // print facture 
-
-        $('#basic').on("click", function() {
-            $("#myPrintable").printThis({
-                debug: false, // show the iframe for debugging
-                importCSS: false, // import parent page css
-                importStyle: true, // import style tags
-                printContainer: true, // print outer container/$.selector
-                loadCSS: "admin/dist/css/adminlte.min.css", // path to additional css file - use an array [] for multiple
+        function myPrintFunction(){
+            var printable = document.getElementById('.html-content');
+            $('.html-content').printThis({
+                // debug: false, // show the iframe for debugging
+                // importCSS: false, // import parent page css
+                // importStyle: true, // import style tags
+                // printContainer: true, // print outer container/$.selector
+                // loadCSS: "admin/dist/css/adminlte.min.css", // path to additional css file - use an array [] for multiple
                 pageTitle: "ma facture", // add title to print page
-                removeInline: false, // remove inline styles from print elements
-                removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
-                printDelay: 333, // variable print delay
-                header: null, // prefix to html
-                footer: null, // postfix to html
-                base: false, // preserve the BASE tag or accept a string for the URL
-                formValues: true, // preserve input/form values
-                canvas: false, // copy canvas content
-                doctypeString: '...', // enter a different doctype for older markup
-                removeScripts: false, // remove script tags from print content
-                copyTagClasses: false, // copy classes from the html & body tag
-                beforePrintEvent: null, // function for printEvent in iframe
-                beforePrint: null, // function called before iframe is filled
-                afterPrint: null // function called before iframe is removed
+                // removeInline: false, // remove inline styles from print elements
+                // removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
+                // printDelay: 333, // variable print delay
+                // header: null, // prefix to html
+                // footer: null, // postfix to html
+                // base: false, // preserve the BASE tag or accept a string for the URL
+                // formValues: true, // preserve input/form values
+                // canvas: false, // copy canvas content
+                // doctypeString: '...', // enter a different doctype for older markup
+                // removeScripts: false, // remove script tags from print content
+                // copyTagClasses: false, // copy classes from the html & body tag
+                // beforePrintEvent: null, // function for printEvent in iframe
+                // beforePrint: null, // function called before iframe is filled
+                // afterPrint: null // function called before iframe is removed
             });
-        });
-    </script>
 
+            //      $("#myPrintable").printThis({
+            //     debug: false, // show the iframe for debugging
+            //     importCSS: false, // import parent page css
+            //     importStyle: true, // import style tags
+            //     printContainer: true, // print outer container/$.selector
+            //     loadCSS: "admin/dist/css/adminlte.min.css", // path to additional css file - use an array [] for multiple
+            //     pageTitle: "ma facture", // add title to print page
+            //     removeInline: false, // remove inline styles from print elements
+            //     removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
+            //     printDelay: 333, // variable print delay
+            //     header: null, // prefix to html
+            //     footer: null, // postfix to html
+            //     base: false, // preserve the BASE tag or accept a string for the URL
+            //     formValues: true, // preserve input/form values
+            //     canvas: false, // copy canvas content
+            //     doctypeString: '...', // enter a different doctype for older markup
+            //     removeScripts: false, // remove script tags from print content
+            //     copyTagClasses: false, // copy classes from the html & body tag
+            //     beforePrintEvent: null, // function for printEvent in iframe
+            //     beforePrint: null, // function called before iframe is filled
+            //     afterPrint: null // function called before iframe is removed
+            // });
+        }
+
+    </script>
+<script>
+
+   
+            // $('#basic').on("click", function() {
+            //     console.log('hello')
+
+        // });
+</script>
 </body>
 
 </html>
