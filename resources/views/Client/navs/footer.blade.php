@@ -94,10 +94,10 @@
                 <h6 class="text-lg font-medium text-gray-700">Contact</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="tel:+243996660436" class="hover:text-pink-400 transition" style="color: gray">+243 972 44 49 66</a>
+                    <a href="tel:+243996660436" class="hover:text-pink-400 transition" style="color: gray">+243  0993066556</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">johnkatembue4@gmail.com</a>
+                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">info@ms-homegadget.com</a>
                   </li>
 
                 </ul>
