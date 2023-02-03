@@ -16,7 +16,7 @@ class ClientProductRepositorie implements ClientProductInterface {
        */
 
     public function get_all(){
-        return Product::latest()->get();
+        return Product::latest()->whereVisible(true)->get();
     }
 
     public function get_one(int $id){

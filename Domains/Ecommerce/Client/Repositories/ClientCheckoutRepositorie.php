@@ -95,33 +95,36 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     // $this->latest_order($order);
                // }
 
-             $this->saved =  $this->stripe_paiement($order->payment_id, $this->data);
+         $stripe =   $this->stripe_paiement($order->payment_id, $this->data);
 
-             if($this->saved){
-                $order->save();
+        if($stripe == true){
 
-
-
-
-                foreach (CartFacade::getContent() as $product) {
-                    $order_item = new OrderItem();
-
-                    $order_item->product_id = $product->id;
-                    $order_item->order_id = $order->id;
-                    $order_item->price = $product->price;
-                    $order_item->quantity = $product->quantity;
-
-                    $order_item->save();
-                }
-
-               $this->latestOrder = $order;
-             }
+            $order->save();
 
 
-            
 
-        });
-        return $this->latestOrder;
+
+            foreach (CartFacade::getContent() as $product) {
+                $order_item = new OrderItem();
+
+                $order_item->product_id = $product->id;
+                $order_item->order_id = $order->id;
+                $order_item->price = $product->price;
+                $order_item->quantity = $product->quantity;
+
+                $order_item->save();
+            }
+
+           $this->latestOrder = $order;
+         
+
+
+        
+        }
+
+
+         });
+         return $this->latestOrder;
 
     }
 
@@ -138,6 +141,7 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                         'cvc' => $data->cvc,
                     ]
                 ]);
+            
                 if (!isset($token)) {
                     session()->flash('stripe_err', 'Veuillez vous vous assurer que vous disposez d\une bonne carte!');
             
@@ -165,10 +169,12 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                 ]);
                 if ($charge['status'] == 'succeeded') {
                 session()->flash("message","paiment fait avec succès");
+
+                return true;
                     // $this->makeTransaction($order->id, 'approved');
                     // $this->resetCard();
                 } else {
-                    session()->flash('stripe_err', 'The Stripe token was not generated correctly!');
+                    session()->flash('stripe_err', 'le paiement ne s\'est pas effectué!');
                 
                 }
             } catch (\Throwable $e) {

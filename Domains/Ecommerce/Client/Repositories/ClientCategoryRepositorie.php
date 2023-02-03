@@ -16,7 +16,7 @@ class ClientCategoryRepositorie implements ClientCategorieInterface {
        */
 
     public function get_all(){
-        return Category::latest()->get();
+        return Category::latest()->whereVisible(true)->get();
     }
 
     /**

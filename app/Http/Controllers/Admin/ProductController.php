@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Domains\Stock\Interfaces\StockProductInterface;
 use Domains\Stock\Product\ProductStockController;
 use Illuminate\Http\Request;
+use Stripe\Product;
 
 class ProductController extends Controller
 {
@@ -20,7 +21,7 @@ class ProductController extends Controller
         $this->domainController = $stockProductInterface;
     }
     public function index(){
-        $categories = Category::all();
+        $categories = Category::whereVisible(true)->get();
         $products = $this->domainController->products();
         return view('Admin.pages.product.products', compact('categories','products'));
     }
@@ -67,6 +68,18 @@ class ProductController extends Controller
 
     public function update_quantity(Request $request){
         $this->domainController->quantity($request);
+        return redirect()->back();
+    }
+
+    public function delete(int $id){
+        $product = \App\Models\Product::find($id);
+        $product->update(['visible' => false]);
+        return redirect()->back();
+    }
+
+    public function restore(int $id){
+        $product = \App\Models\Product::find($id);
+        $product->update(['visible' => true]);
         return redirect()->back();
     }
 }

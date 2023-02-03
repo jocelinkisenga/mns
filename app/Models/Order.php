@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    protected $fillable = ['payment_id', 'amount', 'products', 'paid_at', 'user_id','nickname','suname','country','address','phone','email','status'];
+    protected $fillable = ['payment_id', 'amount', 'products', 'paid_at', 'user_id','nickname','suname','country','address','phone','email','status','visible'];
 
     public function user(){
         return $this->belongsTo(User::class,'user_id');
