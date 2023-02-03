@@ -95,9 +95,9 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                     // $this->latest_order($order);
                // }
 
-             $this->saved =  $this->stripe_paiement($order->payment_id, $this->data);
+            $this->stripe_paiement($order->payment_id, $this->data);
 
-             if($this->saved){
+        
                 $order->save();
 
 
@@ -115,13 +115,13 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                 }
 
                $this->latestOrder = $order;
-             }
+             
 
 
             
 
-        });
-        return $this->latestOrder;
+         });
+         return $this->latestOrder;
 
     }
 
@@ -138,6 +138,7 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
                         'cvc' => $data->cvc,
                     ]
                 ]);
+            
                 if (!isset($token)) {
                     session()->flash('stripe_err', 'Veuillez vous vous assurer que vous disposez d\une bonne carte!');
             

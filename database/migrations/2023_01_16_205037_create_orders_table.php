@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('payment_id')->unique();
             $table->integer('amount');
-            $table->text('products');
+            $table->text('products')->nullable();
             $table->dateTime('paid_at')->nullable();
             $table->unsignedBigInteger('user_id')->cascadeOnDelete();
             $table->string('nickname')->nullable();

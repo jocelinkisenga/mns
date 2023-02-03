@@ -47,13 +47,14 @@ class CheckoutController extends Controller
     }
 
     public function store(CheckoutRequest $request){
+
         
         if(sizeof(CartFacade::getContent()) == 0){
             return redirect()->route("home");
         } 
 
             $order = $this->checkout_repo->order($request);
-
+    
             if(empty($order)){
             return redirect()->back();
             }
