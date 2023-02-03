@@ -10,13 +10,18 @@
                         </div>
                          <div class="card card-primary card-outline">
                             <div class="card-header">
-
-                            </div>
-                            <div class="card-body">
                                 <button type="button" class="btn btn-warning text-white"  data-toggle="modal" data-target="#modal-lg">
                                     Generer un rapport
                                 </button>
 
+                            </div>
+                            <div class="card-body">
+ 
+                            @isset($rapport)
+                            <button onclick="myPrintFunction()" class="btn btn-warning ml-6 text-white"> <i class="fa fa-print text-white" aria-hidden="true"></i> imprimer</button>
+                            <button onclick="CreatePdffromHtml()" class="btn btn-warning ml-6 text-white"> <i class="fa fa-download text-white" aria-hidden="true"></i> telecharger</button>
+                            @endisset
+                        
                                 <div class="modal fade" id="modal-lg">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
@@ -97,13 +102,16 @@
 
 
 
-                <div class="row bb">
+                <div class="row bb html-content">
 
                     <!-- /.col -->
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Listes des categories</h3>
+                                @isset($rapport)
+                                <h2 class="card-title">rappot du <span class="text-bold">{{$rapport['from']}}</span> au <span class="text-bold">{{$rapport['to']}}</span> </h2>
+                                @endisset
+                              
 
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
