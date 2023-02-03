@@ -33,4 +33,10 @@ class CategoryController extends Controller
         $categorie->update(['visible' => false]);
         return redirect()->back();
     }
+
+    public function restore(int $id){
+        $categorie = Category::find($id);
+        $categorie->update(['visible' => true]);
+        return redirect()->back();
+    }
 }
