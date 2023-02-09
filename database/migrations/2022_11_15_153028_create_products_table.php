@@ -18,8 +18,9 @@ return new class extends Migration
             $table->foreignId('category_id')->cascadeOnDelete();
             $table->string('name');
             $table->double('price');
-            $table->bigInteger('old_quantity')->default(0);
+            $table->text('description')->nullable();
             $table->boolean('visible')->default(true);
+            $table->bigInteger('old_quantity')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
