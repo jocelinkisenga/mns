@@ -6,12 +6,12 @@
     <div class="appContainer">
       <div class="pt-4 pb-6 grid lg:grid-cols-2 gap-6">
         <div class="w-full max-w-full overflow-hidden">
-          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 w-full">
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper2 flex w-full">
             <div class="swiper-wrapper w-full">
               @foreach ($product->image  as $key => $image)
-              <div class="swiper-slide">
+              <div class="swiper-slide" style="">
                 <img src="{{ asset('storage/uploads/' . $image->path) }}" alt="product name" width="200" height="auto"
-                  class="w-full h-40 sm:h-48 md:h-64 lg:h-56 object-cover rounded-md" />
+                  class="w-full h-40 sm:h-48 md:h-80 lg:h-80 object-cover rounded-md" />
               </div>
               @endforeach
               {{-- <div class="swiper-slide">
