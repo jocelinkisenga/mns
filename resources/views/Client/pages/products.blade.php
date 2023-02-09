@@ -74,7 +74,7 @@
           </div>
           <!-- sorting end -->
           <!-- product wrapper -->
-          <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-6">
+          <div class="grid xs:grid-cols-2  lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6">
 
             @foreach ($products as $item)
             <div
@@ -87,8 +87,8 @@
               <div class="w-full">
 
                 <a href="{{route('client.productDetails',['id'=>$item->id])}}">
-                  <h4 class="uppercase font-medium text-xl text-gray-700 group-hover:text-pink-600 transition">
-                    {{$item->name}} ...
+                  <h4 class="uppercase font-medium text-sm text-gray-700 group-hover:text-pink-600 transition">
+                    {{substr($item->name,0,15)}} ...
                   </h4><span class="color-orange font-bold">voir plus</span>
                 </a>
               </div>

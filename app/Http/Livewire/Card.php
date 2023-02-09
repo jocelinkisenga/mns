@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
 use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
@@ -38,9 +39,22 @@ class Card extends Component
     public function add(ClientCommandeInterface $clientCommandeInterface, $id)
     {
         $this->interface = $clientCommandeInterface;
+        $product = Product::find($id);
+        if($product->old_quantity == 0){
+            $this->dispatchBrowserEvent('swal', [ 
+				"position"=> 'top-end',
+				"icon" => 'warning',
+				"title" =>'désolé le produidt est indisponible',
+				"showConfirmButton" => false,
+				"timer" => 1500
+			]);
+        } else {
+
+     
 
         $this->interface->add($id);
         $this->emit('addtocart');
+    }
     }
 
 

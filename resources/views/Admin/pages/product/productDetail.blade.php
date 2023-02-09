@@ -67,10 +67,7 @@
                         <div class="col-12 col-sm-6">
 
                             <h3 class="my-3">{{ $product->name }}</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum et hic libero molestiae
-                                incidunt fuga exercitationem, doloremque
-                                voluptatibus dignissimos dolores alias minima voluptates itaque nisi commodi ipsum maiores
-                                iste illo.</p>
+                            <p>{{$product->description}}.</p>
 
                             <hr>
                             <h4></h4>

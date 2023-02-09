@@ -21,7 +21,7 @@ body {
 .screen {		
 	background: linear-gradient(90deg, #8178ca, #eeb407);		
 	position: relative;	
-	height: 600px;
+	height: 900px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
@@ -109,6 +109,7 @@ body {
 	padding-left: 24px;
 	font-weight: 700;
 	width: 75%;
+	margin-top: 2px;
 	transition: .2s;
 }
 
@@ -155,7 +156,7 @@ body {
 	height: 140px;
 	width: 160px;
 	text-align: center;
-	bottom: 0px;
+	margin-top: 50px;
 	right: 0px;
 	color: #fff;
 }

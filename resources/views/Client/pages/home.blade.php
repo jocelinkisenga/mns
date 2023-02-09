@@ -85,8 +85,8 @@
 
                           <a href="{{route('client.productDetails',['id'=>$item->id])}}">
                               <h4
-                                  class="uppercase font-medium text-xl text-gray-700 group-hover:color-orange transition">
-                                  {{$item->name}}... 
+                                  class="uppercase font-medium text-md text-gray-700 group-hover:color-orange transition">
+                                  {{ substr($item->name,0,15)}}... 
                               </h4> <span class=" color-orange font-bold">voir plus </span>
                           </a>
                       </div>

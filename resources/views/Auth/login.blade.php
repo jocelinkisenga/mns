@@ -33,6 +33,8 @@
             <i class="button__icon fas fa-chevron-right"></i>
           </button>				
         </form>
+        <a href=""  class="" style="margin-left: 125px; color:rgb(255, 255, 255); font:bold;">mot de passe oublié?
+        </a>		
 
         <div class="social-login">
           <h4>vous n'avez pas de compte?</h4> <br>
