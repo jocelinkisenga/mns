@@ -131,7 +131,7 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
     public function stripe_paiement($order, $data){
         
 
-         $stripe = Stripe::make(env('STRIPE_SECRET'));
+         $stripe = Stripe::make(config('app.stripe_secret'));
             try {
                 $token = $stripe->tokens()->create([
                     'card' => [
