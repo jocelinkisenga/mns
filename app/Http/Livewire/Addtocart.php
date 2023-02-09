@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
 use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
@@ -17,7 +18,7 @@ class Addtocart extends Component
     protected $cardRepo;
     public $product;
     public $quantity = 1;
-    
+
 
 
 
@@ -35,36 +36,49 @@ class Addtocart extends Component
     public function add($id, ClientCommandeInterface $clientCommandeInterface)
     {
         $this->cardRepo = $clientCommandeInterface;
-        if (Auth::check()) {
-            $item = CartFacade::get($id);
-            if ($item) {
-             
-              
-                $this->dispatchBrowserEvent('swal', [ 
-                "position"=> 'top-end',
+
+        $product = Product::find($id);
+        if ($product->old_quantity == 0) {
+            $this->dispatchBrowserEvent('swal', [
+                "position" => 'top-end',
                 "icon" => 'warning',
-                "title" =>'ce produit existe dans le panier',
+                "title" => 'désolé le produidt est indisponible',
                 "showConfirmButton" => false,
                 "timer" => 1500
             ]);
+        } else {
+            if (Auth::check()) {
+                $item = CartFacade::get($id);
+                if ($item) {
 
-                            
-                            
+
+                    $this->dispatchBrowserEvent('swal', [
+                        "position" => 'top-end',
+                        "icon" => 'warning',
+                        "title" => 'ce produit existe dans le panier',
+                        "showConfirmButton" => false,
+                        "timer" => 1500
+                    ]);
+
+
+
+                } else {
+                    $this->cardRepo->add_to_cart($id);
+                    $this->dispatchBrowserEvent('swal', [
+                        "position" => 'top-end',
+                        "icon" => 'success',
+                        "title" => 'ce produit ajouté avec succés',
+                        "showConfirmButton" => false,
+                        "timer" => 1500
+                    ]);
+                    $this->emit("cardcounter");
+
+                }
+
             } else {
-                $this->cardRepo->add_to_cart($id);
-                $this->dispatchBrowserEvent('swal', [ 
-                    "position"=> 'top-end',
-                    "icon" => 'success',
-                    "title" =>'ce produit ajouté avec succés',
-                    "showConfirmButton" => false,
-                    "timer" => 1500
-                ]);
-                $this->emit("cardcounter");
-
+                return redirect()->to('/login');
             }
 
-        } else {
-            return redirect()->to('/login');
         }
 
     }
