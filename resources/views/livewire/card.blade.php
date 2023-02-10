@@ -10,7 +10,7 @@
               class="flex items-center md:justify-between gap-4 md:gap-6 p-4 border border-gray-200 rounded flex-wrap md:flex-nowrap">
               
               <div class="w-32 min-w-max">
-                <img src="{{asset('storage/uploads/'.$item['attributes']['image'])}}" class="w-full object-cover rounded h-16 sm:h-20 md:h-24">
+                <img src="{{asset('storage/uploads/'.$item['attributes']['image'])}}" class="w-full object-cover rounded h-20 sm:h-20 md:h-24">
               </div>
               <div class="md:w-1/3 w-full">
                 <h2 class="text-gray-600 mb-2 text-xl ">
