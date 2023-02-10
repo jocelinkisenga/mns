@@ -49,7 +49,7 @@
                 <div class="w-full">
                   <h4 class="font-bold text-gray-600 text-xl mb-1">Numero telephone</h4>
                   <p class="text-base text-gray-500">
-                    (+243)
+                     +243  0993066556
                   </p>
                 </div>
               </div>
@@ -68,7 +68,7 @@
                   <h4 class="font-bold text-gray-600 text-xl mb-1">
                     Adresse mail
                   </h4>
-                  <p class="text-base text-gray-500">-</p>
+                  <p class="text-base text-gray-500">info@ms-homegadget.com</p>
                 </div>
               </div>
             </div>

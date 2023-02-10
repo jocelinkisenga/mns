@@ -60,7 +60,7 @@
                 <h6 class="text-lg font-medium text-gray-700">Produits</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Top produits</a>
+                    <a href="{{route('top.products')}}" class="hover:text-pink-400 transition" style="color: gray">Top produits</a>
                   </li>
                   <li>
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Mieux notes</a>
@@ -69,7 +69,7 @@
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Plus vendus</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Tous les produits</a>
+                    <a href="{{route('client-products')}}" class="hover:text-pink-400 transition" style="color: gray">Tous les produits</a>
                   </li>
                 </ul>
               </div>
