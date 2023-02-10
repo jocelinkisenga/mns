@@ -29,7 +29,7 @@
                     <div class="col-8 ">
                         <div class="callout callout-info">
                             <h5 class="text-success"><i class="fas fa-info"></i> Commande confirmée avec succès !!</h5>
-                            Nous avons envoyé la copie de facture à votre email <span><a href="{{ route('home') }}"
+                 <span><a href="{{ route('home') }}"
                                     class="btn btn-primary text-white">rentrer à l'acceuil</a></span>
                         </div>
 
@@ -148,8 +148,8 @@
                                 <div class="col-12">
                                     <button  onclick="myPrintFunction()"   class="btn btn-default"><i class="fas fa-print"></i> Print</button>
                                     <button type="button" class="btn btn-success float-right"><i
-                                            class="far fa-credit-card"></i> Submit
-                                        Payment
+                                            class="far fa-credit-card"></i> 
+                                        
                                     </button>
                                     <button type="button" onclick="CreatePDFfromHTML()" class="btn btn-primary float-right"
                                         style="margin-right: 5px;">

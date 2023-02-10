@@ -10,7 +10,7 @@
 
 
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="mt-4">
                             <button class="btn btn-background font-bold   btn-flat" style=" color:white" type="button" data-toggle="modal"
                                 data-target="#edit">
@@ -22,7 +22,7 @@
                         </div>
 
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="mt-4">
                             <button class="btn btn-background font-bold  btn-flat" style=" color:white" type="button" data-toggle="modal"
                                 data-target="#quantity">
@@ -37,6 +37,22 @@
                         </div>
 
                     </div>
+                    <div class="col-sm-4">
+                        <div class="mt-4">
+                            <button class="btn btn-background font-bold  btn-flat" style=" color:white" type="button" data-toggle="modal"
+                                data-target="#image">
+                                <i class="fas fa-edit fa-lg mr-2"></i>
+                                Ajouter une image
+                            </button>
+
+                            {{-- <div class="btn btn-default btn-lg btn-flat">
+                <i class="fas fa-heart fa-lg mr-2"></i>
+               Ajouter des images
+              </div> --}}
+                        </div>
+
+                    </div>
+                    
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -147,6 +163,20 @@
                                         <input type="text" name="price" class="form-control" id="exampleInputPassword1"
                                             value="{{$product->price}}">
                                     </div>
+                                     <div class="form-group">
+                                    <label for="exampleInputFile">image principale </label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input" multiple
+                                                id="exampleInputFile">
+                                            <label class="custom-file-label"
+                                                for="exampleInputFile">choisir une image</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                    </div>
+                                </div>
                                     
                                     <div class="form-group">
                                       <label for="exampleInputFile">selectionner une catégorie</label>
@@ -159,6 +189,10 @@
                                    
                                         </select>
                                       
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="my-input">description</label>
+                                    <textarea name="description" id="my-input" class="form-control" type="text" value="{{$product->description}}" ></textarea>
                                   </div>
                             </div>
                             <!-- /.card-body -->
@@ -233,6 +267,66 @@
       </div>
       <!-- /.modal-dialog -->
   </div>
+
+
+  {{-- add image --}}
+  <div class="modal fade" id="image">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Ajouter la quantité</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+
+                        <!-- /.card-header -->
+                        <!-- form start -->
+
+                        <div class="card-body">
+                            <form action="{{ route('add_image') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                <div class="form-group">
+                                    <label for="exampleInputFile">selectionner vos images</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image[]" class="custom-file-input" multiple
+                                                id="exampleInputFile">
+                                            <label class="custom-file-label"
+                                                for="exampleInputFile">choisir une image</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <!-- /.card-body -->
+
+
+
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">fermer</button>
+                <button type="submit" class="btn btn-primary">enregistrer</button>
+            </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
     <!-- /.modal-dialog -->
     </div>
 
