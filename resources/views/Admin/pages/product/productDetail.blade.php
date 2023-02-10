@@ -163,6 +163,20 @@
                                         <input type="text" name="price" class="form-control" id="exampleInputPassword1"
                                             value="{{$product->price}}">
                                     </div>
+                                     <div class="form-group">
+                                    <label for="exampleInputFile">image principale </label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input" multiple
+                                                id="exampleInputFile">
+                                            <label class="custom-file-label"
+                                                for="exampleInputFile">choisir une image</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                    </div>
+                                </div>
                                     
                                     <div class="form-group">
                                       <label for="exampleInputFile">selectionner une catégorie</label>

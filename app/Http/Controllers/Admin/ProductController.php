@@ -62,7 +62,15 @@ class ProductController extends Controller
     }
 
     public function update(Request $request){
-        $this->domainController->update($request);
+       $this->domainController->update($request);
+
+      if($request->image){
+        $imgName = Carbon::now()->timestamp . '_mns.' . $request->image->extension();
+        
+        $path = $request->image->storeAs('uploads', $imgName, 'public');
+          $productImages = ProductImage::whereProduct_id($request->product_id)->whereId(1)->update(['path'=>$imgName]);
+        //     dd($productImages);
+      }
         return redirect()->back();
     }
 
