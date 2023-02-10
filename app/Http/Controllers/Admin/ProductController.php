@@ -110,4 +110,10 @@ class ProductController extends Controller
         }
         return redirect()->back();
     }
+
+    public function destroy(int $id){
+        $product = \App\Models\Product::findOrFail($id);
+        $product->delete();
+        return redirect()->back();
+    }
 }

@@ -31,6 +31,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/deleteCategorie/{id}',[CategoryController::class,'delete'])->name('admin.delete.categorie');
     Route::get('/restoreCategorie/{id}',[CategoryController::class,'restore'])->name('admin.restore.categorie');
     route::get('/restoreProduct/{id}', [ProductController::class, 'restore'])->name('admin.restore.product');
+    route::get('/destroyproduct/{id}', [ProductController::class, 'destroy'])->name('admin.destroy.product');
 
     Route::post('storeImage', [ProductController::class, 'add_image'])->name('add_image');
     
