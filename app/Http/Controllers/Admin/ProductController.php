@@ -82,4 +82,24 @@ class ProductController extends Controller
         $product->update(['visible' => true]);
         return redirect()->back();
     }
+
+
+
+    public function add_image(Request $request)
+    {
+
+
+
+
+        if ($request->image) {
+
+            foreach ($request->image as $key => $image) {
+                $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
+                $path = $image->storeAs('uploads', $imgName, 'public');
+                ProductImage::create(['product_id' => $request->product_id, 'path' => $imgName]);
+
+            }
+        }
+        return redirect()->back();
+    }
 }
