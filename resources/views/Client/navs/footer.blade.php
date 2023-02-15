@@ -1,3 +1,6 @@
+@php
+use App\Models\Category;
+@endphp
 <footer>
     <div class="pt-8 bg-gray-50 border-t border-gray-200 mt-20">
       <div class="appContainer text-gray-600">
@@ -42,18 +45,12 @@
                 </form> --}}
                 <h6 class="text-lg font-medium text-gray-700">Categories</h6>
                 <ul class="list-inside mt-4 space-y-4">
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Appareil</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Telephone</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Chaussure</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Telephone</a>
-                  </li>
+              @foreach (Category::whereVisible(true)->get() as $categorie )
+              <li>
+                <a href="{{route('client.categorie',['id'=>$categorie->id])}}" class="hover:text-pink-400 transition" style="color: gray">{{$categorie->name}}</a>
+              </li>
+                
+              @endforeach
                 </ul>
               </div>
               <div>
