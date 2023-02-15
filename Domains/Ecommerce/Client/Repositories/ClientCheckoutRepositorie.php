@@ -30,9 +30,10 @@ class ClientCheckoutRepositorie implements ClientCheckoutInterface {
         DB::transaction(function () {
 
 
+            
                 $order = new Order();
 
-                $order->payment_id = time() . str_shuffle("ABCDEF");
+                $order->payment_id = date('Y-m-d'). str_shuffle("ABCDEF");
                 $order->amount = CartFacade::getTotal();
                 $order->paid_at = new DateTime("now");
                 $order->user_id = Auth::user()->id;

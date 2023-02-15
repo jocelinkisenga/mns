@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class CategorieController extends Controller
 {
     public function show(int $id){
-        $categories = Category::whereVisible(true)->get();
+        $categories = Category::whereVisible(true)->where('id','!=',$id)->get();
         $products = Product::whereCategory_id($id)->whereVisible(true)->get();
 
         return view('Client.pages.categorie',compact('categories','products'));
