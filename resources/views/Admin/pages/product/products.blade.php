@@ -141,6 +141,7 @@
                                             <th>prix</th>
                                             <th>categorie</th>
                                             <th>Détail</th>
+                                            <th>désactiver</th>
                                             <th>supprimer</th>
                                         </tr>
                                     </thead>
@@ -152,12 +153,15 @@
                                             <td>{{$item->old_quantity}}</td>
                                             <td>{{$item->price}}</td>
                                             <td>{{$item->categorie->name}}</td>
-                                            <td><a href="{{route('admin.productDetail',['id'=>$item->id])}}">  <i class="fa fa-eye color-orange" aria-hidden="true"></i></a></td>
+                                            <td><a href="{{route('admin.productDetail',['id'=>$item->id])}}">  <i class="fa fa-eye text-success" aria-hidden="true"></i></a></td>
                                             @if($item->visible == true)
-                                            <td><a href="{{route('admin.delete.product',['id'=>$item->id])}}"><i class="fa fa-window-close text-danger" aria-hidden="true"></i></a></td>
+                                            <td><a href="{{route('admin.delete.product',['id'=>$item->id])}}"><i class="fa fa-window-close text-warning" aria-hidden="true"></i></a></td>
                                             @else
                                             <td><a href="{{route('admin.restore.product',['id'=>$item->id])}}"><i class="fa fa-edit  text-primary" aria-hidden="true"></i> restore</a></td>
                                             @endif
+                                            <td>
+                                                <a href="{{route('admin.destroy.product',['id'=>$item->id])}}"><i class="fa fa-window-close text-danger
+                                                " aria-hidden="true"></i></a></td>
                                        </tr> 
                                        @endforeach
 

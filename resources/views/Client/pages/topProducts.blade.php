@@ -13,7 +13,7 @@
           lg:w-full lg:block">
           <div class="divide-gray-200 divide-y space-y-5 relative">
             <!-- category filter -->
-            <div class="relative">
+            {{-- <div class="relative">
               <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
               <div class="space-y-2">
 
@@ -28,7 +28,7 @@
                 @endforeach
 
               </div>
-            </div>
+            </div> --}}
 
             <div class="pt-4">
               <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Prix</h3>
@@ -54,14 +54,14 @@
         <div class="col-span-3">
 
           <div class="mb-4 flex gap-4 items-center">
-            
+{{--             
             <select
               class="w-44 text-sm text-gray-600 px-4 py-3 border-gray-300 shadow-sm rounded focus:ring-primary focus:border-primary">
               <option>Default sorting</option>
               <option>Price low-high</option>
               <option>Price high-low</option>
               <option>Latest product</option>
-            </select>
+            </select> --}}
 
             <div class="lg:hidden flex items-center">
               <button data-toggle-filter class="outline-none p-3 rounded shadow bg-white text-gray-600">

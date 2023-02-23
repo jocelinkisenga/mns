@@ -62,7 +62,15 @@ class ProductController extends Controller
     }
 
     public function update(Request $request){
-        $this->domainController->update($request);
+       $this->domainController->update($request);
+
+      if($request->image){
+        $imgName = Carbon::now()->timestamp . '_mns.' . $request->image->extension();
+        
+        $path = $request->image->storeAs('uploads', $imgName, 'public');
+          $productImages = ProductImage::whereProduct_id($request->product_id)->whereId(1)->update(['path'=>$imgName]);
+        //     dd($productImages);
+      }
         return redirect()->back();
     }
 
@@ -80,6 +88,32 @@ class ProductController extends Controller
     public function restore(int $id){
         $product = \App\Models\Product::find($id);
         $product->update(['visible' => true]);
+        return redirect()->back();
+    }
+
+
+
+    public function add_image(Request $request)
+    {
+
+
+
+
+        if ($request->image) {
+
+            foreach ($request->image as $key => $image) {
+                $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
+                $path = $image->storeAs('uploads', $imgName, 'public');
+                ProductImage::create(['product_id' => $request->product_id, 'path' => $imgName]);
+
+            }
+        }
+        return redirect()->back();
+    }
+
+    public function destroy(int $id){
+        $product = \App\Models\Product::findOrFail($id);
+        $product->delete();
         return redirect()->back();
     }
 }

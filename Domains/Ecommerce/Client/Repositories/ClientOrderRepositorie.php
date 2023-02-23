@@ -12,6 +12,10 @@ use Domains\Ecommerce\Repositories\CommandeInterfaceRepository;
 use Domains\Stock\Repositories\Product\ProductRepository;
 use Domains\Stock\Utilities\Product\ProductUtility;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Livewire\Component;
+use Livewire\ComponentConcerns\ReceivesEvents;
+
+
 
 class ClientOrderRepositorie implements ClientCommandeInterface
 {
@@ -41,9 +45,10 @@ class ClientOrderRepositorie implements ClientCommandeInterface
 
 		$product = Product::whereId($id)->with('image')->first();
 		
-		if (!$product) {
+		
+		if ( $product->old_quantity == 0) {
 
-			abort(404);
+
 
 		}
 		$item = CartFacade::get($product->id);
@@ -74,12 +79,12 @@ class ClientOrderRepositorie implements ClientCommandeInterface
 	{
 
 		$product = Product::whereId($id)->with('image')->first();
+		
+		if ( $product->old_quantity == 0) {
 
-		if (!$product) {
 
-			abort(404);
 
-		}
+		} else {
 
 			CartFacade::add([
 				'id'=>$product->id, 
@@ -91,7 +96,7 @@ class ClientOrderRepositorie implements ClientCommandeInterface
 			$this->product_repo->substract_quantity($id);
 		
 
-
+			}
 
 	}
 

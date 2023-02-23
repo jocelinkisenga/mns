@@ -121,6 +121,7 @@
           }
         }
         </script>
+        <script  src="{{asset('Client/assets/js/app.js')}}"></script>
 </body>
 
 </html>

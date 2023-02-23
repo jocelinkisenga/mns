@@ -1,3 +1,6 @@
+@php
+use App\Models\Category;
+@endphp
 <footer>
     <div class="pt-8 bg-gray-50 border-t border-gray-200 mt-20">
       <div class="appContainer text-gray-600">
@@ -36,31 +39,25 @@
           <div>
             <div class="pb-16 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
               <div>
-                <form action="{{route('logout')}}" method="POST">
+                {{-- <form action="{{route('logout')}}" method="POST">
                   @csrf
                   <input type="submit" value="se deconnecter" class="rounded min-w-max md:w-max w-full font-bold flex justify-center  btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-8 md:px-6 md:py-6 text-white">
-                </form>
+                </form> --}}
                 <h6 class="text-lg font-medium text-gray-700">Categories</h6>
                 <ul class="list-inside mt-4 space-y-4">
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Appareil</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Telephone</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Chaussure</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Telephone</a>
-                  </li>
+              @foreach (Category::whereVisible(true)->get() as $categorie )
+              <li>
+                <a href="{{route('client.categorie',['id'=>$categorie->id])}}" class="hover:text-pink-400 transition" style="color: gray">{{$categorie->name}}</a>
+              </li>
+                
+              @endforeach
                 </ul>
               </div>
               <div>
                 <h6 class="text-lg font-medium text-gray-700">Produits</h6>
                 <ul class="list-inside mt-4 space-y-4">
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Top produits</a>
+                    <a href="{{route('top.products')}}" class="hover:text-pink-400 transition" style="color: gray">Top produits</a>
                   </li>
                   <li>
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Mieux notes</a>
@@ -69,7 +66,7 @@
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Plus vendus</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Tous les produits</a>
+                    <a href="{{route('client-products')}}" class="hover:text-pink-400 transition" style="color: gray">Tous les produits</a>
                   </li>
                 </ul>
               </div>

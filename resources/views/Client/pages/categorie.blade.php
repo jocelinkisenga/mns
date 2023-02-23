@@ -9,6 +9,7 @@
                 <div class="flex">
                     <h3 class="text-2xl md:text-3xl font-semibold">Autres categories</h3>
                 </div>
+        
                 <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
                   @foreach ($categories as $item )
                   <a href="{{route('client.categorie',['id'=>$item->id])}}"
@@ -53,7 +54,7 @@
                           <a href="{{route('client.productDetails',['id'=>$item->id])}}">
                               <h4
                                   class="uppercase font-medium text-xl text-gray-700 group-hover:text-pink-600 transition">
-                                  {{$item->name}}...
+                                  {{substr($item->name,0,15)}}...
                               </h4><span class=" color-orange font-bold">voir plus </span>
                           </a>
                       </div>

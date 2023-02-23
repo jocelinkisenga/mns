@@ -25,7 +25,7 @@
             <a href="{{route('client-checkout')}}" class="btn-background border btn-border font-bold
           text-white px-8 py-3 rounded-md z-50
         hover:bg-opacity-80 transition">
-            Proceder au paiement
+            payer
           </a>
           </div>
         </div>

@@ -40,7 +40,8 @@ class StockProductRepositorie implements StockProductInterface {
       $product->update([
         'category_id'=>$data->category_id,
         'name'=>$data->name,
-        'price'=>$data->price
+        'price'=>$data->price,
+        'description'=>$data->description,
       ]);
 
       
