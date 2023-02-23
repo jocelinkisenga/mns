@@ -13,21 +13,7 @@
                     Les meilleurs produits pour vos menages
                 </h1>
                 <p class="text-gray-600">
-                rouvez le meilleur des home gadgets à petits !
-
-Nous allions qualité, efficacité et accessibilité.
-Pour nos mamans, nos boss ladies et tous les membres de la famille, les tâches domestiques ne sont plus une corvée.
-
-Find the best home gadgets at a low price. 
-
-We combine quality, efficiency and accessibility.
-For our moms, boss ladies and all family members, household chores are no longer a chore.
-
- 
-
-
-
-
+                Rejoignez notre quête pour un ménage et une organisation aisés à la maison. Nous présentons une vaste sélection d'articles novateurs et économisant du temps pour fluidifier votre routine. Que vous soyez un parent occupé ou souhaitant optimiser les tâches domestiques, nous avons la réponse à vos besoins. Des solutions sûres pour les enfants aux outils d'organisation élégants pour la maison, nous avons tout ce qu'il vous faut. Parcourez notre collection soigneusement choisie de produits conçus pour vous offrir un gain de temps, une réduction d'efforts et pour sublimer votre foyer.
                 </p>
                 <div class="flex">
                     <a href="shop.html"
