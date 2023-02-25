@@ -191,6 +191,11 @@
                                       
                                   </div>
                                   <div class="form-group">
+                                    <label for="exampleInputPassword1">couleurs</label>
+                                    <input type="text" name="colors" class="form-control"
+                                        id="exampleInputPassword1" placeholder="">
+                                </div>
+                                  <div class="form-group">
                                     <label for="my-input">description</label>
                                     <textarea name="description" id="my-input" class="form-control" type="text" value="{{$product->description}}" ></textarea>
                                   </div>
