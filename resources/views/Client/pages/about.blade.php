@@ -56,13 +56,9 @@
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700">A propos de
               nous</h2>
             <p class="text-sm md:text-base">
-            "Bienvenue chez M AND S  Gadjet! Nous sommes le leader sur le marché de l'équipement de maintenance pour la maison. Nous offrons une large gamme de produits de haute qualité pour vous aider à entretenir et à améliorer votre maison.
-
-          Que vous soyez un bricoleur amateur ou un professionnel expérimenté, nous avons ce qu'il vous faut. Nos produits incluent des outils électriques, des équipements de plomberie, des équipements de jardinage et bien plus encore. Tous nos produits sont conçus pour durer et sont fabriqués par les marques les plus fiables sur le marché
-
-          <p>Chez Home Maintenance Equipment, nous savons que l'achat d'équipements de maintenance peut parfois être déroutant. C'est pourquoi nos experts en service à la clientèle sont là pour vous aider à trouver les produits qui répondent à vos besoins spécifiques. Nous nous engageons à vous fournir un service à la clientèle exceptionnel et à vous assister à tout moment.
-
-           sommes fiers de proposer des prix compétitifs sur tous nos produits, et nous offrons également des offres spéciales régulières pour que vous puissiez économiser encore plus. Nous offrons également une garantie de satisfaction à 100% pour vous donner la tranquillité d'esprit que vous méritez.</p>
+            Bienveue chez M&S home gadgets! Nous avons vu le jour en 2021, c'est le fruit d'un an de travail acharné, de nombreux défis et surtout de beaucoup de patience. Tous dirigés par l'idée de vous rendre la vie plus facile.
+            Rejoignez notre quête pour un ménage et une organisation aisés à la maison. Nous présentons une vaste sélection d'articles novateurs et économisant du temps pour fluidifier votre routine. Que vous soyez un parent occupé ou souhaitant optimiser les tâches domestiques, nous avons la réponse à vos besoins. Des solutions sûres pour les enfants aux outils d'organisation élégants pour la maison, nous avons tout ce qu'il vous faut. Parcourez notre collection soigneusement choisie de produits conçus pour vous offrir un gain de temps, une réduction d'efforts et pour sublimer votre foyer..
+          </p>
 
          
             </p>
@@ -80,7 +76,7 @@
                 <div class="w-full">
                   <h4 class="font-bold text-gray-500 text-xl mb-1">Numero telephone</h4>
                   <p class="text-base text-gray-500">
-                    (+243)
+                    (+243) 993066556
                   </p>
                 </div>
               </div>
