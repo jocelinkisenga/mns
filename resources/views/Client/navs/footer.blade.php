@@ -76,9 +76,13 @@ use App\Models\Category;
                   <li>
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">A propos</a>
                   </li>
+                  @auth
+                  @if(Auth::user()->role == 1)
                   <li>
-                    <a href="#" class="hover:text-pink-400 transition" style="color: gray">Clients</a>
+                    <a href="{{route('admin.clients')}}" class="hover:text-pink-400 transition" style="color: gray">Clients</a>
                   </li>
+                  @endif
+                  @endauth
                   <li>
                     <a href="#" class="hover:text-pink-400 transition" style="color: gray">Entreprise</a>
                   </li>

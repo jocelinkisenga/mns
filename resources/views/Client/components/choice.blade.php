@@ -30,7 +30,7 @@ For our moms, boss ladies and all family members, household chores are no longer
 
                 </p>
                 <div class="flex">
-                    <a href="shop.html"
+                    <a href="{{route('client-products')}}"
                         class="btn-background  border btn-border font-bold
              text-white px-8 py-3 rounded-md z-50
            hover:bg-opacity-80 transition">
