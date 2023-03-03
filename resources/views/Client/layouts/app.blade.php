@@ -8,6 +8,8 @@
   <meta name="description" content="">
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>M&S</title>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset('Client/assets/css/new.css')}}">
   
   <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet">
@@ -29,12 +31,13 @@
 
 @livewireScripts
 @notifyJs
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{asset('Client/assets/js/jquery.js')}}"></script>
 <script  src="{{asset('Client/assets/js/app.js')}}"></script>
 <script src="{{asset('Admin/dist/js/adminlte.min.js')}}"></script>
 <script  src="{{asset('Client/assets/js/nav.js')}}"></script>
 <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script> 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 <script  src="{{asset('Client/assets/js/lightbox-plus-jquery.min.js')}}"></script>
 @include('sweetalert::alert')
 
@@ -44,8 +47,20 @@
             Swal.fire(e.detail);
         });
 
+//   $('#search').focus(function(){
+   
+//     $('#crypto-modal').show().addClass('modal-open');
+// });
+// // search
 
-// search
+// search main
+
+
+
+
+
+
+
 
 
 $(document).ready(function(){
@@ -106,6 +121,9 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+
 
 
 </script>
