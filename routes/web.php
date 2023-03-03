@@ -56,7 +56,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
         Route::get('EditProfile', [ProfileController::class, 'create'])->name('edit-profile');
         Route::put('/updateProfile', [ProfileController::class, 'update'])->name('update.profile');
-//     Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
+//      Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 
 });
 

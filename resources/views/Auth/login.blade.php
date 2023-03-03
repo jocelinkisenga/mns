@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>se connecter</title>
+    <title>Se connecter</title>
     <link rel="stylesheet" href="{{asset('Client/assets/css/login.css')}}">
 </head>
 <body>
 
   <div class="container">
+   
     <div class="screen">
       <div class="screen__content">
+        <br>
+        <center><a href="/">Retour</a></center>
+        
         <form class="login" action="{{route('login')}}" method="POST">
           @csrf
           <div class="login__field">
