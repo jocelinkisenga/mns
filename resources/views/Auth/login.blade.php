@@ -14,7 +14,10 @@
     <div class="screen">
       <div class="screen__content">
         <br>
-        <center><a href="/">Retour</a></center>
+        <center>
+          
+          <a href="/">Retour</a>
+      </center>
         
         <form class="login" action="{{route('login')}}" method="POST">
           @csrf
@@ -41,8 +44,8 @@
         </a>		
 
         <div class="social-login">
-          <h4>vous n'avez pas de compte?</h4> <br>
-          <a href="{{route('register')}}">créer un compte</a>
+          <h4>Vous n'avez pas de compte?</h4> <br>
+          <a href="{{route('register')}}">Créer un compte</a>
         </div>
 
       </div>
