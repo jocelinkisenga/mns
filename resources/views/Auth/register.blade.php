@@ -10,13 +10,21 @@
 <body>
 
   <div class="container">
+
     <div class="screen">
       <div class="screen__content">
+      <br>
+        <center>
+         
+          <a href="/">M and S - Retour</a>
+          
+          
+      </center>
         <form class="login" action="{{route('register')}}" method="POST">
           @csrf
           <div class="login__field">
             <i class="login__icon fas fa-user"></i>
-            <input type="text" name="name" class="login__input" placeholder=" votre nom et post-nom" autocomplete="off">
+            <input type="text" name="name" class="login__input" placeholder=" Votre nom et post-nom" autocomplete="off">
           </div>
           @error('name')
             <span style="color: red">{{$message}}</span>
@@ -30,14 +38,14 @@
           @enderror
           <div class="login__field">
             <i class="login__icon fas fa-lock"></i>
-            <input type="password" name="password" class="login__input" placeholder="mot de passe" autocomplete="off">
+            <input type="password" name="password" class="login__input" placeholder="Mot de passe" autocomplete="off">
           </div>
           @error('password')
           <span style="color: red">{{$message}}</span>
         @enderror
         <div class="login__field">
           <i class="login__icon fas fa-lock"></i>
-          <input type="password" name="confirm" class="login__input" placeholder="confirmer mot de passe" autocomplete="off">
+          <input type="password" name="confirm" class="login__input" placeholder="Confirmer mot de passe" autocomplete="off">
         </div>
         @error('confirm')
         <span style="color: red">{{$message}}</span>
@@ -52,8 +60,8 @@
 
         <div class="social-login">
           <br>
-          <h4>vous avez un compte?</h4> <br>
-          <a href="{{route('login')}}">connectez vous</a>
+         
+          <a href="{{route('login')}}">Connectez vous</a>
         </div>
 
       </div>
