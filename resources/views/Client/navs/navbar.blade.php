@@ -82,8 +82,8 @@
             </form>
             @endauth
             @guest
-            <a href="{{route('login')}}">se connecter</a>
-            <a href="{{route('register')}}">créer un compte</a>
+            <a href="{{route('login')}}">Se connecter</a>
+            <a href="{{route('register')}}">Créer un compte</a>
             @endguest
 
           </div>

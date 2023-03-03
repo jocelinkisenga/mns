@@ -11,17 +11,18 @@ body {
 	background: linear-gradient(90deg, #C7C5F4, #dbdae4);		
 }
 
+
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: 10vh;
 }
 
 .screen {		
 	background: linear-gradient(90deg, #8178ca, #eeb407);		
 	position: relative;	
-	height: 900px;
+	height: 600px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #5C5696;
 }
@@ -29,7 +30,7 @@ body {
 .screen__content {
 	z-index: 1;
 	position: relative;	
-	height: 100%;
+	height: 50%;
 }
 
 .screen__background {		
@@ -87,7 +88,7 @@ body {
 .login {
 	width: 320px;
 	padding: 30px;
-	padding-top: 156px;
+	padding-top: 15px;
 }
 
 .login__field {
