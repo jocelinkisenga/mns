@@ -26,10 +26,10 @@
                 clip-rule="evenodd" />
             </svg>
           </span>
-          <input type="text"
-            class="pl-12 w-full border border-r-0 btn-border py-2.5 px-4 rounded-l-md focus:border-yellow-600 outline-none"
+          <input type="text" id="search" onfocus="toggleModal('crypto-modal')"
+            class="pl-12 w-full border border-r-0 btn-border py-2.5 px-4 rounded-l-md outline-none"
             placeholder="Recyclette...">
-          <button type="submit"
+          <button 
             class="color-orange border btn-border text-white px-6 font-medium rounded-r-md hover:bg-transparent hover:text-pink-600 transition">
             Recherche
           </button>
@@ -37,13 +37,18 @@
 
         <div class="gap-4 flex items-center">
           <div class="flex md:hidden">
-            <a href="" class="flex text-gray-600">
+            <a  class="flex text-orange-200" type="button"  data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd"
                   d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
                   clip-rule="evenodd" />
               </svg>
             </a>
+            {{-- <input type="text" class="search-click" name="" placeholder="search here..." />
+            <i class="fa fa-envelope icon">
+            </i> --}}
+
+            <livewire:search>
           </div>
           @auth
             <livewire:card-counter>
@@ -145,4 +150,5 @@
 
       </nav>
     </div>
+
   </header>

@@ -112,7 +112,7 @@
         <table class="table-auto border-collapse w-full text-left text-gray-600 text-sm mt-6">
           <tr>
             <th class="py-2 px-4 border border-gray-300 w-40 font-medium">couleurs</th>
-            <td class="py-2 px-4 border border-gray-300">Black, Brown, Red</td>
+            <td class="py-2 px-4 border border-gray-300">{{$product->colors}}</td>
           </tr>
 
         </table>

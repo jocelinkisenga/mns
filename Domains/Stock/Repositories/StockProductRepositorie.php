@@ -30,7 +30,8 @@ class StockProductRepositorie implements StockProductInterface {
           'category_id'=>$data->category_id,
           'name'=>$data->name,
           'price'=>$data->price,
-          'description'=>$data->description
+          'description'=>$data->description,
+          'colors'=>$data->colors
         ]);
     }
 
@@ -42,6 +43,7 @@ class StockProductRepositorie implements StockProductInterface {
         'name'=>$data->name,
         'price'=>$data->price,
         'description'=>$data->description,
+        'colors' => $data->colors
       ]);
 
       
