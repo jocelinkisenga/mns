@@ -44,8 +44,8 @@
         </a>		
 
         <div class="social-login">
-          <h4>Vous n'avez pas de compte?</h4> <br>
-          <a href="{{route('register')}}">Créer un compte</a>
+          
+          <a href="{{route('register')}}"> Créer un compte </a>
         </div>
 
       </div>
