@@ -40,7 +40,7 @@
             <i class="button__icon fas fa-chevron-right"></i>
           </button>				
         </form>
-        <a href="{{route('password.request')}}"  class="" style="margin-left: 125px; color:rgb(255, 255, 255); font:bold;">mot de passe oublié?
+        <a href="{{route('password.request')}}"  class="" style="margin-left: 125px; color:rgb(255, 255, 255); font:bold;">Mot de passe oublié?
         </a>		
 
         <div class="social-login">
