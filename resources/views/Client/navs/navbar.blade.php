@@ -8,13 +8,13 @@
         <div class="flex items-center gap-4">
           <div class="md:hidden flex items-center">
             <button data-open-menu title="Menu Burger" id="openNav" class="flex border-r border-r-gray-200 text-gray-600 outline-none">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"  stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-              </svg>              
+              </svg>
             </button>
           </div>
           <a href="/" class="flex">
-            <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="M&S" class="w-auto h-8 md:h-10">
+            <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="M&S" class="w-auto h-8 md:h-24">
           </a>
         </div>
 
@@ -29,7 +29,7 @@
           <input type="text" id="search" onfocus="toggleModal('crypto-modal')"
             class="pl-12 w-full border border-r-0 btn-border py-2.5 px-4 rounded-l-md outline-none"
             placeholder="Recyclette...">
-          <button 
+          <button
             class="color-orange border btn-border text-white px-6 font-medium rounded-r-md hover:bg-transparent hover:text-pink-600 transition">
             Recherche
           </button>
@@ -88,7 +88,7 @@
 
           </div>
         </div>
-        
+
 
         </div>
       </div>
@@ -97,40 +97,40 @@
     <div data-nav-bar class="appContainer z-[700] -translate-x-full md:-translate-x-0 flex flex-col py-0 p-0 px-0 justify-start md:justify-start  fixed top-0 md:h-max h-screen left-0 md:relative md:left-0 w-full transition-all duration-300 ease-out">
       <div data-nav-overlay class="fixed z-[600] inset-0 invisible opacity-0 transition-all duration-300 md:hidden md:invisible"></div>
       <nav
-        class="absolute top-0 left-0 md:relative h-full md:bg-transparent 
-        bg-white z-[1200] w-full 
+        class="absolute top-0 left-0 md:relative h-full md:bg-transparent
+        bg-white z-[1200] w-full
         flex flex-col md:flex-row max-w-sm md:overflow-hidden
          md:overflow-x-auto justify-between pb-4 md:pb-0 px-6 md:px-0
           md:gap-8 md:h-auto
-          md:w-full md:max-w-none">
-        <div class="flex md:hidden min-h-max items-end justify-end px-2 py-2">
+          md:w-full md:max-w-none pb-8" style="padding-bottom: 4rem">
+        <div class="flex md:hidden min-h-max items-end justify-end px-2 py-2 " >
           <button data-close-nav class="md:hidden min-h-max bg-white shadow p-3 rounded">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
-            
+
           </button>
         </div>
         <ul
           class="flex flex-col md:flex-row md:items-center gap-3 py-2 min-w-max md:h-max h-full overflow-hidden overflow-y-auto md:overflow-y-hidden">
-          <li class="w-full flex">
+          <li class="w-full flex px-5">
             <a href="/"
               class="transition-all min-w-max duration-300 relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Accueil</a>
           </li>
-          <li class="w-full flex">
+          <li class="w-full flex px-5">
             <a href="{{route('about')}}"
               class="transition-all min-w-max duration-300 relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">A
               propos</a>
           </li>
-          <li class="w-full flex">
+          <li class="w-full flex px-5">
             <a href="{{route('client-products')}}"
               class="ttransition-all min-w-max duration-300 text-base font-medium relative before:absolute before:bottom-0 before:origin-right hover:before:origin-right origin-left before:bg-pink-600 before:h-0.5 before:transition-all before:w-full before:scale-x-0 hover:before:scale-x-100 py-2  text-gray-600 2xl:text-xl hover:text-pink-600">Notre Magasin</a>
           </li>
-          <li class="w-full flex">
+          <li class="w-full flex px-5">
           @auth
           @if (Auth::user()->role == 1)
           <div class="flex items-center py-2 min-h-max md:w-max w-full">
-            <a href="{{route('admin.dashboard')}}" 
+            <a href="{{route('admin.dashboard')}}"
               class="rounded min-w-max md:w-max w-full flex justify-center  color-orange  py-2 text-base transition duration-300 hover:bg-pink-700 px-4 md:px-6 md:py-3 text-white">
               dashboard</a>
           </div>
@@ -138,10 +138,10 @@
           @endauth
           </li>
         </ul>
-      
 
- 
-        <div class="flex items-center py-2  min-h-max md:w-max w-full">
+
+
+        <div class="flex items-center py-2  min-h-max md:w-max w-full pb-5">
 
           <a href="{{route('contact')}}"
             class="rounded min-w-max md:w-max w-full font-bold flex justify-center btn-background py-2 text-base transition duration-300 hover:bg-pink-100 px-4 md:px-6 md:py-3 text-white ml-2">Nous

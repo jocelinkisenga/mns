@@ -10,15 +10,16 @@
 <body>
 
   <div class="container">
-   
+
     <div class="screen">
       <div class="screen__content">
         <br>
         <center>
-          
-          <a href="/">Retour</a>
+
+          <a href="/" class="container">
+            <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="M and S logo"></a>
       </center>
-        
+
         <form class="login" action="{{route('login')}}" method="POST">
           @csrf
           <div class="login__field">
@@ -38,23 +39,23 @@
           <button type="submit" class="button login__submit">
             <span class="button__text">se connecter</span>
             <i class="button__icon fas fa-chevron-right"></i>
-          </button>				
+          </button>
         </form>
         <a href="{{route('password.request')}}"  class="" style="margin-left: 125px; color:rgb(255, 255, 255); font:bold;">Mot de passe oublié?
-        </a>		
+        </a>
 
         <div class="social-login">
-          
+
           <a href="{{route('register')}}"> Créer un compte </a>
         </div>
 
       </div>
       <div class="screen__background">
         <span class="screen__background__shape screen__background__shape4"></span>
-        <span class="screen__background__shape screen__background__shape3"></span>		
+        <span class="screen__background__shape screen__background__shape3"></span>
         <span class="screen__background__shape screen__background__shape2"></span>
         <span class="screen__background__shape screen__background__shape1"></span>
-      </div>		
+      </div>
     </div>
   </div>
 </body>

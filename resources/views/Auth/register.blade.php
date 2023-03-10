@@ -14,12 +14,11 @@
     <div class="screen">
       <div class="screen__content">
       <br>
-        <center>
-         
-          <a href="/">M and S - Retour</a>
-          
-          
-      </center>
+      <center>
+
+        <a href="/" class="container">
+          <img src="{{asset('Client/assets/images/MS Logo JPG.jpg')}}" alt="M and S logo"></a>
+    </center>
         <form class="login" action="{{route('register')}}" method="POST">
           @csrf
           <div class="login__field">
@@ -50,27 +49,27 @@
         @error('confirm')
         <span style="color: red">{{$message}}</span>
       @enderror
-      
-        
+
+
           <button type="submit" class="button login__submit">
             <span class="button__text">s'inscrire</span>
             <i class="button__icon fas fa-chevron-right"></i>
-          </button>				
+          </button>
         </form>
 
         <div class="social-login">
           <br>
-         
+
           <a href="{{route('login')}}">Connectez vous</a>
         </div>
 
       </div>
       <div class="screen__background">
         <span class="screen__background__shape screen__background__shape4"></span>
-        <span class="screen__background__shape screen__background__shape3"></span>		
+        <span class="screen__background__shape screen__background__shape3"></span>
         <span class="screen__background__shape screen__background__shape2"></span>
         <span class="screen__background__shape screen__background__shape1"></span>
-      </div>		
+      </div>
     </div>
   </div>
 </body>

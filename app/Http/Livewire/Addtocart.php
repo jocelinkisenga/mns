@@ -28,7 +28,7 @@ class Addtocart extends Component
     }
 
     /**
-     * Summary of add 
+     * Summary of add
      * this function adds a product to a card
      * @param mixed $id
      * @return mixed
@@ -42,9 +42,9 @@ class Addtocart extends Component
             $this->dispatchBrowserEvent('swal', [
                 "position" => 'top-end',
                 "icon" => 'warning',
-                "title" => 'désolé le produidt est indisponible',
+                "title" => "Désolé, ce produit est actuellement en rupture de stock. Nous travaillons pour renouveler notre inventaire. Nous vous invitons à revenir dans quelques temps ou à découvrir d'autres produits similaires disponibles sur notre site.",
                 "showConfirmButton" => false,
-                "timer" => 1500
+                "timer" => 9500
             ]);
         } else {
             if (Auth::check()) {

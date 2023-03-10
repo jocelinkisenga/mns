@@ -22,7 +22,7 @@
           Nous allions qualité, efficacité et accessibilité.
           Pour nos mamans, nos boss ladies et tous les membres de la famille, les tâches domestiques ne sont plus une corvée.
 
-          Find the best home gadgets at a low price. 
+          Find the best home gadgets at a low price.
 
           We combine quality, efficiency and accessibility.
           For our moms, boss ladies and all family members, household chores are no longer a chore.
@@ -60,12 +60,12 @@
             Rejoignez notre quête pour un ménage et une organisation aisés à la maison. Nous présentons une vaste sélection d'articles novateurs et économisant du temps pour fluidifier votre routine. Que vous soyez un parent occupé ou souhaitant optimiser les tâches domestiques, nous avons la réponse à vos besoins. Des solutions sûres pour les enfants aux outils d'organisation élégants pour la maison, nous avons tout ce qu'il vous faut. Parcourez notre collection soigneusement choisie de produits conçus pour vous offrir un gain de temps, une réduction d'efforts et pour sublimer votre foyer..
           </p>
 
-         
+
             </p>
             <div class="flex flex-col gap-6">
               <div class="flex max-w-sm w-full gap-6">
-                <div class="max-w-[2rem] sm:max-w-[3rem] w-full  
-                h-[2rem] sm:h-[3rem] flex items-center justify-center 
+                <div class="max-w-[2rem] sm:max-w-[3rem] w-full
+                h-[2rem] sm:h-[3rem] flex items-center justify-center
                 overflow-hidden bg-pink-600 bg-opacity-5 color-orange rounded ">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path
@@ -82,8 +82,8 @@
               </div>
 
               <div class="flex max-w-sm w-full gap-6">
-                <div class="max-w-[2rem] sm:max-w-[3rem] w-full  
-                h-[2rem] sm:h-[3rem] flex items-center justify-center 
+                <div class="max-w-[2rem] sm:max-w-[3rem] w-full
+                h-[2rem] sm:h-[3rem] flex items-center justify-center
                 overflow-hidden bg-pink-600 bg-opacity-5 color-orange rounded ">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="flex">
-            <a href="contact-us.html"
+            <a href="https://wa.me/243993066556"
               class="px-6 py-3 btn-background text-white transition hover:bg-pink-600 rounded-md">Prendre contact</a>
           </div>
         </div>

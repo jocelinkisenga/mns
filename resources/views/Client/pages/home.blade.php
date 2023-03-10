@@ -2,7 +2,7 @@
 @extends("Client.layouts.app")
 
 @section('content')
- 
+
     <section class="w-full relative overflow-hidden">
         <div class="bg-cover bg-no-repeat bg-center py-28 relative">
             <div class="absolute z-0 inset-0">
@@ -19,7 +19,7 @@
                                     rapidement</span>
                             </h1>
                             <p class="text-base text-gray-600 leading-6 z-50">
-                                
+
                             </p>
                         </div>
                         <div class="flex pt-8 z-30">
@@ -85,8 +85,8 @@
 
                           <a href="{{route('client.productDetails',['id'=>$item->id])}}">
                               <h4
-                                  class="uppercase font-medium text-md text-gray-700 group-hover:color-orange transition">
-                                  {{ substr($item->name,0,15)}}... 
+                                  class="uppercase truncate  font-medium text-md text-gray-700 group-hover:color-orange transition">
+                                  {{ $item->name}}
                               </h4> <span class=" color-orange font-bold">voir plus </span>
                           </a>
                       </div>
