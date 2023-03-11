@@ -9,9 +9,9 @@
           <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper2 flex w-full">
             <div class="swiper-wrapper w-full">
               @foreach ($product->image  as $key => $image)
-              <div class="swiper-slide" style="">
+              <div class="swiper-slide overflow-hide h-moyen " style="">
                 <img src="{{ asset('storage/uploads/' . $image->path) }}" alt="product name" width="200" height="auto"
-                  class="w-full h-40 sm:h-48 md:h-80 lg:h-80 object-cover rounded-md" />
+                  class="w-full h-40 sm:h-48  h-48 md:h-80 lg:h-80 object-cover rounded-md" />
               </div>
               @endforeach
               {{-- <div class="swiper-slide">
@@ -47,7 +47,7 @@
              <p class="text-gray-800 font-semibold space-x-2">
               <span>Disponibilite: </span>
               <span class=" color-orange p-1 px-2 rounded-full text-sm font-bold">Bientot disponible</span>
-            </p> 
+            </p>
             @endif
             <p class="space-x-2">
               <span class="text-gray-800 font-semibold">Categorie: </span>
@@ -119,5 +119,5 @@
       </div>
     </div>
   </section>
-    
+
 @endsection

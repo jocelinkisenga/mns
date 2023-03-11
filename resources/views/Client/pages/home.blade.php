@@ -77,7 +77,7 @@
                   <div
                   class="col-span-1 flex flex-col  w-full border border-dashed shadow group-first: shadow-gray-100 rounded-md overflow-hidden">
                   <div class="flex w-full bg-gray-100">
-                      <img src="{{ asset('storage/uploads/' . $item->image->first()["path"]) }}" width="40"
+                      <img src="{{ asset('storage/uploads/' . $item->cover()["path"]) }}" width="40"
                           height="auto" alt="image produits" class="w-full h-28 sm:h-36 md:h-40 lg:h-44 rounded">
                   </div>
                   <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">

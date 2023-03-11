@@ -52,7 +52,7 @@
                         </div>
 
                     </div>
-                    
+
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -65,18 +65,28 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <h3 class="d-inline-block d-sm-none">{{$product->name}}</h3>
+                            <h3 class="d-inline-block d-sm-none">{{$product->name}} </h3>
                             <div class="col-12">
-                                <img src="{{ asset('storage/uploads/' . $product->image->first()["path"]) }}" class="product-image"
+                                <img src="{{ asset('storage/uploads/' . $product->cover()["path"]) }}" class="product-image"
                                     alt="Product Image">
                             </div>
-                            <div class="col-12 product-image-thumbs">
+                            <div class="col-12 product-image-thumbs d-flex flex-column">
 
+                                <div class="row">
+                                    @foreach ($product->image  as $key => $image)
+                                    <div class="product-image-thumb thumbnail-img active {{$key+1}} position-relative overflow-hide" data-id="{{$image->id}}" data-url="{{route('change_image_statut', $image->id)}}" style="position:relative"><img
+                                        src="{{ asset('storage/uploads/' . $image->path) }}" alt="Product Image">
+                                        <div class=" w-full  flex align-items-center " style="position: absolute; ">
+                                            <button class="btn btn-primary bg-transparent-black">cover</button>
+                                        </div>
+                                    </div>
+                                    @endforeach
 
-                                @foreach ($product->image  as $key => $image)
-                                <div class="product-image-thumb active {{$key+1}}"><img
-                                    src="{{ asset('storage/uploads/' . $image->path) }}" alt="Product Image"></div>
-                                @endforeach
+                                </div>
+                                <div class="row">
+                                    <div class="h4">Cliquez sur un image pour l'utiliser comme couverture du produit </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -114,7 +124,7 @@
 
                             <div class="mt-4 product-share">
 
-                        
+
                             </div>
 
                         </div>
@@ -177,18 +187,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                    
+
                                     <div class="form-group">
                                       <label for="exampleInputFile">selectionner une catégorie</label>
-                                   
+
                                         <select class="custom-select" name="category_id" id="">
                                           <option value="{{$product->categorie->id}}" selected>{{$product->categorie->name}}</option>
                                           @foreach ($categories as  $item)
                                               <option value="{{$item->id}}">{{$item->name}}</option>
                                           @endforeach
-                                   
+
                                         </select>
-                                      
+
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleInputPassword1">couleurs</label>
@@ -336,4 +346,29 @@
     </div>
 
     {{-- end modal edit --}}
+
+    <script>
+        const thumbnails = document.querySelectorAll(".thumbnail-img");
+        thumbnails.forEach(element => {
+              element.addEventListener("click", (e)=>{
+                e.preventDefault();
+                // console.log(e.target)
+                console.log(element.getAttribute("data-id"))
+                // let form = new FormData();
+                // form.append('img_id', element.getAttribute("data-id"))
+                fetch(element.getAttribute('data-url'))
+  .then(response => response.text())
+  .then((data )=> {
+    console.log(data);
+    Swal.fire(   'couverture modifié !',
+                        'avec succés!',
+                        'success'
+                      )
+  setTimeout((e) => {
+     window.location.reload();
+  }, 3000);
+});
+              })
+        });
+    </script>
 @endsection

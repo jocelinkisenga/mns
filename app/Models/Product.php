@@ -25,6 +25,23 @@ class Product extends Model
     public function order_items(){
         return $this->hasMany(OrderItem::class);
     }
+    public function cover(){
+        $all = $this->image;
+        $img = false;
+        foreach ($all as $key => $value) {
+           $stat = $value->statut->isfirst??false;
+           
+           if($stat){
+            $img = $value;
+            break;
+        }
+        }
+        if($img){
+            return $img;
+        }
+
+        return $this->image->first();
+    }
 
     /**
      * Interact with the user's first name.

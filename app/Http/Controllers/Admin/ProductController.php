@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\ProductImage;
+use App\Models\ImageStatut;
 use Carbon\Carbon;
 use Domains\Stock\Interfaces\StockProductInterface;
 use Domains\Stock\Product\ProductStockController;
 use Illuminate\Http\Request;
 use Stripe\Product;
+use App\Models\Product as Produit;
 
 class ProductController extends Controller
 {
@@ -27,27 +29,28 @@ class ProductController extends Controller
     }
 
     public function store(ProductRequest $request){
-        
-       
+
+
 //  foreach($request->image as $key => $image){
 //          echo ("image n°".$key+1..$image->getClientOriginalName())."<br>";
-//  }     
-        
-        // $path = $request->file('image')->storeAs('uploads',$newFile,'public');  
+//  }
+
+        // $path = $request->file('image')->storeAs('uploads',$newFile,'public');
             $product = $this->domainController->store($request);
-        
+
         if ($request->image) {
-            
+
             foreach ($request->image as $key => $image) {
                 $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
                 $path = $image->storeAs('uploads',$imgName,'public');
-                ProductImage::create(['product_id'=>$product['id'],'path'=>$imgName]);
-           
+               $img =  ProductImage::create(['product_id'=>$product['id'],'path'=>$imgName]);
+               ImageStatut::create(['product_image_id'=>$img->id,
+                                    'isfirst'=>1]);
             }
-          
+
     }
         // $product = $this->domainController->store($request);
-        
+
 
         // ProductImage::create(['product_id'=>$product['id'],'path'=>$newFile]);
          return redirect()->back();
@@ -66,10 +69,36 @@ class ProductController extends Controller
 
       if($request->image){
         $imgName = Carbon::now()->timestamp . '_mns.' . $request->image->extension();
-        
+
         $path = $request->image->storeAs('uploads', $imgName, 'public');
-          $productImages = ProductImage::whereProduct_id($request->product_id)->whereId(1)->update(['path'=>$imgName]);
-        //     dd($productImages);
+          $productImages = ProductImage::whereProduct_id($request->product_id)->first();
+          $productImages->update(['path'=>$imgName]);
+          $produits = Produit::where("id",  $request->product_id)->get();
+        //   $produits = $produits->toArray();
+    //    dd($produits);
+        foreach ($produits as  $p) {
+           foreach ($p->image as $e) {
+            if($e->statut!=null){
+                $e->statut->update(["isfirst"=>0]);
+              }
+           }
+
+        }
+        //   array_map(function($e){
+        //       if($e->statut!=null){
+        //         $e->statut->update(["isfirst"=>0]);
+        //       }
+        //   }, $produits);
+// $prodfistImage = ProductImage::whereProduct_id($request->product_id)->where("id")->first();
+//   dd($prodfistImage);
+          if($productImages->statut!=null){
+        $stat = $productImages->statut;
+        $stat->update(["isfirst"=>1]);
+       }else{
+        ImageStatut::create(['product_image_id'=>$productImages->id,
+        'isfirst'=>1]);
+       }
+
       }
         return redirect()->back();
     }
@@ -104,8 +133,9 @@ class ProductController extends Controller
             foreach ($request->image as $key => $image) {
                 $imgName = Carbon::now()->timestamp . $key . '_mns.' . $image->extension();
                 $path = $image->storeAs('uploads', $imgName, 'public');
-                ProductImage::create(['product_id' => $request->product_id, 'path' => $imgName]);
-
+               $img =  ProductImage::create(['product_id' => $request->product_id, 'path' => $imgName]);
+                ImageStatut::create(['product_image_id'=>$img->id,
+                                    'isfirst'=>0]);
             }
         }
         return redirect()->back();

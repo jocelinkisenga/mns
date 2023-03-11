@@ -33,7 +33,7 @@
 
                                                         <!-- /.card-header -->
                                                         <!-- form start -->
-                                                      
+
                                                             <div class="card-body">
                                                               <form action="{{route('admin-categories')}}" method="POST" enctype="multipart/form-data">
                                                                 @csrf
@@ -42,11 +42,16 @@
                                                                     <input type="text" name="name" class="form-control"
                                                                         id="exampleInputEmail1" placeholder="">
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Associer une icone a la catégorie</label>
+                                                                    <input type="file" name="icon" class="form-control"
+                                                                        id="exampleInputEmail1" placeholder="">
+                                                                </div>
                                                             </div>
                                                             <!-- /.card-body -->
 
 
-                                                      
+
                                                     </div>
                                                     <!-- /.card -->
 
@@ -109,15 +114,15 @@
                                        <tr>
                                             <td>{{$key+1}}</td>
                                             <td>{{$item->name}}</td>
-                                            <td><a href=""><i class="fa fa-edit text-success" aria-hidden="true"></i></a></td>
+                                            <td><a href="{{route('admin.categories.edit', $item->id)}}"><i class="fa fa-edit text-success" aria-hidden="true"></i></a></td>
                                             @if($item->visible == true)
                                             <td><a href="{{route('admin.delete.categorie',['id'=>$item->id])}}"><i class="fa fa-window-close text-danger" aria-hidden="true"></i></a></td>
                                             @else
                                             <td><a href="{{route('admin.restore.categorie',['id'=>$item->id])}}"><i class="fa fa-edit  text-primary" aria-hidden="true"></i> restore</a></td>
                                             @endif
-                                           
-                                       </tr> 
-                                   
+
+                                       </tr>
+
                                        @endforeach
 
 

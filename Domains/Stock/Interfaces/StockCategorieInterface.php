@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Domains\Stock\Interfaces;
+use App\Models\Category;
 
 interface StockCategorieInterface
 {
@@ -12,7 +13,7 @@ interface StockCategorieInterface
     public function category(int $id);
     public function store($data);
 
-    public function update(int $id, $data);
+    public function update(Category $category, $data);
 
     public function delete(int $id);
 }

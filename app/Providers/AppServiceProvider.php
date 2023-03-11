@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Route;
+use App\Models\ProductImage;
+use App\Models\Category;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +29,13 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+
+
+        Route::bind('ProductImage', function($value){
+            return ProductImage::findOrFail($value);
+        });
+        Route::bind('Category', function($value){
+            return Category::findOrFail($value);
+        });
     }
 }

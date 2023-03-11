@@ -189,7 +189,7 @@ header .search-bar-container label:hover{
 }
 
 .input-field {
-  
+
   text-align: center;
 }
 
@@ -251,7 +251,7 @@ h2 {
   padding:0;
   margin:0;
   border:0;
-  outline:0; 
+  outline:0;
   line-height:50px;
   text-align:center;
   cursor:pointer;
@@ -262,7 +262,35 @@ h2 {
 .searchbar-open{
   width:100%;
 }
+.h-48{
+    height: 48%;
+}
+.overflow-hide{
+    overflow: hidden;
 
+}
+.bg-transparent-black{
+    background-color: #0000003d;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.justify-content-start{
+    justify-content: start;
+}
+.flex{
+    display: flex;
+}
+.h-moyen{
+    height: 45rem;
+    /* max-height: 60%; */
+}
+.bg-red{
+    background-color: red;
+}
 
 /* search 2 */
 .modal-header {

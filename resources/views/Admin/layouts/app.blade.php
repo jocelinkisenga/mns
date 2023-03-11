@@ -8,7 +8,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-   <link rel="stylesheet" href="{{asset('Admin/plugins/fontawesome-free/css/all.min.css')}}"> 
+   <link rel="stylesheet" href="{{asset('Admin/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('Admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
 
@@ -39,9 +39,9 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js"></script> --}}
     <!-- Bootstrap -->
- 
+
     <!-- overlayScrollbars -->
-   
+
     <!-- PAGE admin/plugins -->
     <!-- jQuery Mapael -->
     <script src="{{ asset('Client/assets/js/jquery.js') }}"></script>
@@ -49,13 +49,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <!-- ChartJS -->
-   
-  
-  
+
+
+
     <!-- AdminLTE for demo purposes -->
 
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    
+
     <script>
         //nav bar function
 
@@ -105,7 +105,7 @@
             });
         }
 
-        // print facture 
+        // print facture
         function myPrintFunction(){
             var printable = document.getElementById('.html-content');
             $('.html-content').printThis({
@@ -169,6 +169,7 @@
 <script src="{{asset('Admin/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('Admin/plugins/chart.js/Chart.min.js')}}"></script>
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script> 
 
 <!-- AdminLTE for demo purposes -->
 

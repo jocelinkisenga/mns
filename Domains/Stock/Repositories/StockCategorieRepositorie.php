@@ -8,7 +8,7 @@ use App\Models\Category;
 use Domains\Stock\Interfaces\StockCategorieInterface;
 
 class StockCategorieRepositorie implements StockCategorieInterface {
-    
+
     public function categories(){
         return Category::all();
     }
@@ -18,14 +18,14 @@ class StockCategorieRepositorie implements StockCategorieInterface {
     }
 
     public function store($data){
-            Category::create(['name'=>$data]);
+            Category::create($data);
     }
 
-    public function update(int $id, $data){
-
+    public function update(Category $category, $data){
+         $category->update($data);
     }
 
     public function delete(int $id){
-        
+
     }
 }
