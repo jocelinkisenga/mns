@@ -145,7 +145,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Modifier le produit</h4>
+                    <h4 class="modal-title text-center ">Modifier le produit</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -203,11 +203,11 @@
                                   <div class="form-group">
                                     <label for="exampleInputPassword1">couleurs</label>
                                     <input type="text" name="colors" class="form-control"
-                                        id="exampleInputPassword1" placeholder="">
+                                        id="exampleInputPassword1" placeholder="" value="{{$product->colors}}">
                                 </div>
                                   <div class="form-group">
                                     <label for="my-input">description</label>
-                                    <textarea name="description" id="my-input" class="form-control" type="text" value="{{$product->description}}" ></textarea>
+                                    <textarea name="description" id="my-input" class="form-control" type="text" value="{{$product->description}}" >{{$product->description}}</textarea>
                                   </div>
                             </div>
                             <!-- /.card-body -->

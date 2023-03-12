@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $this->DomainController = $stockCategorieInterface;
     }
     public function index(){
-        $categories = Category::latest()->get();
+        $categories = Category::where('visible', 1)->get();
         return view("Admin.pages.categorie.categories",compact('categories'));
     }
     public function edit(Category $categorie){
@@ -28,7 +28,7 @@ class CategoryController extends Controller
 
     public function store(CategorieRequest $categorie){
             if($categorie->hasFile('icon')){
-            $icon =  str_replace("categories/icons/", "", $categorie->icon->store('categories/icons'));
+            $icon =  str_replace("public/categories/icons/", "", $categorie->icon->store('public/categories/icons'));
             $this->DomainController->store(["name"=>$categorie->name, "icon"=>$icon]);
             }else{
                 $this->DomainController->store(["name"=>$categorie->name]);
@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
     public function update(UpdateCategorieRequest $request, Category $categorie){
         if($request->hasFile('icon')){
-            $icon =  str_replace("categories/icons/", "", $request->icon->store('categories/icons'));
+            $icon =  str_replace("public/categories/icons/", "", $request->icon->store('public/categories/icons'));
             $this->DomainController->update($categorie, ["name"=>$request->name, "icon"=>$icon]);
             }else{
                 $this->DomainController->update($categorie, ["name"=>$request->name]);

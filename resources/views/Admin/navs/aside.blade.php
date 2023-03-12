@@ -43,7 +43,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
- 
+
               <li class="nav-item">
                 <a href="{{route('admin.categories')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon color-orange"></i>
@@ -72,6 +72,12 @@
                 <a href="{{route('rapport')}}" class="nav-link">
                   <i class="far fa-circle nav-icon color-orange"></i>
                   <p>Rapports</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.corbeille')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon color-orange"></i>
+                  <p>corbeille</p>
                 </a>
               </li>
             </ul>

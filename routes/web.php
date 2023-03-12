@@ -40,7 +40,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/productDetails/{id}', [ProductController::class, 'show'])->name('client.productDetails');
 Route::get('categories/{id}',[CategorieController::class,'show'])->name('client.categorie');
-
+Route::get('/admin/corbeille', [App\Http\Controllers\Admin\HomeController::class, 'corbeille'])->name('admin.corbeille');
 
 // Route::get('/test', [StripeTestController::class, 'index']);
 
