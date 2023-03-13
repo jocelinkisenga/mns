@@ -12,6 +12,7 @@ use Domains\Ecommerce\Interfaces\Client\ClientProductInterface;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -26,9 +27,9 @@ class HomeController extends Controller
 
     public function index(){
 
-     
+
         $categories = $this->domainCategorie->get_all();
-        $products = $this->domainProduct->get_all();
+        $products = Product::paginate(4);      //$this->domainProduct->get_all();
 
         return view("Client.pages.home",compact('categories','products'));
     }

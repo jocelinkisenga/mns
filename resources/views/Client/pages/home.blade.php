@@ -106,6 +106,14 @@
 
 
                 </div>
+                <div class="container-paginate">
+
+                    <a href="{{route('client-products')}}"> Voir plus </a>
+
+
+
+
+               </div>
             </div>
         </div>
     </section>
