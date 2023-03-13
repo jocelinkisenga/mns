@@ -269,6 +269,12 @@ h2 {
     overflow: hidden;
 
 }
+.gradient-custom{
+    background: linear-gradient(to left, #0821ac, #04337977 50%, #143c8542 75%, #000f5000 100%);
+}
+.back-drop-blur{
+    backdrop-filter: blur(1vh);
+}
 .bg-transparent-black{
     background-color: #0000003d;
 }

@@ -6,11 +6,11 @@
     <section class="w-full relative overflow-hidden">
         <div class="bg-cover bg-no-repeat bg-center py-28 relative">
             <div class="absolute z-0 inset-0">
-                <div class="absolute inset-0 z-0 bg-gradient-to-br to-gray-300"></div>
-                <img src="{{ asset('Client/assets/images/young-wife.jpg') }}" alt="Jeune femme au foyer porte des gants"
-                    class="w-full h-full object-cover">
+                <div class="absolute inset-0 z-0 gradient-custom to-gray-300"></div>
+                <img src="{{ asset('Client/assets/images/ustencile.png') }}"  alt="Jeune femme au foyer porte des gants"
+                    class="w-full h-full object-cover ">
             </div>
-            <div class="appContainer">
+            <div class="appContainer ">
                 <div class="grid md:grid-cols-3 lg:grid-cols-2">
                     <div class="flex flex-col gap-6 md:col-span-2 lg:col-span-1 z-30">
                         <div class="flex flex-col gap-4">
