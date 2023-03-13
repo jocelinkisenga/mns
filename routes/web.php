@@ -36,6 +36,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/topProducts', [App\Http\Controllers\Client\ProductController::class, 'top_products'])->name('top.products');
 Route::get('/products', [ProductController::class, 'index'])->name("client-products");
+Route::get('/products/{id}', [ProductController::class, 'index'])->name("client-products.paginate");
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/productDetails/{id}', [ProductController::class, 'show'])->name('client.productDetails');

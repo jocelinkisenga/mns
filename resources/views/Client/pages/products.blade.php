@@ -131,4 +131,12 @@
       <!-- shop wrapper end -->
     </div>
   </div>
+ <div class="container-paginate">
+
+      {{$products->links()}}
+     
+
+
+
+ </div>
 @endsection

@@ -23,17 +23,20 @@ class ProductController extends Controller
         $this->categorieDom = $clientCategorieInterface;
         $this->productDom = $clientProductInterface;
     }
-    public function index(){
+    public function index(int $index=0){
 
         $categories = $this->categorieDom->get_all();
         $products = $this->productDom->get_all();
+        $products = Product::paginate(6);
+        // dd($products);
+        // dd($prod->links());
         return view("Client.pages.products",compact('categories','products'));
     }
 
     public function show(int $id){
 
         $product = Product::find($id);
-    
+
         return view("Client.pages.productDetails", compact('product'));
     }
 
@@ -42,6 +45,6 @@ class ProductController extends Controller
         $products = Product::inRandomOrder()->whereVisible(true)->with('image')->get();
         return view("Client.pages.topProducts",compact("categories",'products'));
     }
-   
+
 
 }

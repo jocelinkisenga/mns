@@ -9,15 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>M&S</title>
   
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset('Client/assets/css/new.css')}}">
-  
+
   <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css " rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('Admin/plugins/fontawesome-free/css/all.min.css')}}"> 
+  <link rel="stylesheet" href="{{asset('Admin/plugins/fontawesome-free/css/all.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('Client/assets/css/style.css')}}">
   @livewireStyles
-  
+
 </head>
 <body class="w-full overflow-hidden overflow-y-auto">
 @include("Client.navs.navbar")
@@ -35,19 +36,20 @@
 <script  src="{{asset('Client/assets/js/app.js')}}"></script>
 <script src="{{asset('Admin/dist/js/adminlte.min.js')}}"></script>
 <script  src="{{asset('Client/assets/js/nav.js')}}"></script>
-<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script> 
+
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 <script  src="{{asset('Client/assets/js/lightbox-plus-jquery.min.js')}}"></script>
 @include('sweetalert::alert')
 
-    
+
 <script>
           window.addEventListener('swal',function(e){
             Swal.fire(e.detail);
         });
 
 //   $('#search').focus(function(){
-   
+
 //     $('#crypto-modal').show().addClass('modal-open');
 // });
 // // search
@@ -77,7 +79,7 @@ $(document).ready(function(){
             inputBox.focusout();
             isOpen = false;
         }
-    });  
+    });
      submitIcon.mouseup(function(){
             return false;
         });
