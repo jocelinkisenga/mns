@@ -15,7 +15,7 @@
                 <p class="text-gray-600">
                 Rejoignez notre quête pour un ménage et une organisation aisés à la maison. Nous présentons une vaste sélection d'articles novateurs et économisant du temps pour fluidifier votre routine. Que vous soyez un parent occupé ou souhaitant optimiser les tâches domestiques, nous avons la réponse à vos besoins. Des solutions sûres pour les enfants aux outils d'organisation élégants pour la maison, nous avons tout ce qu'il vous faut. Parcourez notre collection soigneusement choisie de produits conçus pour vous offrir un gain de temps, une réduction d'efforts et pour sublimer votre foyer.
                 </p>
-                
+
                 <div class="flex">
                     <a href="{{route('client-products')}}"
                         class="btn-background  border btn-border font-bold
@@ -27,7 +27,7 @@
             </div>
             <div class="hidden md:flex col-span-1 h-full relative overflow-hidden">
                 <div class="w-full">
-                    <img src="{{ asset('client/assets/images/disinfecting-in-home.jpg') }}" alt="image product"
+                    <img src="{{ asset('Client/assets/images/disinfecting-in-home.jpg') }}" alt="image product"
                         width="300" height="auto" class="w-full h-full object-cover absolute rounded-l-[10rem]">
                 </div>
             </div>
