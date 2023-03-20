@@ -122,27 +122,7 @@
       <!-- shop wrapper end -->
     </div>
   </div>
- <div class="container-paginate">
 
-      {{$products->links()}}
-
-
-
- </div>
- <script>
-    const container_paginate = document.querySelector(".container-paginate");
-    let bad_links = container_paginate.querySelectorAll(".leading-5");
-    bad_links.forEach(element => {
-        // element.style.display="none";
-        if(element.textContent.trim().toLowerCase().includes("previous")
-        || element.textContent.trim().toLowerCase().includes("next")
-        || element.textContent.trim().toLowerCase().includes("showing")){
-            element.classList.add("hide-main");
-            element.textContent = element.textContent.replace("Previous", "Précédent")
-            element.textContent = element.textContent.replace("Next", "Suivant")
-        }
-
-    });
-</script>
+ 
 
 @endsection

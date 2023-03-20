@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Route;
 use App\Models\ProductImage;
 use App\Models\Category;
+use App\Models\Product;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
         });
         Route::bind('Category', function($value){
             return Category::findOrFail($value);
+        });
+
+        Route::bind('Product', function($value){
+            return Product::findOrFail($value);
         });
     }
 }

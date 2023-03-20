@@ -13,6 +13,7 @@ use Domains\Stock\Product\ProductStockController;
 use Illuminate\Http\Request;
 use Stripe\Product;
 use App\Models\Product as Produit;
+use App\Models\Color;
 
 class ProductController extends Controller
 {
@@ -28,14 +29,29 @@ class ProductController extends Controller
         return view('Admin.pages.product.products', compact('categories','products'));
     }
 
+    public function most_sell(Produit $produit){
+         if($produit->is_most_sell==1){
+            $produit->update(['is_most_sell'=>0]);
+         }else{
+            $produit->update(['is_most_sell'=>1]);
+         }
+          return redirect()->back();
+    }
+    public function is_top(Produit $produit){
+
+        if($produit->is_top==1){
+           $produit->update(['is_top'=>0]);
+        }else{
+           $produit->update(['is_top'=>1]);
+        }
+        return redirect()->back();
+   }
+
     public function store(ProductRequest $request){
 
 
-//  foreach($request->image as $key => $image){
-//          echo ("image n°".$key+1..$image->getClientOriginalName())."<br>";
-//  }
 
-        // $path = $request->file('image')->storeAs('uploads',$newFile,'public');
+
             $product = $this->domainController->store($request);
 
         if ($request->image) {
@@ -49,10 +65,16 @@ class ProductController extends Controller
             }
 
     }
-        // $product = $this->domainController->store($request);
 
+    foreach ($request->input() as $key => $value) {
+        if(preg_match("/couleur/", $key)){
+            Color::create([
+                "name"=>$value,
+                "product_id"=>$product->id
+            ]);
+        }
+    }
 
-        // ProductImage::create(['product_id'=>$product['id'],'path'=>$newFile]);
          return redirect()->back();
 
     }
@@ -60,7 +82,7 @@ class ProductController extends Controller
     public function show( int $id){
         $product = $this->domainController->product($id);
          $categories = Category::all();
-
+// dd($product);
         return view('Admin.pages.product.productDetail',compact("product","categories"));
     }
 
@@ -84,13 +106,7 @@ class ProductController extends Controller
            }
 
         }
-        //   array_map(function($e){
-        //       if($e->statut!=null){
-        //         $e->statut->update(["isfirst"=>0]);
-        //       }
-        //   }, $produits);
-// $prodfistImage = ProductImage::whereProduct_id($request->product_id)->where("id")->first();
-//   dd($prodfistImage);
+
           if($productImages->statut!=null){
         $stat = $productImages->statut;
         $stat->update(["isfirst"=>1]);
@@ -100,6 +116,16 @@ class ProductController extends Controller
        }
 
       }
+      $product = Produit::where("id",  $request->product_id)->first();
+      foreach ($request->input() as $key => $value) {
+        if(preg_match("/couleur/", $key)){
+            Color::create([
+                "name"=>$value,
+                "product_id"=>$product->id
+            ]);
+        }
+    }
+
         return redirect()->back();
     }
 

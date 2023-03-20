@@ -33,7 +33,7 @@
 
                                                         <!-- /.card-header -->
                                                         <!-- form start -->
-                                                      
+
                                                             <div class="card-body">
                                                               <form action="{{route('admin.products.store')}}" method="POST" enctype="multipart/form-data">
                                                                 @csrf
@@ -63,19 +63,22 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                   <label for="exampleInputFile">selectionner une catégorie</label>
-                                                               
+
                                                                     <select class="custom-select" name="category_id" id="">
                                                                       <option selected>Selectionner une cat...</option>
                                                                       @foreach ($categories as  $item)
                                                                           <option value="{{$item->id}}">{{$item->name}}</option>
                                                                       @endforeach
-                                                               
+
                                                                     </select>
-                                                                  
+
                                                               </div>
-                                                                <div class="form-group">
+                                                              <div class="form-group">
+                                                                <button class="btn btn-primary btn-add-couleur">+ couleur</button>
+                                                              </div>
+                                                                <div class="form-group container-color">
                                                                     <label for="exampleInputPassword1">couleurs</label>
-                                                                    <input type="text" name="colors" class="form-control"
+                                                                    <input type="hidden" name="colors"  class="form-control"
                                                                         id="exampleInputPassword1" placeholder="">
                                                                 </div>
                                                               <div class="form-group">
@@ -87,7 +90,7 @@
                                                             <!-- /.card-body -->
 
 
-                                                      
+
                                                     </div>
                                                     <!-- /.card -->
 
@@ -146,6 +149,8 @@
                                             <th>prix</th>
                                             <th>categorie</th>
                                             <th>Détail</th>
+                                            <th>top ?</th>
+                                            <th>PLus vendus ?</th>
                                             <th>désactiver</th>
                                             <th>supprimer</th>
                                         </tr>
@@ -158,19 +163,38 @@
                                             <td>{{$item->old_quantity}}</td>
                                             <td>{{$item->price}}</td>
                                             <td>{{$item->categorie->name}}</td>
+
                                             <td><a href="{{route('admin.productDetail',['id'=>$item->id])}}">  <i class="fa fa-eye text-success" aria-hidden="true"></i></a></td>
+
+                                            <td><a href="{{route('is_top', $item->id)}}"> @if(!$item->is_top)
+                                                <i class="fa fa-toggle-off " aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa fa-toggle-on style="color:green" aria-hidden="true"></i>
+
+                                                @endif
+                                            </a>
+                                            </td>
+                                            <td> <a href="{{route('is_most_sell', $item->id)}}">@if(!$item->is_most_sell)
+                                                <i class="fa fa-toggle-off"></i>
+                                                @else
+                                                <i class="fa fa-toggle-on"></i>
+
+                                                @endif
+                                                </a>
+                                            </td>
                                             @if($item->visible == true)
                                             <td><a href="{{route('admin.delete.product',['id'=>$item->id])}}"><i class="fa fa-window-close text-warning" aria-hidden="true"></i></a></td>
                                             @else
                                             <td><a href="{{route('admin.restore.product',['id'=>$item->id])}}"><i class="fa fa-edit  text-primary" aria-hidden="true"></i> restore</a></td>
                                             @endif
+
                                             <td>
                                                 <a href="{{route('admin.destroy.product',['id'=>$item->id])}}"><i class="fa fa-window-close text-danger
                                                 " aria-hidden="true"></i></a></td>
-                                       </tr> 
+                                       </tr>
                                        @endforeach
 
-                                    
+
 
                                     </tbody>
                                 </table>
@@ -184,4 +208,18 @@
 
             </div>
     </div>
+
+
+    <script>
+        let declenche = document.querySelector(".btn-add-couleur");
+        declenche.addEventListener("click", function(e){
+            e.preventDefault();
+            const element = document.createElement("input");
+            element.setAttribute("type", "color");
+            element.setAttribute("name", "couleur"+Date.now().toString())
+            document.querySelector(".container-color").appendChild(element);
+
+
+        })
+    </script>
 @endsection

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>M&S</title>
-  
+
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset('Client/assets/css/new.css')}}">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{asset('Admin/plugins/fontawesome-free/css/all.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('Client/assets/css/style.css')}}">
+  @yield('custom-style')
   @livewireStyles
 
 </head>

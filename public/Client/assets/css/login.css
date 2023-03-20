@@ -27,7 +27,7 @@ body {
     padding-bottom: 2rem;
 	background: linear-gradient(90deg, #8178ca, #eeb407);
 	position: relative;
-	height: 600px;
+	/* height: 600px; */
 	width: 360px;
 	box-shadow: 0px 0px 24px #5C5696;
 }
@@ -115,13 +115,14 @@ body {
 }
 
 .login__input {
+
 	border: none;
 	border-bottom: 2px solid #D1D1D4;
 	background: none;
 	padding: 10px;
-	padding-left: 24px;
+	padding-left: 10px;
 	font-weight: 700;
-	width: 75%;
+	width: 100%;
 	margin-top: 2px;
 	transition: .2s;
 }

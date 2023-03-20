@@ -96,6 +96,15 @@
                             <p>{{$product->description}}.</p>
 
                             <hr>
+                            <div class="h2">Couleur</div>
+                            <div class="d-flex justify-content-between">
+                                @foreach ($product->couleurs as $color)
+                                <div class="pt-2 pb-2 px-2 border" style="background:{{$color->name}};"></div>
+                                @endforeach
+
+                            </div>
+
+
                             <h4></h4>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
 
@@ -201,10 +210,13 @@
 
                                   </div>
                                   <div class="form-group">
-                                    <label for="exampleInputPassword1">couleurs</label>
-                                    <input type="text" name="colors" class="form-control"
-                                        id="exampleInputPassword1" placeholder="" value="{{$product->colors}}">
-                                </div>
+                                    <button class="btn btn-primary btn-add-couleur">+ couleur</button>
+                                  </div>
+                                    <div class="form-group container-color">
+                                        <label for="exampleInputPassword1">couleurs</label>
+                                        <input type="hidden" name="colors"  class="form-control"
+                                            id="exampleInputPassword1" placeholder="">
+                                    </div>
                                   <div class="form-group">
                                     <label for="my-input">description</label>
                                     <textarea name="description" id="my-input" class="form-control" type="text" value="{{$product->description}}" >{{$product->description}}</textarea>
@@ -370,5 +382,17 @@
 });
               })
         });
+    </script>
+    <script>
+        let declenche = document.querySelector(".btn-add-couleur");
+        declenche.addEventListener("click", function(e){
+            e.preventDefault();
+            const element = document.createElement("input");
+            element.setAttribute("type", "color");
+            element.setAttribute("name", "couleur"+Date.now().toString())
+            document.querySelector(".container-color").appendChild(element);
+
+
+        })
     </script>
 @endsection

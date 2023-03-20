@@ -38,15 +38,28 @@
   text-decoration: none;
   display: block;
 }
+.hide-main{
+    display: none;
+}
 
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
 
-
+.d-flex{
+    display: flex;
+}
+.min-4{
+    min-height: 25vh;
+}
 @media screen and (max-width: 360px) {
     .table-order{
         width: 100px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .hide-main{
+        display: inline-block;
     }
 }
 

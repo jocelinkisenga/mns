@@ -12,7 +12,19 @@ class Product extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['category_id','name','price','old_quantity','description','visible','colors'];
+    protected $fillable = [
+                'category_id',
+                'name',
+                'price',
+                'old_quantity',
+                'description',
+                'visible',
+                'is_top',
+                'is_most_sell',
+                'colors'
+            ];
+
+
 
     public function categorie(){
         return $this->belongsTo(Category::class,'category_id');
@@ -20,6 +32,9 @@ class Product extends Model
 
     public function image (){
         return $this->hasMany(ProductImage::class);
+    }
+    public function couleurs(){
+        return $this->hasMany(Color::class);
     }
 
     public function order_items(){
@@ -30,7 +45,7 @@ class Product extends Model
         $img = false;
         foreach ($all as $key => $value) {
            $stat = $value->statut->isfirst??false;
-           
+
            if($stat){
             $img = $value;
             break;

@@ -5,15 +5,15 @@
       <div class="w-full grid lg:grid-cols-4 gap-6 pt-4 pb-16 items-start relative">
         <!-- sidebar -->
         <div data-filter-box
-          class="col-span-1 bg-white px-4 pt-4 pb-6 
-          shadow rounded-md overflow-hidden absolute 
-          lg:static left-4 top-16 z-10 w-72 lg:opacity-100 
-          opacity-0 lg:visible invisible lg:scale-y-100 scale-y-0 
+          class="col-span-1 bg-white px-4 pt-4 pb-6
+          shadow rounded-md overflow-hidden absolute
+          lg:static left-4 top-16 z-10 w-72 lg:opacity-100
+          opacity-0 lg:visible invisible lg:scale-y-100 scale-y-0
           transition-all duration-500 ease-in-out origin-top
           lg:w-full lg:block">
           <div class="divide-gray-200 divide-y space-y-5 relative">
             <!-- category filter -->
-            {{-- <div class="relative">
+            <div class="relative">
               <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
               <div class="space-y-2">
 
@@ -28,7 +28,7 @@
                 @endforeach
 
               </div>
-            </div> --}}
+            </div>
 
             <div class="pt-4">
               <h3 class="text-xl text-gray-800 mb-3 uppercase font-medium">Prix</h3>
@@ -53,25 +53,25 @@
 
         <div class="col-span-3">
 
-          <div class="mb-4 flex gap-4 items-center">
-{{--             
+          {{-- <div class="mb-4 flex gap-4 items-center">
+
             <select
               class="w-44 text-sm text-gray-600 px-4 py-3 border-gray-300 shadow-sm rounded focus:ring-primary focus:border-primary">
               <option>Default sorting</option>
               <option>Price low-high</option>
               <option>Price high-low</option>
               <option>Latest product</option>
-            </select> --}}
+            </select>
 
             <div class="lg:hidden flex items-center">
               <button data-toggle-filter class="outline-none p-3 rounded shadow bg-white text-gray-600">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                   <path d="M6 12a.75.75 0 01-.75-.75v-7.5a.75.75 0 111.5 0v7.5A.75.75 0 016 12zM18 12a.75.75 0 01-.75-.75v-7.5a.75.75 0 011.5 0v7.5A.75.75 0 0118 12zM6.75 20.25v-1.5a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0zM18.75 18.75v1.5a.75.75 0 01-1.5 0v-1.5a.75.75 0 011.5 0zM12.75 5.25v-1.5a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0zM12 21a.75.75 0 01-.75-.75v-7.5a.75.75 0 011.5 0v7.5A.75.75 0 0112 21zM3.75 15a2.25 2.25 0 104.5 0 2.25 2.25 0 00-4.5 0zM12 11.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM15.75 15a2.25 2.25 0 104.5 0 2.25 2.25 0 00-4.5 0z" />
-                </svg>                
+                </svg>
               </button>
             </div>
 
-          </div>
+          </div> --}}
           <!-- sorting end -->
           <!-- product wrapper -->
           <div class="grid xs:grid-cols-2  lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6">
@@ -80,16 +80,17 @@
             <div
             class="col-span-1 flex flex-col  w-full border border-dashed shadow group-first: shadow-gray-100 rounded-md overflow-hidden">
             <div class="flex w-full bg-gray-100">
-              <img src="{{ asset('storage/uploads/' . $item->image->first()["path"]) }}" width="40" height="auto" alt="image produits"
+              <img src="{{ asset('storage/uploads/' . $item->cover()["path"]) }}" width="40" height="auto" alt="image produits"
                 class="w-full h-28 sm:h-36 md:h-40 lg:h-44 rounded">
             </div>
             <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">
               <div class="w-full">
 
                 <a href="{{route('client.productDetails',['id'=>$item->id])}}">
-                  <h4 class="uppercase font-medium text-sm text-gray-700 group-hover:text-pink-600 transition">
-                    {{substr($item->name,0,15)}} ...
-                  </h4><span class="color-orange font-bold">voir plus</span>
+                    <h4
+                        class="uppercase truncate  font-medium text-md text-gray-700 group-hover:color-orange transition">
+                        {{ $item->name}}
+                    </h4> <span class=" color-orange font-bold">voir plus </span>
                 </a>
               </div>
               <div class="flex w-full items-center flex-wrap gap-1 small:gap-0 small:flex-nowrap justify-between">
@@ -130,4 +131,27 @@
       <!-- shop wrapper end -->
     </div>
   </div>
+ <div class="container-paginate">
+
+      {{$products->links()}}
+
+
+
+ </div>
+ <script>
+    const container_paginate = document.querySelector(".container-paginate");
+    let bad_links = container_paginate.querySelectorAll(".leading-5");
+    bad_links.forEach(element => {
+        // element.style.display="none";
+        if(element.textContent.trim().toLowerCase().includes("previous")
+        || element.textContent.trim().toLowerCase().includes("next")
+        || element.textContent.trim().toLowerCase().includes("showing")){
+            element.classList.add("hide-main");
+            element.textContent = element.textContent.replace("Previous", "Précédent")
+            element.textContent = element.textContent.replace("Next", "Suivant")
+        }
+
+    });
+</script>
+
 @endsection
