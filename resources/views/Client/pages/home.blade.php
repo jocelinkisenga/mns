@@ -49,9 +49,9 @@
                   class="col-span-1 bg-white shadow-gray-100 border border-dashed rounded-md shadow transition-all hover:shadow-lg p-4">
                   <div class="w-full flex flex-col gap-2">
                       <div class="flex justify-center">
-                          <div class="flex bg-white shadow-lg p-3 rounded-full">
+                          <div class="flex bg-white shadow-lg p-0 rounded-full">
                               <img src="{{ $item->icon?asset('storage/categories/icons/'.$item->icon):asset('Client/assets/images/bar_icon_127276.png') }}" alt="{{$item->name}}"
-                                  width="30" class="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                                  width="40" class=" rounded-circle img-fluid h-7 sm:w-10 sm:h-10 md:w-12 md:h-12">
                           </div>
                       </div>
                       <div class="flex justify-center">

@@ -12,7 +12,7 @@
               <div class="swiper-slide overflow-hide  min-4 " style="">
                 <div class="d-flex justify-content-center align-items-center  px-2" >
                     <img src="{{ asset('storage/uploads/' . $image->path) }}" data-fancybox="{{$product->name}}" role="button"  alt="product name" width="200" height="auto"
-                  class="img-fluid h-40 sm:h-48  h-48 md:h-80 lg:h-80 object-cover rounded-md" />
+                  class="img-fluid height-50 object-cover rounded-md" />
                 </div>
 
               </div>
