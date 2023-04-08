@@ -387,3 +387,20 @@ background-color:#fff;
 .navbar-default .navbar-form {
   border: none;
 }
+.max-mo-4{
+    max-height: 20vh;
+}
+.cover-custom{
+    object-fit: cover;
+}
+.hide-main{
+    display:none;
+}
+@media screen and (max-width: 770px){
+    .hide-responsive{
+      display: none!important;
+    }
+    .hide-main{
+        display: block;
+    }
+}

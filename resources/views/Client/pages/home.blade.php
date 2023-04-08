@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <section class="w-full relative overflow-hidden">
+    <section class="w-full relative overflow-hidden hide-responsive">
         <div class="bg-cover bg-no-repeat bg-center py-28 relative">
             <div class="absolute z-0 inset-0">
                 <div class="absolute inset-0 z-0 gradient-custom to-gray-300"></div>
@@ -33,6 +33,42 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="w-full relative overflow-hidden hide-main">
+
+        <div class="bg-cover bg-no-repeat bg-center py-28 relative">
+            <div class="absolute z-0 inset-0">
+                <div class="absolute inset-0 z-0 gradient-custom to-gray-300"></div>
+                <video autoplay loop muted >
+                    <source src="{{asset('Client/assets/images/VID-20230315-WA0000.mp4')}}"/>
+                </video>
+            </div>
+            <div class="appContainer ">
+                <div class="grid md:grid-cols-3 lg:grid-cols-2">
+                    <div class="flex flex-col gap-6 md:col-span-2 lg:col-span-1 z-30">
+                        <div class="flex flex-col gap-4">
+                            <h1 class="xl:text-6xl md:text-5xl text-4xl text-gray-700 font-semibold z-50">
+                                <br>
+                                <br>
+                                <br>
+                            </h1>
+                            <p class="text-base text-gray-600 leading-6 z-50">
+
+                            </p>
+                        </div>
+                        <div class="flex pt-8 z-30">
+                            <a href="{{route('client-products')}}"
+                                class="btn-background btn-border border  font-bold
+                   text-white px-8 py-3 rounded-md z-50
+                 hover:bg-opacity-80 transition">
+                                Acheter maintenant
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -71,14 +107,14 @@
                 <div class="flex">
                     <h2 class="text-2xl  md:text-3xl font-semibold text-gray-700">Nos produits</h2>
                 </div>
-                <div class="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 sm:gap-4 md:gap-6">
+                <div class="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  grid-cols-2 sm:grid-cols-4 gap-4 gap-1 sm:gap-4 md:gap-6">
 
                   @foreach ($products as $item)
                   <div
-                  class="col-span-1 flex flex-col  w-full border border-dashed shadow group-first: shadow-gray-100 rounded-md overflow-hidden">
+                  class=" col-sm-6 col-lg-3   border border-dashed shadow group-first: shadow-gray-100 rounded-md overflow-hidden">
                   <div class="flex w-full bg-gray-100">
                       <img src="{{ asset('storage/uploads/' . $item->cover()["path"]) }}" width="40"
-                          height="auto" alt="image produits" class="w-full h-28 sm:h-36 md:h-40 lg:h-44 rounded">
+                          height="auto" alt="image produits" class="w-full max-mo-4 cover-custom h-28 sm:h-36 md:h-40 lg:h-44 rounded">
                   </div>
                   <div class="flex w-full flex-col px-2 pb-2 sm:px-4 sm:pb-4 pt-2 sm:gap-2">
                       <div class="w-full">
