@@ -37,6 +37,19 @@ class ProductController extends Controller
 
     // }
 
+    public function choose_color(Request $request){
+
+        $request->session()->put('color-'.$request->input('product_id'), $request->input('color'));
+        // $this->dispatchBrowserEvent('swal', [
+        //     "position"=> 'top-end',
+        //     "icon" => 'success',
+        //     "title" =>'couleur selectionné avec succés',
+        //     "showConfirmButton" => false,
+        //     "timer" => 1500
+        // ]);
+        return 'ok';
+
+    }
     public function show(int $id){
 
         $product = Product::find($id);

@@ -7,6 +7,7 @@ use Darryldecode\Cart\Facades\CartFacade;
 use Domains\Ecommerce\Client\Commandes\CommandeClientController;
 use Domains\Ecommerce\Interfaces\Client\ClientCommandeInterface;
 use Livewire\Component;
+use Illuminate\Http\Request;
 
 class Card extends Component
 {
@@ -27,6 +28,7 @@ class Card extends Component
     public function render()
     {
         $this->items = CartFacade::getContent();
+        // dd($this->items);
         return view('livewire.card');
     }
 
@@ -41,7 +43,7 @@ class Card extends Component
         $this->interface = $clientCommandeInterface;
         $product = Product::find($id);
         if($product->old_quantity == 0){
-            $this->dispatchBrowserEvent('swal', [ 
+            $this->dispatchBrowserEvent('swal', [
 				"position"=> 'top-end',
 				"icon" => 'warning',
 				"title" =>'désolé le produidt est indisponible',
@@ -50,11 +52,24 @@ class Card extends Component
 			]);
         } else {
 
-     
+
 
         $this->interface->add($id);
         $this->emit('addtocart');
     }
+    }
+
+    public function choose_color(Request $request, $color, $product_id){
+
+        $request->session()->put('color-'.$product_id, $color);
+        // $this->dispatchBrowserEvent('swal', [
+        //     "position"=> 'top-end',
+        //     "icon" => 'success',
+        //     "title" =>'couleur selectionné avec succés',
+        //     "showConfirmButton" => false,
+        //     "timer" => 1500
+        // ]);
+        
     }
 
 

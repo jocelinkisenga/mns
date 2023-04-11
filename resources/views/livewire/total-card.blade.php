@@ -3,10 +3,11 @@
         <div class="xs:max-w-xs w-4/6 max-w-md">
           <h4 class="text-gray-800 text-lg mb-4 font-medium uppercase"></h4>
           <div class="space-y-1 text-gray-600 pb-3 border-b border-gray-200">
+            
             <div class="flex justify-between font-medium">
               <p>Sous total</p>
               <p>$ {{Cart::getTotal()}}</p>
-             
+
             </div>
             <div class="flex justify-between">
               <p>Livraison</p>

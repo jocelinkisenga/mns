@@ -45,7 +45,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/productDetails/{id}', [ProductController::class, 'show'])->name('client.productDetails');
 Route::get('categories/{id}',[CategorieController::class,'show'])->name('client.categorie');
 Route::get('/admin/corbeille', [App\Http\Controllers\Admin\HomeController::class, 'corbeille'])->name('admin.corbeille');
-
+Route::post("/product/choose_color", [ProductController::class, "choose_color"])->name("product.choose_color");
 // Route::get('/test', [StripeTestController::class, 'index']);
 
 
@@ -60,6 +60,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/invoce', [InvoceController::class, 'show'])->name('invoce-client');
         Route::get('EditProfile', [ProfileController::class, 'create'])->name('edit-profile');
         Route::put('/updateProfile', [ProfileController::class, 'update'])->name('update.profile');
+
 //      Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 
 });
