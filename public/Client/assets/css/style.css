@@ -388,10 +388,11 @@ background-color:#fff;
   border: none;
 }
 .max-mo-4{
-    max-height: 20vh;
+    height: 20vh;
 }
+
 .cover-custom{
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 .hide-main{
     display:none;
