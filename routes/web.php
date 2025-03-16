@@ -61,5 +61,4 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/{id}',[OrderController::class,'index'])->middleware('auth')->name('myOrders');
 require __DIR__ . "/auth.php";
-require __DIR__ . "/Admin.php";
 
