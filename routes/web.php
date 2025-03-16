@@ -45,7 +45,7 @@ Route::get('categories/{id}',[CategorieController::class,'show'])->name('client.
 // Route::get('/test', [StripeTestController::class, 'index']);
 
 
-require __DIR__ . "/Admin.php";
+
 
 Route::middleware('auth')->group(function () {
 
@@ -59,6 +59,7 @@ Route::middleware('auth')->group(function () {
 //      Route::get('/checkoutHome', [CheckoutController::class, 'checkout_back'])->name("checkout-back");
 
 });
-
-require __DIR__ . "/auth.php";
 Route::get('/{id}',[OrderController::class,'index'])->middleware('auth')->name('myOrders');
+require __DIR__ . "/auth.php";
+require __DIR__ . "/Admin.php";
+
