@@ -18,7 +18,7 @@ class AdminMidleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role !==  RoleEnum::ADMIN){
+        if(Auth::user()->role !=  RoleEnum::ADMIN){
             return redirect()->back();
         }
         return $next($request);
