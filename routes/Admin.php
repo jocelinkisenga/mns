@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/admindashboard',[HomeController::class,'index'])->name('admin.dashboard');
     Route::get('/commandes',[CommandeController::class,'index'])->name('admin-commandes');
 
