@@ -5,10 +5,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <title>M&S</title>
+  
 
+<!-- Balises Meta de base -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- SEO: Titre et description -->
+<title>Bs - Investissements | Pièces Auto, Moto & Construction</title>
+<meta name="description" content="Bs - Investissement propose des pièces de qualité pour véhicules, motos et équipements de construction. Fiabilité, robustesse et innovation au service de vos projets.">
+
+<!-- Mots-clés -->
+<meta name="keywords" content="pièces auto, pièces moto, équipements de construction, Bs Investment, pièces détachées, mécanique, véhicules, engins, réparation, accessoires">
+
+<!-- Auteur -->
+<meta name="author" content="Jocelin Kisenga">
+
+<!-- Réseaux sociaux: Open Graph pour Facebook -->
+<meta property="og:title" content="Bs - Investment | Pièces Auto, Moto & Construction">
+<meta property="og:description" content="Découvrez notre catalogue de pièces pour véhicules, motos et engins de chantier. Bs - Investment, votre partenaire mécanique.">
+<meta property="og:image" content="{{asset()}}">
+<meta property="og:url" content="https://www.bs-investment.com">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bs - Investment | Pièces Auto, Moto & Construction">
+<meta name="twitter:description" content="Pièces détachées pour véhicules, motos et engins de construction. Bs - Investment, la mécanique en confiance.">
+<meta name="twitter:image" content="">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{asset('Client/assets/css/new.css')}}">
