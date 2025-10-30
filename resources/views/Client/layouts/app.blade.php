@@ -27,7 +27,7 @@
 <!-- Réseaux sociaux: Open Graph pour Facebook -->
 <meta property="og:title" content="Bs - Investment | Pièces Auto, Moto & Construction">
 <meta property="og:description" content="Découvrez notre catalogue de pièces pour véhicules, motos et engins de chantier. Bs - Investment, votre partenaire mécanique.">
-<meta property="og:image" content="{{asset()}}">
+<meta property="og:image" content="">
 <meta property="og:url" content="https://www.bs-investment.com">
 <meta property="og:type" content="website">
 
